@@ -1,0 +1,150 @@
+.main{
+    background-color: rgb(39, 32, 32);
+    width: 100%;
+    height: 60px;
+    
+}
+.span1{
+    color: white;
+    margin-left: 20px;
+}
+.fi-sr-phone-call{
+color: white;
+margin-left: 20px;
+
+}
+.menu{
+    margin-left:65px;
+    width: 100%px;
+    position: absolute;
+    
+    top: 30px;
+    
+}
+.span2{
+    color: white;
+    margin-left: 22px;
+    
+}
+.fi-rr-envelope {
+    color:white;
+    margin-left: 45px;
+}
+
+.fb{
+    width: 22px;
+    height: 22px;
+    margin-left: 553px;
+}
+.twitter{
+    width: 22px;
+    height: 22px;
+    margin-left: 23px;
+}
+.youtube{
+
+    width: 22px;
+    height: 22px;
+    margin-left: 23px;
+}
+.linkden{
+    width: 22px;
+    height: 22px;
+    margin-left: 23px;
+}
+.bcimg{
+    width:100%;
+    max-height: fit-content;
+}
+.menu2{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 74px;
+    width: 1280px;
+
+    
+}
+
+.menu3{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 124px;
+    width:755px;
+    
+}
+
+.btn{
+    margin-left: 83px;
+    width: 95px;
+    height: 33px;
+    margin-top:9px;
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.png{
+    width:150px;
+    height:40px;
+    margin-left: 92px;
+   margin-top:5px;
+}
+#home{
+
+
+color: white;
+font-weight: 100;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#home:hover{
+    
+}
+
+  #blog{
+
+    color: white;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+  #about{
+    
+    color: white;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+  #contact{
+    color: white;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+  #hire{
+    color: white;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+  }
+  #para1{
+    font-size: 32px;
+    letter-spacing: -2px;
+    line-height: 32px;
+    font-weight:100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+  }
+  #para{
+    position: absolute;
+    top: 150px;
+    margin-left: 93px;
+
+    
+  }
+  .high{
+    color: rgb(22, 235, 22);
+  }
+
