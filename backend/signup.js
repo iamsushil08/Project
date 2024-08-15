@@ -23,6 +23,10 @@ if(usernameValue === ""){
     usernameError.innerHTML="Cannot have an empty fieldset";
     return false;
 }
+else if(usernameValue.length<10){
+ usernameError.innerHTML="Insufficient letters";
+ return false;
+}
 else if(!usernamePattern.test(usernameValue)){
 usernameError.innerHTML="Invalid username";
 return false;
