@@ -1,3 +1,8 @@
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
 .main{
     background-color: rgb(39, 32, 32);
     width: 100%;
@@ -74,15 +79,6 @@ margin-left: 20px;
     
 }
 
-.btn{
-    margin-left: 83px;
-    width: 95px;
-    height: 33px;
-    margin-top:9px;
-    background-color: var(--primary-color);
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .png{
     width:150px;
@@ -90,52 +86,20 @@ margin-left: 20px;
     margin-left: 92px;
    margin-top:5px;
 }
-#home{
-
-
-color: white;
+#home,#blog,#about,#contactus,#signup{
+color: rgb(241, 235, 235);
 font-weight: 100;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-decoration: none;
 
 }
-#home:hover{
-    
-    
-}
+ 
 
-  #blog{
-
-    color: white;
-    font-weight: 100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-  }
-  #about{
-    
-    color: white;
-    font-weight: 100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-  }
-  #contact{
-    color: white;
-    font-weight: 100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-  }
-  #hire{
-    color: white;
-    font-weight: 100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-
-  }
   #para1{
     font-size: 32px;
     letter-spacing: -2px;
     line-height: 32px;
     font-weight:100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     color: white;
   }
   #para{
