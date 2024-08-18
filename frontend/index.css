@@ -1,42 +1,45 @@
 *{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
 }
+body{
+    height:100vh;
+    background-image: url('./images/111.jpeg');
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
 
 
-.main{
-    background-color: rgb(39, 32, 32);
+}
+#header{
+    background-color:#508C9B;
     width: 100%;
     height: 60px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-}
-.span1{
-    color: white;
-    margin-left: 20px;
+    
 }
 .fi-sr-phone-call{
 color: white;
 margin-left: 20px;
-
+margin-right:4px;
 }
-.menu{
-    margin-left:65px;
-    width: 100%px;
-    position: absolute;
-    
-    top: 30px;
-    
-}
-.span2{
-    color: white;
-    margin-left: 22px;
-    
+.span1{
+    color: white;  
 }
 .fi-rr-envelope {
     color:white;
     margin-left: 45px;
+    margin-right:4px;
 }
+.span2{
+    color: white;
 
-.fb{
+}
+ .fb{
     width: 22px;
     height: 22px;
     margin-left: 553px;
@@ -57,68 +60,49 @@ margin-left: 20px;
     height: 22px;
     margin-left: 23px;
 }
-.bcimg{
-    width:100%;
-    max-height: fit-content;
-}
-.menu2{
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 74px;
-    width: 1280px;
 
-    
-}
+#section{
 
-.menu3{
-    display: flex;
-    justify-content: space-around;
-    margin-right: 124px;
-    width:755px;
-    
+height:80px;
+display:flex;
+justify-content:space-around;
+align-items: center;
+padding:0px;
+
+}
+#section a{
+    color:white;
 }
 
-
-.png{
-    width:150px;
-    height:40px;
-    margin-left: 92px;
-   margin-top:5px;
+#logo{
+    margin-right: 250px;
 }
+#logo img{
+    height:80px;
+    width:170px;
+    font-weight: 400;
+    color: white;
+}
+
 #home,#blog,#about,#contactus,#signup{
-color: rgb(255, 255, 255);
+color: rgb(41, 32, 32);
 font-weight: 100;
 text-decoration: none;
 
 }
- 
-
-  #para1{
-    font-size: 32px;
-    letter-spacing: -2px;
-    line-height: 32px;
-    font-weight:100;
-
-    color: white;
-  }
-  #para{
-    position: absolute;
-    top: 150px;
-    margin-left: 93px;
-
-    
-  }
-  .high{
-    color: rgb(22, 235, 22);
-  }
+/* #main{
+    height:100%;
+    width:100%;
+    background-color: rgb(227, 134, 21);
+} */
 
   #middle{
-    background-color: white;
-    width: 1100px;
+    display: flex;
+    background-color:#ECDFCC;
+    width: 800px;
     height: 270px;
     position: absolute;
     top: 260px;
-    margin-left: 93px;
+    margin-left: 250px;
     border-radius: 3px;
   }
