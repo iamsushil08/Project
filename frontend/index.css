@@ -87,7 +87,7 @@ margin-left: 20px;
    margin-top:5px;
 }
 #home,#blog,#about,#contactus,#signup{
-color: rgb(241, 235, 235);
+color: rgb(255, 255, 255);
 font-weight: 100;
 text-decoration: none;
 
@@ -116,8 +116,9 @@ text-decoration: none;
   #middle{
     background-color: white;
     width: 1100px;
-    height: 250px;
+    height: 270px;
     position: absolute;
     top: 260px;
     margin-left: 93px;
+    border-radius: 3px;
   }
