@@ -1,4 +1,39 @@
+
+
+*{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+
 #usernameError,#passwordError{
     color:red;
     font-size:11px;
 }
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('./bg.avif'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+ 
+}
+
+#container{
+    height: 200px;
+    width:400px;
+    background-color: red;
+    border-radius:3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
