@@ -20,7 +20,7 @@ body{
     align-items: center;
     margin: 0;
     padding: 0;
-    background-image: url('./bg.avif'); /* Replace with your image URL */
+    background-image: url('./bg.avif');
     background-size: cover;
     background-position: center;
  
