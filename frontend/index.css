@@ -10,7 +10,7 @@
 }
 .span1{
     color: white;
-    margin-left: 20px;
+    margin-left: 4px;
   
 }
 .fi-sr-phone-call{
@@ -22,13 +22,12 @@ margin-left: 20px;
     margin-left:65px;
     width: 100%px;
     position: absolute;
-    
     top: 30px;
     
 }
 .span2{
     color: white;
-    margin-left: 22px;
+    margin-left: 5px;
     
     
 }
@@ -287,6 +286,7 @@ hr{
   background-color: aqua;
   position: relative;
   margin-top: 88px;
+
  }
  #carr{
   margin-top: 55px;
