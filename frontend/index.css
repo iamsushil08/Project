@@ -5,6 +5,7 @@
     background-color: rgb(39, 32, 32);
     width: 100%;
     height: 60px;
+    border-radius:15px;
     
 }
 .span1{
@@ -85,7 +86,7 @@ margin-left: 20px;
 }
 
 #btn{
-  background-color: green;
+  background-color:var(--priamry color--);
   color: white;
   position: absolute;
     margin-top:3px;
@@ -286,4 +287,13 @@ hr{
   background-color: aqua;
   position: relative;
   margin-top: 88px;
+ }
+ #carr{
+  margin-top: 55px;
+  margin-left:450px;
+  
+ }
+ #car{
+  height: 500px;
+  border-radius: 15px;
  }
