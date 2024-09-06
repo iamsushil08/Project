@@ -1,22 +1,29 @@
   
 body{
   height:100vh;
-  background-color: rgb(180, 83, 83);
+  background-color:#D2E3FC;
   display:flex;
   justify-content: center;
   align-items: center;
+  }
+  .forlogo{
+    height:40px;
+    /* background-color: red; */
+    border-radius: 2px;
+    margin-bottom:4px;
   }
 
   .form {
     display: flex;
     flex-direction: column;
      max-width: 350px;
-    background-color: #fff;
+    background-color:#F1F3F4;
     padding: 20px;
     border-radius: 20px;
     position: relative;
     justify-content: center;
-    margin:10px;
+    padding-bottom:5px;
+ 
   }
   
   .name{
@@ -26,13 +33,16 @@ body{
   
 
 
-  .form label #input {
+  .form label #fname,#lname,#pw,#cpw,#phone,#email {
     width: 95%;
+    height: 10px;
     padding: 10px 10px 20px 10px;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
     font-size: 19px;
   }
+ 
+
   
   .submit {
     border:none;
@@ -53,6 +63,7 @@ body{
   
   #signup a {
     color: royalblue;
+    text-decoration: none;
     
   }
   
