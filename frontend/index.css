@@ -1,0 +1,136 @@
+*{
+    text-decoration: none;
+}
+#mainmenu{
+    display:flex;
+    gap: 33px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#drivezylogo{
+    height:70px;
+    width: 120px;
+    margin-top: 3px;
+    margin-left: 44px;
+}
+#menuBar{
+   margin-left:190px;
+   margin-top:19px;
+   gap: 33px;
+   
+}
+#medialogo{
+    margin-left:145px;
+    margin-top: 9px;
+
+    
+}
+#home{
+   margin-left: 27px;
+   text-decoration: none;
+   color: black;
+}
+#blog{
+    margin-left: 27px;
+    text-decoration: none;
+    color: black;
+}
+#about{
+    margin-left: 27px;
+    text-decoration: none;
+    color: black;
+}
+
+#contact{
+    margin-left: 27px;
+    text-decoration: none;
+    color:black;
+
+}
+
+#login{
+    margin-left: 27px;
+    text-decoration: none;
+    color: black;
+}
+
+#fb{
+    margin-left: 23px;
+
+}
+#twitter{
+    margin-left: 23px;
+
+}
+#youtube{
+    margin-left: 23px;
+
+}
+#car1{
+    width:1280px
+}
+#text1{
+    position: relative;
+    bottom:603px;
+    margin-left:85px;
+    color: rgb(255, 253, 249);
+}
+#FindingVechile{
+    display: flex;
+    position: relative;
+    bottom: 222px;
+    gap: 59px;
+    
+}
+#rent{
+background-color: rgb(238, 242, 234);
+margin-left: 250px;
+height: 45px;
+width:265px;
+border-radius: 14px;
+
+}
+#HireDriver{
+    background-color: rgb(36, 99, 236);
+    width: 265px;
+    border-radius: 14px;
+    
+    
+}
+#Self{
+ background-color: rgb(254, 254, 255);
+ width: 265px;
+ border-radius: 14px;
+ 
+ 
+}
+#rentt{
+color: black;
+padding-top: 10px; 
+display: block;
+text-align: center; 
+}
+#hiree{
+color: white;
+padding-top: 10px; 
+display: block;
+text-align: center; 
+
+}
+#selff{
+color: rgb(0, 0, 0);
+padding-top: 10px; 
+display: block;
+text-align: center; 
+}
+#dreamyz{
+     position: relative;
+     bottom: 66px;
+     margin-left: 526px;
+     width: 600px;
+}
+#car2{
+    width: 500px;
+    margin-left: 435px;
+}
+
