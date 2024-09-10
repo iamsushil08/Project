@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./register.css" />
   </head>
   <body>
-    <form class="form">
+    <form class="form" method="POST" action="./insert.php">
       <div class="forlogo"></div>
       <div class="name">
         <label
@@ -49,7 +49,7 @@
         </label>
       </div>
       <br />
-      <button class="submit">SUBMIT</button>
+      <button class="submit" name="submit">SUBMIT</button>
       <p id="signup">Already have an acount ? <a href="./signup.html">Sign In</a></p>
     </form>
   </body>
