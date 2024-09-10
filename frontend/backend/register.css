@@ -1,21 +1,18 @@
   
 body{
-  height:100vh;
+  height:100%;
   background-color:#D2E3FC;
   display:flex;
   justify-content: center;
   align-items: center;
   }
-  .forlogo{
-    height:40px;
-    /* background-color: red; */
-    border-radius: 2px;
-    margin-bottom:4px;
-  }
+ 
 
   .form {
+    margin-top:10px;
     display: flex;
     flex-direction: column;
+    height:450px;
      max-width: 350px;
     background-color:#F1F3F4;
     padding: 20px;
@@ -33,13 +30,22 @@ body{
   
 
 
-  .form label #fname,#lname,#pw,#cpw,#phone,#email {
+  .form label #fname,#pw,#cpw,#phone,#email {
     width: 95%;
     height: 10px;
     padding: 10px 10px 20px 10px;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
-    font-size: 19px;
+    font-size: 15px;
+  }
+  .form label #lname{
+
+  width: 90%;
+  height: 10px;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 15px;
   }
  
 
