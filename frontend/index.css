@@ -75,54 +75,6 @@
     margin-left:85px;
     color: rgb(255, 253, 249);
 }
-#FindingVechile{
-    display: flex;
-    position: relative;
-    bottom: 222px;
-    gap: 59px;
-    
-}
-#rent{
-background-color: rgb(238, 242, 234);
-margin-left: 250px;
-height: 45px;
-width:265px;
-border-radius: 14px;
-
-}
-#HireDriver{
-    background-color: rgb(36, 99, 236);
-    width: 265px;
-    border-radius: 14px;
-    
-    
-}
-#Self{
- background-color: rgb(254, 254, 255);
- width: 265px;
- border-radius: 14px;
- 
- 
-}
-#rentt{
-color: black;
-padding-top: 10px; 
-display: block;
-text-align: center; 
-}
-#hiree{
-color: white;
-padding-top: 10px; 
-display: block;
-text-align: center; 
-
-}
-#selff{
-color: rgb(0, 0, 0);
-padding-top: 10px; 
-display: block;
-text-align: center; 
-}
 #dreamyz{
      position: relative;
      bottom: 66px;
