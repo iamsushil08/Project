@@ -133,5 +133,63 @@ text-align: center;
     width: 500px;
     margin-left: 435px;
 }
+#rental1{
+    margin-left: 584px;
+    font-size: 23px;
+    position: relative;
+    top: 70px;
 
+
+}
+#div1{
+    background-color: rgb(240, 248, 255);
+}
+#rentalhead{
+    margin-left:380px;
+    font-size: 43px;
+    position: relative;
+    margin-top:130px;
+}
+#img1con{
+    width: 45px;
+}
+#img2con{
+    width: 45px;
+}
+#img3con{
+    width: 45px;
+}
+#div2{
+    display: flex;
+    gap: 53px;
+    margin-left: 93px;
+    position: relative;
+    margin-top: 110px;
+    color: rgb(34, 21, 21);
+}
+#endless{
+font-size: 23px;
+}
+#customer{
+    font-size: 23px;
+}
+#trip{
+    font-size: 23px;
+}
+#perfect-car{
+background-color: rgb(36, 99, 236);
+margin-left:570px;
+height: 45px;
+width:265px;
+border-radius: 14px;
+margin-top: 49px;
+text-align: center;
+
+}
+#perfectt-car{
+    padding-top: 10px; 
+    display: block;
+    color: white;
+
+}
 
