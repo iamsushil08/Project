@@ -19,8 +19,13 @@ if(isset($_POST["submit"])){
     $sql="INSERT INTO users(firstname,lastname,email,phone,password) VALUES ('$fname','$lname','$email','$phone','$password_hashed')";
     $result=mysqli_query($conn,$sql);
     if($result){
-       header("Location:../index.html");
+    //    header("Location:../index.html");
+    //    exit();
+   echo" you are logged in";
 
+    }
+    else{
+        echo"Not done"; 
     }
 
   
