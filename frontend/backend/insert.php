@@ -13,8 +13,6 @@ if(isset($_POST["submit"])){
         echo "Passwords do not match!";
   
     }
-
-
     $password_hashed= password_hash($password, PASSWORD_DEFAULT);
     $sql="INSERT INTO users(firstname,lastname,email,phone,password) VALUES ('$fname','$lname','$email','$phone','$password_hashed')";
     $result=mysqli_query($conn,$sql);
@@ -25,7 +23,8 @@ if(isset($_POST["submit"])){
 
     }
     else{
-        echo"Not done"; 
+        // echo"Not done"; 
+        echo "Error: " . mysqli_error($conn); 
     }
 
   
