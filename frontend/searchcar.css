@@ -2,3 +2,17 @@
     margin:0px;
     padding:0px;
 }
+.box{
+    width:350px;
+    height:100vh;
+    background-color: red;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+#carsearch{
+padding-left:5px;
+}
+#carsearch h3{
+    text-align: center;
+}
