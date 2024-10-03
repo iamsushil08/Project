@@ -1,17 +1,29 @@
-<?php 
+<?php
+session_start();
+include 'connection.php';
 
-$host="localhost";
-$user="root";
-$db="admins";
-$pw="";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username']; 
+    $password = $_POST['password'];
 
-$conn=mysqli_connect($host,$user,$db,$pw);
-if($conn){
-    echo "okay";
-    
+   
+    $query = "SELECT * FROM admins WHERE username='$username'";
+    $result = mysqli_query($conn, $query);
+    $admin = mysqli_fetch_assoc($result);
+
+
+    if ($admin && password_verify($password, $admin['password'])) {
+        $_SESSION['admin_id'] = $admin['id'];
+        header('Location: dashboard.php'); 
+    } else {
+        echo "Invalid username or password";
+    }
 }
-
-
-
-
 ?>
+
+
+<form method="POST">
+    <input type="text" name="username" required><br><br>
+    <input type="password" name="password" required><br>
+    <button type="submit">Login</button>
+</form>
