@@ -7,16 +7,9 @@ if (!isset($_SESSION['admin_id'])) {
 ?>
 
 <html>
-<h2>Admin Dashboard</h2>
-<button><a href=".div1" style="text-decoration:none">Add Car</a></button>
-<button><a href="" style="text-decoration:none">Delete Car </a></button>
-
-
-
-<div class="div1">
-    <form action="" method="POST">
-        hello
-    </form>
-</div>
+<button><a href="./addcars.php">Add Cars</a></button>
+<button><a href="">Delete Cars</a></button>
+<button><a href="">Manage Users</a></button>
+<button><a href="">Manage Payment</a></button>
 
 </html>
