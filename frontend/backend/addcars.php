@@ -46,7 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $status=$_POST['status'];
     $plate_number=$_POST['plate_number'];
     
-
+     $image_url='./carimages' basename['image']['name'];
+     move_uploaded_file
 
 
     $query="insert into cars(name,model,color,mileage,description,extra_charge,status,plate_number,image_url) values(
