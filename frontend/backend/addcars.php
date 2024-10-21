@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="./addcars.php" method="POST">
+    <form action="./addcars.php" method="POST" enctype="multipart/form-data">
         <label for="">Car Name</label>
         <input type=" text" name="name">
         <br>
@@ -70,11 +70,12 @@ $extensions = array("image/jpeg", "image/png", "image/jpg");
 
 if (in_array($filetype, $extensions)) {
 // overwrite nahos so using time
-$unique_filename = time() . "_" . basename($filename);
-$destination = "carimages/" . $unique_filename;
+$unique_file = time() . "_" . basename($filename);
+$destination = "carimages/" . $unique_file;
+
 
 if (move_uploaded_file($filetemp, $destination)) {
-    echo"success";
+   
 $query = "INSERT INTO cars (name, model, color, mileage, description, extra_charge, status, plate_number, image_url)
 VALUES ('$name', '$model', '$color', '$mileage', '$description', '$extra_charge', '$status', '$plate_number',
 '$destination')";
@@ -92,4 +93,5 @@ echo "Invalid file type. Only JPEG, PNG, and JPG formats are allowed.";
 }
 }
 }
+echo "Successsss";
 ?>
