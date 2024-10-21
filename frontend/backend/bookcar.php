@@ -4,6 +4,7 @@
     <button type="submit">Confirm Booking</button>
 </form>
 <?php
+session_start();
 include("connection.php");
 
 if (isset($_GET['car_id'])) {
@@ -28,7 +29,7 @@ if (isset($_GET['car_id'])) {
         
         if (mysqli_query($conn, $update_query)) {
            
-            $user_id = 1; 
+            $user_id =$_SESSION['user_id'];
             $booking_query = "INSERT INTO bookings (user_id, car_id) VALUES ('$user_id', '$car_id')";
             mysqli_query($conn, $booking_query);
             
