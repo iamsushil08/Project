@@ -2,7 +2,8 @@
     <label for="hours">Enter number of hours:</label>
     <input type="number" name="hours" min="" value="" required>
     <button type="submit">Confirm Booking</button>
-</form><?php
+</form>
+<?php
 include("connection.php");
 
 if (isset($_GET['car_id'])) {
@@ -16,7 +17,7 @@ if (isset($_GET['car_id'])) {
     if (mysqli_num_rows($result) > 0) {
         
         $car = mysqli_fetch_assoc($result);
-        $hours = isset($_POST['hours']); 
+        $hours = $_POST['hours']; 
         $extra_charge = $car['extra_charge'];
         
       
