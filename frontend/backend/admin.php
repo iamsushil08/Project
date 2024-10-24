@@ -20,10 +20,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-
-<form method="POST">
-    <input type="text" name="username" placeholder="Admin Username" required><br><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-</form>
