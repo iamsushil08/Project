@@ -13,14 +13,18 @@ if(isset($_POST["submit"])){
         echo "Passwords do not match!";
   
     }
-
-
     $password_hashed= password_hash($password, PASSWORD_DEFAULT);
     $sql="INSERT INTO users(firstname,lastname,email,phone,password) VALUES ('$fname','$lname','$email','$phone','$password_hashed')";
     $result=mysqli_query($conn,$sql);
     if($result){
-       header("Location:../index.html");
+    //    header("Location:../index.html");
+    //    exit();
+   echo" you are logged in";
 
+    }
+    else{
+        // echo"Not done"; 
+        echo "Error: " . mysqli_error($conn); 
     }
 
   
