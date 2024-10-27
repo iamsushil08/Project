@@ -81,7 +81,7 @@ VALUES ('$name', '$model', '$color', '$mileage', '$description', '$extra_charge'
 '$destination')";
 
 if (mysqli_query($conn, $query)) {
-echo "Car added successfully!";
+
 } else {
 echo "Error: " . mysqli_error($conn);
 }
@@ -93,5 +93,5 @@ echo "Invalid file type. Only JPEG, PNG, and JPG formats are allowed.";
 }
 }
 }
-echo "Successsss";
+
 ?>

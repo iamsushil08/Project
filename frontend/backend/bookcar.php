@@ -1,11 +1,9 @@
-<form method="POST" action="">
-    <label for="hours">Enter number of hours:</label>
-    <input type="number" name="hours" min="" value="" required>
-    <button type="submit">Confirm Booking</button>
-</form>
 <?php
 session_start();
 include("connection.php");
+if(isset($_POST["confirm"])){
+    
+
 
 if (isset($_GET['car_id'])) {
     $car_id = $_GET['car_id'];
@@ -44,4 +42,14 @@ if (isset($_GET['car_id'])) {
 } else {
     echo "No car ID provided.";
 }
+}
 ?>
+<form method="POST" action="">
+    <label for="hours">Enter number of hours:</label>
+    <input type="number" name="hours" min="1" value="1" required />
+    <br /><br />
+    <label for="">Location:</label>
+    <input type="text" name="location" required />
+    <br /><br />
+    <button type="submit" name="confirm">Confirm Booking</button>
+</form>
