@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Signup Popup</title>
+    <style>
+   
+      nav {
+        background-color: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Popup box styling */
+      #adminSignupBox {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      #adminSignupBox h2 {
+        margin-top: 0;
+      }
+
+      /* Background overlay */
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+      }
+
+      /* Close button */
+      .close-btn {
+        float: right;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar with an Admin link -->
+    <nav>
+      <a onclick="toggleSignupBox()">Admin</a>
+    </nav>
+
+    <!-- Background overlay -->
+    <div id="overlay" onclick="toggleSignupBox()"></div>
+
+    <!-- Signup form popup box -->
+    <div id="adminSignupBox">
+      <span class="close-btn" onclick="toggleSignupBox()">&times;</span>
+      <h2>Admin Signup</h2>
+      <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required /><br /><br />
+
+        <input type="submit" value="Sign Up" />
+      </form>
+    </div>
+
+    <script>
+      // Function to toggle the visibility of the signup box and overlay
+      function toggleSignupBox() {
+        const signupBox = document.getElementById("adminSignupBox");
+        const overlay = document.getElementById("overlay");
+        const isVisible = signupBox.style.display === "block";
+
+        signupBox.style.display = isVisible ? "none" : "block";
+        overlay.style.display = isVisible ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>

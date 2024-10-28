@@ -41,7 +41,7 @@
     color: black;
 }
 
-#contact{
+#admin{
     margin-left: 27px;
     text-decoration: none;
     color:black;
@@ -143,5 +143,8 @@ text-align: center;
     display: block;
     color: white;
 
+}
+#admin{
+    hover:
 }
 
