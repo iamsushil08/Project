@@ -4,7 +4,7 @@
 #mainmenu{
     display:flex;
     gap: 33px;
-    background-color: rgb(255, 255, 255);
+    background-color:white
     
 }
 #drivezylogo{
@@ -94,8 +94,9 @@
 
 }
 #div1{
-    background-color: rgb(240, 248, 255);
+    background-color:#D7BBD8;
 }
+
 #rentalhead{
     margin-left:380px;
     font-size: 43px;
@@ -143,8 +144,5 @@ text-align: center;
     display: block;
     color: white;
 
-}
-#admin{
-    hover:
 }
 
