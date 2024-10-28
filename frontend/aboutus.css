@@ -26,3 +26,67 @@
 #car6:hover{
     width: 700px;
 }
+#mainmenu{
+    display:flex;
+    gap: 33px;
+    background-color:white
+}
+#drivezylogo{
+    height:60px;
+    width: 120px;
+    margin-top: 1px;
+    margin-left: 44px;
+}
+#menuBar{
+    margin-left:190px;
+    margin-top:19px;
+    gap: 33px;
+    
+ }
+ #medialogo{
+     margin-left:145px;
+     margin-top: 9px;
+ 
+     
+ }
+ #home{
+    margin-left: 27px;
+    text-decoration: none;
+    color: black;
+ }
+ #blog{
+     margin-left: 27px;
+     text-decoration: none;
+     color: black;
+ }
+ #about{
+     margin-left: 27px;
+     text-decoration: none;
+     color: black;
+ }
+ 
+ #contact{
+     margin-left: 27px;
+     text-decoration: none;
+     color:black;
+ 
+ }
+ 
+ #login{
+     margin-left: 27px;
+     text-decoration: none;
+     color: black;
+ }
+ 
+ #fb{
+     margin-left: 23px;
+ 
+ }
+ #twitter{
+     margin-left: 23px;
+ 
+ }
+ #youtube{
+     margin-left: 23px;
+ 
+ }

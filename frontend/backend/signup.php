@@ -19,8 +19,8 @@ if (isset($_POST['signin'])) {
                 $_SESSION['email'] = $user['email'];
 
             
-                // header("Location:../frontend/index.html");
-                // exit;
+                header("Location:../frontend/index.html");
+                exit;
                 echo"you are logged in";
          
             } else {

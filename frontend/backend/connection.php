@@ -10,4 +10,3 @@ if(!$conn){
 echo"Error while connecting";
 }
 ?>
-
