@@ -6,6 +6,18 @@ $userid = isset($_GET['userid']) ? $_GET['userid'] : null;
 $carid = isset($_GET['carid']) ? $_GET['carid'] : null;
 $extra_charge = isset($_GET['extra_charge']) ? $_GET['extra_charge'] : 0;
 
+
+if ($userid) {
+    $user_check_query = "SELECT * FROM users WHERE id = '$userid'";
+    $user_result = mysqli_query($conn, $user_check_query);
+    
+    if (mysqli_num_rows($user_result) == 0) {
+      
+        header("Location: signup.html?carid=$carid&extra_charge=$extra_charge");
+        exit();
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $userid && $carid) {
     $locationfrom = $_POST['locationfrom'];
     $locationto = $_POST['locationto'];
@@ -25,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $userid && $carid) {
     if (mysqli_query($conn, $query)) {
         echo "Booking confirmed successfully!<br>";
         echo "Total Payment: $" . $total_payment;
+        
+       
+        header("Location: payment.php?userid=$userid&carid=$carid&total_payment=$total_payment");
+        exit();
     } else {
         echo "Error: " . mysqli_error($conn);
     }
