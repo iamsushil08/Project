@@ -19,7 +19,8 @@ if (isset($_POST['signin'])) {
                 $_SESSION['email'] = $user['email'];
 
             
-                header("Location:index.html");
+            
+                header("Location: ../index.html");
                 exit;
                 
          
