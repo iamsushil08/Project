@@ -4,54 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car Search</title>
     <style>
-    /* do internal css here */
-    </style>
+    /* Style the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+    </style>
 </head>
 
 <body>
-    <form action="search.php" method="GET"><input type="text" name="searching" placeholder="Search for cars"><button
-            type="submit">Search</button></form><?php include("connection.php");
+    <form action="search.php" method="GET">
+        <input type="text" name="searching" placeholder="Search for cars">
+        <button type="submit">Search</button>
+    </form>
+
+    <?php 
+    include("connection.php");
 
     if (isset($_GET['searching'])) {
-        $searching=$_GET['searching'];
-        $query="SELECT * FROM cars WHERE name = '$searching'";
-        $result=mysqli_query($conn, $query);
-
+        $searching = $_GET['searching'];
+        $query = "SELECT * FROM cars WHERE name = '$searching'";
+        $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
+            echo "<table>";
+            echo "<tr>
+                    <th>Car Name</th>
+                    <th>Image</th>
+                    <th>Color</th>
+                    <th>Mileage</th>
+                    <th>Description</th>
+                    <th>Extra Charge</th>
+                    <th>Status</th>
+                    <th>Plate Number</th>
+                    <th>Action</th>
+                  </tr>";
 
-            while ($car=mysqli_fetch_assoc($result)) {
-                echo "<div>";
-                echo "<h3>". $car['name']."</h3>";
-                echo "<img src='". $car['image_url'] . "' alt='". $car['model'] . "' style='width:300px;height:auto;'><br>";
-                echo "<p>Color: ". $car['color'] . "</p>";
-                echo "<p>Mileage: ". $car['mileage'] . " km/l</p>";
-                echo "<p>Description: ". $car['description'] . "</p>";
-                echo "<p>Extra Charge: ". $car['extra_charge'] . "</p>";
-                echo "<p>Status: ". $car['status'] . "</p>";
-                echo "<p>Plate Number: ". $car['plate_number'] . "</p>";
+            while ($car = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $car['name'] . "</td>";
+                echo "<td><img src='" . $car['image_url'] . "' alt='" . $car['model'] . "' style='width:100px;height:auto;'></td>";
+                echo "<td>" . $car['color'] . "</td>";
+                echo "<td>" . $car['mileage'] . " km/l</td>";
+                echo "<td>" . $car['description'] . "</td>";
+                echo "<td>" . $car['extra_charge'] . "</td>";
+                echo "<td>" . $car['status'] . "</td>";
+                echo "<td>" . $car['plate_number'] . "</td>";
 
-                if ($car['status']==='Available') {
-                    echo "<a href='bookcar.php?car_id=". $car['id'] . "'>Book Now</a>";
-
+               
+                if ($car['status'] === 'Available') {
+                    echo "<td><a href='bookcar.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book Now</a></td>";
+                } else {
+                    echo "<td>Rented Out</td>";
                 }
-
-                else {
-                    echo "<p>Rented Out</p>";
-                }
-
-                echo "</div><br>";
+                
+                echo "</tr>";
             }
-        }
 
-        else {
+            echo "</table>";
+        } else {
             echo "<p>No cars found with the specified model.</p>";
         }
     }
-
     ?>
 </body>
 
