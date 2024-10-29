@@ -85,6 +85,10 @@
     width: 500px;
     margin-left: 435px;
 }
+#car2:hover{
+  width:700px;
+  margin-left:300px ;
+}
 #rental1{
     margin-left: 584px;
     font-size: 23px;
@@ -95,6 +99,7 @@
 }
 #div1{
     background-color:#D7BBD8;
+    height: 700px;
 }
 
 #rentalhead{
@@ -155,5 +160,22 @@ text-align: center;
 }
 #div00{
     background-color:#DFD9E2;
+}
+#fleet{
+margin-top: 80px;
+}
+#fleett{
+    margin-left: 530px;
+
+}
+#fleettt{
+    margin-left: 390px;
+    color: rgb(100, 79, 79);
+    font-size:19px;
+}
+#blogs{
+    display: flex;
+    background-color: #aa7688;
+    border-radius: 23px;
 }
 
