@@ -40,8 +40,15 @@
     text-decoration: none;
     color: black;
 }
-
 #contact{
+    margin-left: 27px;
+    text-decoration: none;
+    color:black;
+
+}
+
+
+#admin{
     margin-left: 27px;
     text-decoration: none;
     color:black;
@@ -162,7 +169,7 @@ text-align: center;
     background-color:#DFD9E2;
 }
 #fleet{
-margin-top: 80px;
+margin-top: 170px;
 }
 #fleett{
     margin-left: 530px;
@@ -175,7 +182,45 @@ margin-top: 80px;
 }
 #blogs{
     display: flex;
-    background-color: #aa7688;
     border-radius: 23px;
+    gap: 15px;
+    width: 1100px;
+    margin-left: 85px;
 }
+#blogss{
+ background-color: rgb(250, 255, 255);
+ height: 250px;
+ border-radius: 3px;
+}
+#blogsss{
+ background-color: rgb(250, 255, 255);
+ border-radius: 3px;
+}
+#blogssss{
+    background-color: rgb(250, 255, 255);
+    border-radius: 3px;
+}
+#text{
+    margin-top: 42px;
+}
+#textt{
+    margin-top: 71px;
+}
+#texttt{
+    margin-top: 44px;
+}
+#readmore{
+    background-color: rgb(36, 99, 236);
+    width: 155px;
+    height: 51px;
+    margin-left:99px;
+    border-radius: 13px;
+}
+#more{
+    padding-top: 10px; 
+    display: block;
+    color: rgb(244, 235, 235);
+    margin-left: 41px;
+    font-size: 19px;
 
+}
