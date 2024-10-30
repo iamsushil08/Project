@@ -237,3 +237,48 @@ margin-top: 170px;
     margin-left: 103px;
     margin-top: 3px;
 }
+#phone{
+    width: 43px;
+}
+#infoo{
+    background-color: #9e6fb6;
+     height: 333px;
+     margin-top: 43px;
+}
+#info{
+
+    position: relative;
+    top: 56px;
+    width: 145px;
+    margin-left: 1005px;
+    color: rgb(0, 0, 0);
+
+}
+#customerdiv{
+    width: 600px;
+    position: relative;
+    bottom: 166px;
+    margin-left: 73px;
+}
+#custo{
+    font-size: 31px;
+    color: rgb(12, 8, 8);
+}
+#us{
+    background-color: rgb(16, 73, 230);
+    border-radius: 6px;
+    height: 35px;
+    padding-top: 10px; 
+    display: block;
+    
+}
+#uss{
+    color: rgb(204, 193, 193);
+    margin-left: 36px;  
+}
+#now{
+    font-size:27px;
+}
+#nu{
+    font-size:37px;
+}
