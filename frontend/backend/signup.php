@@ -19,9 +19,10 @@ if (isset($_POST['signin'])) {
                 $_SESSION['email'] = $user['email'];
 
             
-                header("Location:../frontend/index.html");
+            
+                header("Location: ../index.html");
                 exit;
-                echo"you are logged in";
+                
          
             } else {
                 echo "Invalid password. Please try again.";
