@@ -4,7 +4,7 @@
 #mainmenu{
     display:flex;
     gap: 33px;
-    background-color:white
+    background-color:white;
     
 }
 #drivezylogo{
@@ -222,5 +222,18 @@ margin-top: 170px;
     color: rgb(244, 235, 235);
     margin-left: 41px;
     font-size: 19px;
-
+}
+#packages{
+    margin-top: 104px;
+    margin-left: 540px;
+    color: rgba(3,27,78);
+}
+#packagess{
+    margin-left: 390px;
+    font-size:19px;
+    color: rgb(72, 55, 55);
+}
+#images00{
+    margin-left: 103px;
+    margin-top: 3px;
 }
