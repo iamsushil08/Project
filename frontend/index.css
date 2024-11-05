@@ -241,7 +241,7 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
-    background-color: #29c343;
+    background-color:#c25e47;
      height: 333px;
      margin-top: 43px;
 }
@@ -273,7 +273,7 @@ margin-top: 170px;
     
 }
 #uss{
-    color: rgb(204, 193, 193);
+    color: rgb(246, 241, 241);
     margin-left: 36px;  
 }
 #now{
@@ -281,4 +281,34 @@ margin-top: 170px;
 }
 #nu{
     font-size:37px;
+}
+#nu:hover{
+    color: rgb(22, 197, 42);
+}
+#car7{
+ margin-top: 33px;
+ 
+
+}
+#car7img{
+    width: 445px;
+    margin-left: 144px;
+}
+#extra{
+    width: 554px;
+    position: relative;
+    bottom:325px;
+    margin-left: 644px;
+}
+#extraa{
+    font-size: 44px;
+    color: rgb(27, 24, 81);
+}
+#extraaa{
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(29, 15, 15);
+}
+#extraaaa{
+font-size: 19px;
 }
