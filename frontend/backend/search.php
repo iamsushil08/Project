@@ -90,7 +90,7 @@
                         echo "<td><a href='payment.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book Now</a></td>";
                     } else {
                     
-                        echo "<td><a href='signup.php'>Login to Book</a></td>";
+                        echo "<td><a href='checkuser.php'>Book now</a></td>";
                     }
                 } else {
                     echo "<td>Rented Out</td>";
