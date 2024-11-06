@@ -36,26 +36,26 @@
 </head>
 
 <body>
-    <!-- Search form -->
+
     <form action="search.php" method="GET">
         <input type="text" name="searching" placeholder="Search for cars" required>
         <button type="submit">Search</button>
     </form>
 
     <?php 
-    session_start(); // Start the session
+    session_start();
 
-    include("connection.php"); // Include the database connection
+    include("connection.php"); 
 
-    // Check if there is a search query
+
     if (isset($_GET['searching'])) {
         $searching = $_GET['searching'];
 
-        // Run a query to search for cars by name
+        
         $query = "SELECT * FROM cars WHERE name = '$searching'";
         $result = mysqli_query($conn, $query);
 
-        // Check if any cars are found
+        
         if (mysqli_num_rows($result) > 0) {
             echo "<table>";
             echo "<tr>
@@ -70,7 +70,7 @@
                     <th>Action</th>
                   </tr>";
 
-            // Display each car's details
+
             while ($car = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $car['name'] . "</td>";
@@ -82,14 +82,14 @@
                 echo "<td>" . $car['status'] . "</td>";
                 echo "<td>" . $car['plate_number'] . "</td>";
 
-                // Show Book Now or Login to Book button based on login status
+                
                 if ($car['status'] === 'Available') {
-                    // Check if the user is logged in
+            
                     if (isset($_SESSION['user_id'])) {
-                        // User is logged in, go to payment.php
+            
                         echo "<td><a href='payment.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book Now</a></td>";
                     } else {
-                        // User is not logged in, go to login or signup
+                    
                         echo "<td><a href='signup.php'>Login to Book</a></td>";
                     }
                 } else {
