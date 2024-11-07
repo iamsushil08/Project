@@ -19,9 +19,9 @@
    gap: 33px;
    
 }
-#medialogo{
-    margin-left:145px;
-    margin-top: 9px;
+#medialogo {
+    margin-left:265px;
+    margin-top: 20px;
 
     
 }
@@ -29,6 +29,7 @@
    margin-left: 27px;
    text-decoration: none;
    color: black;
+   size:20px;
 }
 #blog{
     margin-left: 27px;
@@ -168,9 +169,11 @@ text-align: center;
     background-color: white;
     transition: 3s;
 }
-#div00{
-    background-color:#C45946;
-}
+ #div00 h1{
+  text-align: center;
+  color:#C45946;
+ }
+
 #fleet{
 margin-top: 170px;
 }
@@ -244,9 +247,10 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
-    background-color:#c25e47;
+    background-color:#ddd9d8;
      height: 333px;
      margin-top: 43px;
+   
 }
 #info{
 
@@ -255,7 +259,12 @@ margin-top: 170px;
     width: 145px;
     margin-left: 1005px;
     color: rgb(254, 254, 254);
+    display: flex;
 
+}
+
+#info .footer-top{
+    display:flex;
 }
 #customerdiv{
     width: 600px;
@@ -288,4 +297,38 @@ margin-top: 170px;
 #nu:hover{
     color: rgb(22, 197, 42);
 }
+#div00 {
+    text-align: center;
+}
 
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.car-item {
+    width: 250px; 
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.car-item img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 4px;
+}
+.status-available {
+    color: green;
+    font-weight: bold;
+}
+
+.status-unavailable {
+    color: red;
+    font-weight: bold;
+}
