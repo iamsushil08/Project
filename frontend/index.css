@@ -19,9 +19,9 @@
    gap: 33px;
    
 }
-#medialogo{
+#medialogo #search{
     margin-left:145px;
-    margin-top: 9px;
+    margin-top: 20px;
 
     
 }
@@ -29,6 +29,7 @@
    margin-left: 27px;
    text-decoration: none;
    color: black;
+   size:20px;
 }
 #blog{
     margin-left: 27px;
@@ -244,9 +245,10 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
-    background-color:#c25e47;
+    background-color:#ddd9d8;
      height: 333px;
      margin-top: 43px;
+   
 }
 #info{
 
@@ -255,7 +257,12 @@ margin-top: 170px;
     width: 145px;
     margin-left: 1005px;
     color: rgb(254, 254, 254);
+    display: flex;
 
+}
+
+#info .footer-top{
+    display:flex;
 }
 #customerdiv{
     width: 600px;
