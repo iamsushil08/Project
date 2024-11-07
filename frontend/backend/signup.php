@@ -16,7 +16,7 @@ if (isset($_POST['signin'])) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
 
-                header("Location: profile.php");
+                header("Location: ../index.html");
                 exit;
             } else {
                 echo "Invalid password. Please try again.";

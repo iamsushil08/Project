@@ -85,25 +85,20 @@
                 
                 if ($car['status'] === 'Available') {
             
-                    if (isset($_SESSION['user_id'])) {
-            
-                        echo "<td><a href='payment.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book Now</a></td>";
-                    } else {
-                    
                         echo "<td><a href='checkuser.php'>Book now</a></td>";
                     }
-                } else {
+                
+                else {
                     echo "<td>Rented Out</td>";
                 }
-
-                echo "</tr>";
             }
-
+          
             echo "</table>";
         } else {
             echo "<p>No cars found with the specified model.</p>";
         }
     }
+    
     ?>
 </body>
 
