@@ -30,22 +30,13 @@ body{
   
 
 
-  .form label #fname,#pw,#cpw,#phone,#email {
+  .form label #uname,#pw,#cpw,#phone,#email {
     width: 95%;
     height: 10px;
     padding: 10px 10px 20px 10px;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
     font-size: 15px;
-  }
-  .form label #lname{
-
-  width: 90%;
-  height: 10px;
-  padding: 10px 10px 20px 10px;
-  border: 1px solid rgba(105, 105, 105, 0.397);
-  border-radius: 10px;
-  font-size: 15px;
   }
  
 
