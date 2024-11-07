@@ -60,6 +60,9 @@
     text-decoration: none;
     color: black;
 }
+#search{
+    border-radius:9px;
+}
 
 #fb{
     margin-left: 23px;
@@ -105,7 +108,7 @@
 
 }
 #div1{
-    background-color:#D7BBD8;
+    background-color:#C45946;
     height: 700px;
 }
 
@@ -130,7 +133,7 @@
     margin-left: 93px;
     position: relative;
     margin-top: 110px;
-    color: rgb(34, 21, 21);
+    color: rgb(252, 244, 244);
 }
 #endless{
 font-size: 23px;
@@ -166,7 +169,7 @@ text-align: center;
     transition: 3s;
 }
 #div00{
-    background-color:#DFD9E2;
+    background-color:#C45946;
 }
 #fleet{
 margin-top: 170px;
@@ -285,30 +288,4 @@ margin-top: 170px;
 #nu:hover{
     color: rgb(22, 197, 42);
 }
-#car7{
- margin-top: 33px;
- 
 
-}
-#car7img{
-    width: 445px;
-    margin-left: 144px;
-}
-#extra{
-    width: 554px;
-    position: relative;
-    bottom:325px;
-    margin-left: 644px;
-}
-#extraa{
-    font-size: 44px;
-    color: rgb(27, 24, 81);
-}
-#extraaa{
-    font-size: 19px;
-    font-weight: 500;
-    color: rgb(29, 15, 15);
-}
-#extraaaa{
-font-size: 19px;
-}
