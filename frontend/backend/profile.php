@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 include "./connection.php";
 
@@ -86,6 +86,45 @@ if (isset($_POST['change_password'])) {
             <button type="submit" name="change_password">Change Password</button>
         </form>
     </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+</head>
+
+<body>
+
+    <?php if ($userid && $carid): ?>
+    <form method="POST" action="">
+        <label for="locationfrom">Location From:</label>
+        <input type="text" id="locationfrom" name="locationfrom" required>
+        <br><br>
+
+        <label for="locationto">Location To:</label>
+        <input type="text" id="locationto" name="locationto" required>
+        <br><br>
+
+        <label for="starttime">Start Date and Time:</label>
+        <input type="datetime-local" id="starttime" name="starttime" required>
+        <br><br>
+
+        <label for="endtime">End Date and Time:</label>
+        <input type="datetime-local" id="endtime" name="endtime" required>
+        <br><br>
+
+        <button type="submit" name="confirm">Confirm Booking</button>
+    </form>
+    <?php else: ?>
+    <p>User or car information is missing. Please try again.</p>
+    <?php endif; ?>
+
 </body>
 
 </html>

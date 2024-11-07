@@ -16,8 +16,22 @@ if (isset($_POST['signin'])) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['username'] = $user['username'];
 
-                header("Location: ../index.php");
-                exit;
+              
+                if (isset($_SESSION['redirect_to_checkuser']) && $_SESSION['redirect_to_checkuser'] === true) {
+                   
+                    $car_id = $_SESSION['car_id'];
+                    $extra_charge = $_SESSION['extra_charge'];
+
+                    unset($_SESSION['car_id']); // Clear session data
+                    unset($_SESSION['extra_charge']);
+                    unset($_SESSION['redirect_to_checkuser']);
+
+                    header("Location: checkuser.php?car_id=$car_id&extra_charge=$extra_charge");
+                    exit;
+                } else {
+                    header("Location: ../index.php");
+                    exit;
+                }
             } else {
                 echo "Invalid password. Please try again.";
             }
@@ -29,13 +43,16 @@ if (isset($_POST['signin'])) {
     }
 }
 ?>
+
+<!-- Your HTML form for login -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login</title>
 
     <style>
     * {
@@ -56,7 +73,7 @@ if (isset($_POST['signin'])) {
         display: flex;
         flex-direction: column;
         max-width: 350px;
-        background-color: #9AA0A6;
+        background-color: #9aa0a6;
         padding: 20px;
         border-radius: 10px;
         justify-content: center;

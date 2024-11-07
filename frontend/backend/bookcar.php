@@ -2,17 +2,17 @@
 session_start();
 include("connection.php");
 
-// Retrieve user ID from the session
+
 $userid = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
-// Get car ID and extra charge from URL parameters
+
 $carid = isset($_GET['carid']) ? intval($_GET['carid']) : null;
 $extra_charge = isset($_GET['extra_charge']) ? floatval($_GET['extra_charge']) : 0;
 
-// Check if user is logged in
+
 if (!$userid) {
-    // Redirect to signup.html if user is not logged in
-    header("Location: signup.html?carid=$carid&extra_charge=$extra_charge");
+   
+    header("Location: signup.php?carid=$carid&extra_charge=$extra_charge");
     exit();
 }
 
@@ -22,7 +22,7 @@ $user_result = mysqli_query($conn, $user_check_query);
 
 if (mysqli_num_rows($user_result) == 0) {
     // Redirect to signup.html if user ID is not found
-    header("Location: signup.html?carid=$carid&extra_charge=$extra_charge");
+    header("Location: signup.php?carid=$carid&extra_charge=$extra_charge");
     exit();
 }
 
