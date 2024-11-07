@@ -16,20 +16,20 @@ if (isset($_POST['signin'])) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['username'] = $user['username'];
 
-              
+                // Check if there’s a saved redirect target after login
                 if (isset($_SESSION['redirect_to_checkuser']) && $_SESSION['redirect_to_checkuser'] === true) {
-                   
                     $car_id = $_SESSION['car_id'];
                     $extra_charge = $_SESSION['extra_charge'];
 
-                    unset($_SESSION['car_id']); // Clear session data
+                    unset($_SESSION['car_id']);
                     unset($_SESSION['extra_charge']);
                     unset($_SESSION['redirect_to_checkuser']);
 
                     header("Location: checkuser.php?car_id=$car_id&extra_charge=$extra_charge");
                     exit;
                 } else {
-                    header("Location: ../index.php");
+                    // If no specific redirection target, go to index.php
+                    header("Location: index.php");
                     exit;
                 }
             } else {
@@ -43,9 +43,6 @@ if (isset($_POST['signin'])) {
     }
 }
 ?>
-
-<!-- Your HTML form for login -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,6 +64,7 @@ if (isset($_POST['signin'])) {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0;
     }
 
     form {
@@ -77,17 +75,16 @@ if (isset($_POST['signin'])) {
         padding: 20px;
         border-radius: 10px;
         justify-content: center;
-        padding-bottom: 5px;
     }
 
-    form label #username,
-    #pw {
+    form label input[type="text"],
+    form label input[type="password"] {
         width: 95%;
-        height: 10px;
-        padding: 10px 10px 20px 10px;
-        border: 1px solid rgba(105, 105, 105, 0.397);
+        padding: 10px;
+        border: 1px solid rgba(105, 105, 105, 0.4);
         border-radius: 10px;
         font-size: 15px;
+        margin-top: 5px;
     }
 
     .submit {
@@ -97,6 +94,7 @@ if (isset($_POST['signin'])) {
         border-radius: 10px;
         color: #fff;
         font-size: 15px;
+        cursor: pointer;
     }
 
     .submit:hover {
@@ -104,23 +102,21 @@ if (isset($_POST['signin'])) {
     }
 
     #pforget {
-        margin-left: 190px;
+        margin-left: auto;
         margin-top: 5px;
     }
 
-    #pforget a {
+    #pforget a,
+    #createone a {
         text-decoration: none;
         font-size: 12px;
+        color: #333;
     }
 
     #createone {
-        margin-bottom: 8px;
+        margin-top: 10px;
         text-align: center;
         font-size: 12px;
-    }
-
-    #createone a {
-        text-decoration: none;
     }
     </style>
 </head>
@@ -130,19 +126,19 @@ if (isset($_POST['signin'])) {
         <div class="username">
             <label>
                 <span>Username</span>
-                <input required="" placeholder="" type="text" id="username" name="username" />
+                <input required type="text" id="username" name="username" />
             </label>
         </div>
         <br />
         <div class="password">
             <label>
                 <span>Password</span>
-                <input required="" placeholder="" type="password" id="pw" name="password" />
+                <input required type="password" id="pw" name="password" />
             </label>
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
-        <p id="pforget"><a href="">Forgot Password?</a></p>
+        <p id="pforget"><a href="#">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
     </form>
 </body>
