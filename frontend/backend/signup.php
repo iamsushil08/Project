@@ -3,29 +3,29 @@ session_start();
 include "./connection.php";
 
 if (isset($_POST['signin'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = $_POST['password'];
 
-    if (!empty($email) && !empty($password)) {
-        $sql = "SELECT * FROM users WHERE email = '$email'";
+    if (!empty($username) && !empty($password)) {
+        $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
 
             if (password_verify($password, $user['password'])) {
-                $_SESSION['email'] = $user['email'];
+                $_SESSION['username'] = $user['username'];
 
-                header("Location: ../index.html");
+                header("Location: ../index.php");
                 exit;
             } else {
                 echo "Invalid password. Please try again.";
             }
         } else {
-            echo "No user found with that email.";
+            echo "No user found with that username.";
         }
     } else {
-        echo "Please enter both email and password.";
+        echo "Please enter both username and password.";
     }
 }
 ?>
@@ -43,7 +43,6 @@ if (isset($_POST['signin'])) {
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
-
     }
 
     body {
@@ -51,7 +50,6 @@ if (isset($_POST['signin'])) {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     form {
@@ -63,12 +61,9 @@ if (isset($_POST['signin'])) {
         border-radius: 10px;
         justify-content: center;
         padding-bottom: 5px;
-
-
-
     }
 
-    form label #email,
+    form label #username,
     #pw {
         width: 95%;
         height: 10px;
@@ -99,15 +94,12 @@ if (isset($_POST['signin'])) {
     #pforget a {
         text-decoration: none;
         font-size: 12px;
-
     }
 
     #createone {
         margin-bottom: 8px;
         text-align: center;
         font-size: 12px;
-
-
     }
 
     #createone a {
@@ -120,8 +112,8 @@ if (isset($_POST['signin'])) {
     <form action="./signup.php" method="POST">
         <div class="username">
             <label>
-                <span>Email</span>
-                <input required="" placeholder="" type="text" id="email" name="email" />
+                <span>Username</span>
+                <input required="" placeholder="" type="text" id="username" name="username" />
             </label>
         </div>
         <br />

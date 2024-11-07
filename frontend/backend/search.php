@@ -84,15 +84,16 @@
 
                 
                 if ($car['status'] === 'Available') {
-            
-                        echo "<td><a href='checkuser.php'>Book now</a></td>";
+                    if (isset($_SESSION['username'])) {
+                        echo "<td><a href='checkuser.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book now</a></td>";
+                    } else {
+                        echo "<td><a href='signup.php?redirect_to=checkuser.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book now</a></td>";
                     }
-                
-                else {
+                } else {
                     echo "<td>Rented Out</td>";
                 }
+                echo "</tr>";
             }
-          
             echo "</table>";
         } else {
             echo "<p>No cars found with the specified model.</p>";
