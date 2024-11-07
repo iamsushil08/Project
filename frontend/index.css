@@ -20,7 +20,7 @@
    
 }
 #medialogo {
-    margin-left:265px;
+    margin-left:240px;
     margin-top: 20px;
 
     
@@ -88,20 +88,20 @@
 }
 #dreamyz{
      position: relative;
-     bottom: 66px;
-     margin-left: 526px;
+     bottom: 62px;
+     margin-left: 356px;
      width: 600px;
 }
 #car2{
     width: 500px;
-    margin-left: 435px;
+    margin-left: 105px;
 }
 #car2:hover{
   width:700px;
   margin-left:300px ;
 }
 #rental1{
-    margin-left: 584px;
+    margin-left: 134px;
     font-size: 23px;
     position: relative;
     top: 70px;
@@ -118,6 +118,7 @@
     font-size: 43px;
     position: relative;
     margin-top:130px;
+    color: rgb(214, 201, 201);
 }
 #img1con{
     width: 45px;
@@ -247,19 +248,14 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
-    background-color:#ddd9d8;
-     height: 333px;
-     margin-top: 43px;
+ background-color: black;
+ margin-top: 53px;
    
 }
 #info{
-
-    position: relative;
-    top: 56px;
-    width: 145px;
-    margin-left: 1005px;
-    color: rgb(254, 254, 254);
-    display: flex;
+    margin-left: 233px;
+display: flex;
+gap: 245px;
 
 }
 
@@ -331,4 +327,16 @@ margin-top: 170px;
 .status-unavailable {
     color: red;
     font-weight: bold;
+}
+#searchh{
+    width: 23px;
+}
+#email-address{
+    display: flex;
+    gap: 385px;
+    margin-left: 233px;
+    color: #fff;
+}
+#footer-menu{
+    color: white;
 }
