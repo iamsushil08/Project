@@ -3,6 +3,8 @@
 }
 #mainmenu{
     display:flex;
+    align-items: center;
+    justify-content: center;
     gap: 33px;
     background-color:white;
     
@@ -10,22 +12,17 @@
 #drivezylogo{
     height:60px;
     width: 120px;
-    margin-top: 1px;
+    /* margin-top: 1px; */
     margin-left: 44px;
 }
 #menuBar{
    margin-left:190px;
-   margin-top:19px;
+   /* margin-top:19px; */
    gap: 33px;
    
 }
-#login {
-    margin-left:240px;
 
-    margin-top: 20px;
 
-    
-}
 #home{
    margin-left: 27px;
    text-decoration: none;
@@ -262,7 +259,7 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
- background-color: rgb(7, 6, 6);
+ background-color: rgb(250, 241, 241);
  margin-top: 53px;
  height: 420px;
    
@@ -356,4 +353,22 @@ gap: 245px;
     margin-left: 233px;
     margin-top: 53px;
 
+}
+.login-btn {
+    padding: 8px 16px;
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+.login-btn:hover {
+    background-color: #0056b3;
+}
+#righty{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }

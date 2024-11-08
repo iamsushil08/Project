@@ -22,8 +22,9 @@
             <a id="blog" href="">FAQs</a>
             <a id="search" href="./backend/search.php">Search</a>
         </div>
-        <div id="medialogo">
-            <a id="login" href="./backend/signup.php">Log in</a>
+        <div id="righty">
+            <a href="./backend/register.html" style="color: black;">Sign Up |</a>
+            <a href="./backend/signup.php" class="login-btn">Log In</a>
 
 
         </div>
@@ -42,7 +43,9 @@ $result = mysqli_query($conn, $sql);
 ?>
 
     <div id="div00">
-        <h1>Available Cars</h1>
+        <marquee behavior="" direction="">Available Cars at minimize cost and maximum comfortable, book a car now
+            and enjoy your travel :drivZy
+        </marquee>
 
         <div class="car-list">
             <?php if (mysqli_num_rows($result) > 0): ?>
@@ -79,7 +82,7 @@ mysqli_close($conn);
 
     <hr />
     <div id="div1">
-        <p id="rental1">Skip the rental counter</p>
+        <!-- <p id="rental1">Skip the rental counter</p> -->
         <h1 id="rentalhead">Discover our Car Rental Marketplaces</h1>
         <div id="div2">
             <div>
@@ -159,7 +162,7 @@ mysqli_close($conn);
         <p id="packagess">
             Where your journey begins with an exquisite fleet of vehicles for an unforgettable experience.
         </p>
-        <img id="images00" src="./images/images00.webp" alt="Special Packages" />
+        <!-- <img id="images00" src="./images/images00.webp" alt="Special Packages" /> -->
         <div id="infoo">
             <div id="info">
 

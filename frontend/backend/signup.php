@@ -108,21 +108,35 @@ if (isset($_POST['signin'])) {
 
     #pforget a,
     #createone a {
-        text-decoration: none;
+
         font-size: 12px;
-        color: #333;
+        color: blue;
     }
 
     #createone {
         margin-top: 10px;
         text-align: center;
         font-size: 12px;
+
+    }
+
+
+
+
+
+    #message {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 10px;
     }
     </style>
 </head>
 
 <body>
     <form action="./signup.php" method="POST">
+        <p id="message">WELCOME BACK!</p>
         <div class="username">
             <label>
                 <span>Username</span>
