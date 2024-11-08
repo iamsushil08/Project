@@ -19,13 +19,9 @@
    gap: 33px;
    
 }
-<<<<<<< HEAD
 #login {
-    margin-left:275px;
-=======
-#medialogo {
     margin-left:240px;
->>>>>>> b1cd05b12caf4a5e029c5de4bce4a69c5df111a2
+
     margin-top: 20px;
 
     
@@ -360,16 +356,4 @@ gap: 245px;
     margin-left: 233px;
     margin-top: 53px;
 
-}
-#footer-menu{
-    color: white;
-}
-#footer-2{
-background-color: rgb(12, 13, 15);
-margin-top: 83px;
-height: 40px;
-}
-#copyright{
-    color: rgb(186, 140, 140);
-    text-align: center;
 }
