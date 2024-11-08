@@ -19,8 +19,8 @@
    gap: 33px;
    
 }
-#medialogo {
-    margin-left:265px;
+#login {
+    margin-left:275px;
     margin-top: 20px;
 
     
@@ -56,7 +56,7 @@
 
 }
 
-#login{
+#search{
     margin-left: 27px;
     text-decoration: none;
     color: black;

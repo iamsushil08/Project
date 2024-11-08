@@ -20,11 +20,12 @@
             <a id="about" href="#blogs">About</a>
             <a id="contact" href="#infoo">Contact Us</a>
             <a id="blog" href="">FAQs</a>
-            <a id="login" href="./backend/signup.php">Log in</a>
+            <a id="search" href="./backend/search.php">Search</a>
         </div>
         <div id="medialogo">
-            <a href="./backend/search.php">
-                Search Cars</a>
+            <a id="login" href="./backend/signup.php">Log in</a>
+
+
         </div>
     </div>
     <img id="car1" src="./images/Homepage-Cybertruck-Desktop-v3.avif" alt="Car Image" />
@@ -76,9 +77,6 @@ mysqli_close($conn);
 ?>
 
 
-
-    <!-- <img id="car2" src="./images/car4.webp" alt="" /> -->
-
     <hr />
     <div id="div1">
         <p id="rental1">Skip the rental counter</p>
@@ -88,7 +86,8 @@ mysqli_close($conn);
                 <img id="img1con" src="./images/infinity.jpg" alt="Endless Options" />
                 <p id="endless">Endless options</p>
                 <p>
-                    Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up where
+                    Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up
+                    where
                     you want
                     it.
                 </p>
@@ -106,7 +105,8 @@ mysqli_close($conn);
                 <img id="img3con" src="./images/fa sheild.jpg" alt="Confidence" />
                 <p id="trip">Go for a trip confidently</p>
                 <p>
-                    Go for a trip confidently with your choice of protection plans — all plans include varying levels of
+                    Go for a trip confidently with your choice of protection plans — all plans include varying
+                    levels of
                     liability insurance provided through Sajilo Rental's Insurance Agency.
                 </p>
             </div>
@@ -134,7 +134,8 @@ mysqli_close($conn);
             <div id="blogsss">
                 <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
                 <p id="textt">
-                    Hiace van rental in Kathmandu, Nepal is best when you are traveling in a group, renting a Hiace in
+                    Hiace van rental in Kathmandu, Nepal is best when you are traveling in a group, renting a Hiace
+                    in
                     Kathmandu
                     can be the perfect solution.
                 </p>
