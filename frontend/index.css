@@ -77,6 +77,19 @@
     margin-left: 23px;
 
 }
+#facebook{
+ background-color:rgb(240, 229, 229);
+ margin-left:19px;
+ border-radius: 12px;
+}
+#twitter{
+    background-color: rgb(240, 229, 229);
+    border-radius: 12px;
+}
+#email-add{
+    border-radius: 13px;
+    height: 33px;
+}
 #car1{
     width:1280px
 }
@@ -248,15 +261,20 @@ margin-top: 170px;
     width: 43px;
 }
 #infoo{
- background-color: black;
+ background-color: rgb(7, 6, 6);
  margin-top: 53px;
+ height: 420px;
    
 }
 #info{
-    margin-left: 233px;
+ margin-left: 233px;
 display: flex;
 gap: 245px;
 
+
+}
+#uss-s{
+    color: rgb(245, 239, 239);
 }
 
 #info .footer-top{
@@ -335,8 +353,18 @@ gap: 245px;
     display: flex;
     gap: 385px;
     margin-left: 233px;
-    color: #fff;
+    margin-top: 53px;
+
 }
 #footer-menu{
     color: white;
+}
+#footer-2{
+background-color: rgb(12, 13, 15);
+margin-top: 83px;
+height: 40px;
+}
+#copyright{
+    color: rgb(186, 140, 140);
+    text-align: center;
 }
