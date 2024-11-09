@@ -87,14 +87,8 @@
      margin-left: 356px;
      width: 600px;
 }
-#car2{
-    width: 500px;
-    margin-left: 105px;
-}
-#car2:hover{
-  width:700px;
-  margin-left:300px ;
-}
+
+
 #rental1{
     margin-left: 134px;
     font-size: 23px;
@@ -184,18 +178,39 @@ margin-top: 170px;
     color: rgb(100, 79, 79);
     font-size:19px;
 }
+#page2{
+    height:700px;
+    background-color:#A9B7A0;
+ 
+  
+}
+#page2 h3{
+    text-align: center;
+    /* color:white; */
+  
+}
+
+#car2{
+    width: 500px;
+    margin-left: 300px;
+   
+}
 #blogs{
-    height:500px;
+   height:250px;
     display: flex;
     gap: 15px;
-    align-items: center;
-    /* background-color: black; */
+    padding-top:95px;
+    justify-content:space-between;
+   
+   
 }
 #blogss{
  background-color: rgb(250, 255, 255);
  height: 250px;
- border-radius: 5px solid black;
+ border-radius:5px;
+ border: 1px solid black; 
  padding:5px;
+
 }
 
 #text{
@@ -209,8 +224,8 @@ margin-top: 170px;
 }
 #readmore{
     background-color: rgb(36, 99, 236);
-    width: 155px;
-    height: 51px;
+    width: 140px;
+    height: 40px;
     margin-left:99px;
     border-radius: 13px;
 }
