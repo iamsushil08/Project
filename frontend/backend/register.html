@@ -9,44 +9,49 @@
   <body>
     <form class="form" method="POST" action="./insert.php">
       <div class="forlogo"></div>
+
       <div class="name">
-        <label
-          ><span>Username</span>
-          <input required="" placeholder="" type="text" id="uname" name="uname" />
+        <label for="uname">
+          <span>Username</span>
+          <input placeholder="" type="text" id="uname" name="uname" />
         </label>
       </div>
       <br />
 
       <div class="email">
-        <label>
+        <label for="email">
           <span>Email</span>
-          <input required="" placeholder="" type="email" id="email" name="email" />
+          <input placeholder="" type="email" id="email" name="email" />
         </label>
       </div>
       <br />
+
       <div class="phone">
-        <label for="">
+        <label for="phone">
           <span>Phone</span>
-          <input type="text " required="" placeholder="" id="phone" name="phone"
-        /></label>
+          <input placeholder="" type="text" id="phone" name="phone" />
+        </label>
       </div>
       <br />
+
       <div class="password">
-        <label>
+        <label for="pw">
           <span>Password</span>
-          <input required="" placeholder="" type="password" id="pw" name="password" />
+          <input placeholder="" type="password" id="pw" name="password" />
         </label>
       </div>
       <br />
+
       <div class="confirmpassword">
-        <label
-          ><span>Confirm Password</span>
-          <input required="" placeholder="" type="password" id="cpw" name="cpassword" />
+        <label for="cpw">
+          <span>Confirm Password</span>
+          <input placeholder="" type="password" id="cpw" name="cpassword" />
         </label>
       </div>
       <br />
+
       <button class="submit" name="submit">SUBMIT</button>
-      <p id="signup">Already have an acount ? <a href="./signup.php">Sign In</a></p>
+      <p id="signup">Already have an account? <a href="./signup.php">Sign In</a></p>
     </form>
   </body>
 </html>

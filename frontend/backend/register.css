@@ -1,66 +1,58 @@
-  
-body{
-  height:100%;
-  background-color:#D2E3FC;
-  display:flex;
+body {
+  height: 100%;
+  background-color: #D2E3FC;
+  display: flex;
   justify-content: center;
   align-items: center;
-  }
- 
+}
 
-  .form {
-    margin-top:10px;
-    display: flex;
-    flex-direction: column;
-    height:450px;
-     max-width: 350px;
-    background-color:#F1F3F4;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    justify-content: center;
-    padding-bottom:5px;
- 
-  }
-  
-  .name{
-    display:flex;
+.form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  background-color: #F1F3F4;
+  padding: 20px;
+  border-radius: 20px;
+  justify-content: center;
+}
 
-  }
-  
+.form label span {
+  font-size: 14px;
+  color: #333;
+}
+
+.form input {
+  width: 100%;
+  height: 40px; 
+  padding: 10px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 15px;
+  box-sizing: border-box; 
+}
 
 
-  .form label #uname,#pw,#cpw,#phone,#email {
-    width: 95%;
-    height: 10px;
-    padding: 10px 10px 20px 10px;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-    font-size: 15px;
-  }
- 
+.submit {
+  border: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  
-  .submit {
-    border:none;
-    background-color: royalblue;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-  }
-  
-  .submit:hover {
-    background-color: rgb(56, 90, 194);
-  }
-  
-  #signup {
-    text-align: center;
-  }
-  
-  #signup a {
-    color: royalblue;
-    text-decoration: none;
-    
-  }
-  
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+#signup {
+  text-align: center;
+  font-size: 14px;
+}
+
+#signup a {
+  color: royalblue;
+  text-decoration: none;
+}
