@@ -324,13 +324,15 @@ gap: 245px;
 }
 .car-item p{
     font-size:13px;
+    margin-bottom:-1px;
 }
 .car-item h3{
     font-size:15px;
+    margin-top:-2px;
 }
 .status-available {
     color: green;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .status-unavailable {
