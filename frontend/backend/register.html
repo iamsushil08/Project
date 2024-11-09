@@ -8,50 +8,62 @@
   </head>
   <body>
     <form class="form" method="POST" action="./insert.php">
-      <div class="forlogo"></div>
+      <p>WELCOME TO DRIVZY!</p>
 
-      <div class="name">
-        <label for="uname">
-          <span>Username</span>
-          <input placeholder="" type="text" id="uname" name="uname" />
-        </label>
-      </div>
+      <label for="uname">
+        <span>Username</span>
+        <input placeholder="" type="text" id="uname" name="uname" />
+      </label>
+      <div id="uname_error"></div>
+
       <br />
 
-      <div class="email">
-        <label for="email">
-          <span>Email</span>
-          <input placeholder="" type="email" id="email" name="email" />
-        </label>
-      </div>
+      <label for="email">
+        <span>Email</span>
+        <input placeholder="" type="email" id="email" name="email" />
+      </label>
+      <div id="email_error"></div>
+
       <br />
 
-      <div class="phone">
-        <label for="phone">
-          <span>Phone</span>
-          <input placeholder="" type="text" id="phone" name="phone" />
-        </label>
-      </div>
+      <label for="phone">
+        <span>Phone</span>
+        <input placeholder="" type="text" id="phone" name="phone" />
+      </label>
+      <div id="phone_error"></div>
+
       <br />
 
-      <div class="password">
-        <label for="pw">
-          <span>Password</span>
-          <input placeholder="" type="password" id="pw" name="password" />
-        </label>
-      </div>
+      <label for="pw">
+        <span>Password</span>
+        <input placeholder="" type="password" id="pw" name="password" />
+      </label>
+      <div id="password_error"></div>
+
       <br />
 
-      <div class="confirmpassword">
-        <label for="cpw">
-          <span>Confirm Password</span>
-          <input placeholder="" type="password" id="cpw" name="cpassword" />
-        </label>
-      </div>
+      <label for="cpw">
+        <span>Confirm Password</span>
+        <input placeholder="" type="password" id="cpw" name="cpassword" />
+      </label>
+      <div id="cpassword_error"></div>
+
       <br />
 
       <button class="submit" name="submit">SUBMIT</button>
       <p id="signup">Already have an account? <a href="./signup.php">Sign In</a></p>
     </form>
   </body>
+  <script>
+    function validateForm() {
+      var isValiduname = validateUname();
+      var isValidemail = vaidateEmail();
+    }
+
+    validateUname(){
+      var uname=document.getElementById('uname').value.trim();
+      var uname_error=document.getElementById('uname_error');
+      var unamepattern=
+    }
+  </script>
 </html>

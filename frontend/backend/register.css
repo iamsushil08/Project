@@ -7,6 +7,7 @@ body {
 }
 
 .form {
+  height:500px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -15,8 +16,11 @@ body {
   padding: 20px;
   border-radius: 20px;
   justify-content: center;
+ 
 }
-
+.form p{
+  text-align: center;
+}
 .form label span {
   font-size: 14px;
   color: #333;
@@ -30,6 +34,10 @@ body {
   border-radius: 10px;
   font-size: 15px;
   box-sizing: border-box; 
+}
+#uname_error,#email_error ,#phone_error ,#pw_error, #cpassword_error {
+  color:red;
+  margin-top:2px;
 }
 
 
@@ -54,5 +62,4 @@ body {
 
 #signup a {
   color: royalblue;
-  text-decoration: none;
-}
+  }
