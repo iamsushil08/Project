@@ -41,11 +41,11 @@
         </div>
 
     </div>
-
+    <!-- second page ho -->
     <div id="div00">
 
         <?php
-// Include the database connection file
+
 include './backend/connection.php';
 
 
@@ -89,7 +89,45 @@ mysqli_close($conn);
 ?>
 
 
-    <hr />
+
+    <!-- third page ho hai -->
+    <div id="blogs">
+        <div id="blogss">
+            <h2>Dashain Travels Made Easy with DriveZy Car Rental: Pre-Booking Now Open!</h2>
+            <p id="text">
+                This year, DriveZy Car Rental is here to make your Dashain travels easier than ever, offering
+                pre-booking
+                services to help you secure the pe..
+            </p>
+            <div id="readmore">
+                <a id="more" href="">Read more</a>
+            </div>
+        </div>
+        <div id="blogss">
+            <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
+            <p id="textt">
+                Hiace van rental in Kathmandu, Nepal is best when you are traveling in a group, renting a Hiace
+                in
+                Kathmandu
+                can be the perfect solution.
+            </p>
+            <div id="readmore">
+                <a id="more" href="">Read more</a>
+            </div>
+        </div>
+        <div id="blogss">
+            <h2>Why Customers Love Renting from DriveZy: Nepals Leading Vehicle Rental</h2>
+            <p id="texttt">
+                As Nepal's first ISO-certified vehicle rental company, DriveZy Car has set the benchmark for
+                quality,
+                reliability, and customer satisfaction..
+            </p>
+            <div id="readmore">
+                <a id="more" href="">Read more</a>
+            </div>
+        </div>
+
+    </div>
     <div id="div1">
 
         <h1 id="rentalhead">Discover our Car Rental Marketplaces</h1>
@@ -126,43 +164,7 @@ mysqli_close($conn);
         <div id="perfect-car"><a id="perfectt-car" href="./backend/search.php"> Book the Perfect Car</a></div>
 
     </div>
-    <div id="blogs">
-        <div id="blogss">
-            <h2>Dashain Travels Made Easy with DriveZy Car Rental: Pre-Booking Now Open!</h2>
-            <p id="text">
-                This year, DriveZy Car Rental is here to make your Dashain travels easier than ever, offering
-                pre-booking
-                services to help you secure the pe..
-            </p>
-            <div id="readmore">
-                <a id="more" href="">Read more</a>
-            </div>
-        </div>
-        <div id="blogsss">
-            <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
-            <p id="textt">
-                Hiace van rental in Kathmandu, Nepal is best when you are traveling in a group, renting a Hiace
-                in
-                Kathmandu
-                can be the perfect solution.
-            </p>
-            <div id="readmore">
-                <a id="more" href="">Read more</a>
-            </div>
-        </div>
-        <div id="blogssss">
-            <h2>Why Customers Love Renting from DriveZy: Nepals Leading Vehicle Rental</h2>
-            <p id="texttt">
-                As Nepal's first ISO-certified vehicle rental company, DriveZy Car has set the benchmark for
-                quality,
-                reliability, and customer satisfaction..
-            </p>
-            <div id="readmore">
-                <a id="more" href="">Read more</a>
-            </div>
-        </div>
 
-    </div>
 
     <div id="contactSection">
         <h2>Do you have any queries?</h2>

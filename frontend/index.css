@@ -187,25 +187,17 @@ margin-top: 170px;
 #blogs{
     height:500px;
     display: flex;
-    border-radius: 23px;
     gap: 15px;
-    width: 1100px;
-    margin-left: 85px;
     align-items: center;
+    /* background-color: black; */
 }
 #blogss{
  background-color: rgb(250, 255, 255);
  height: 250px;
- border-radius: 3px;
+ border-radius: 5px solid black;
+ padding:5px;
 }
-#blogsss{
- background-color: rgb(250, 255, 255);
- border-radius: 3px;
-}
-#blogssss{
-    background-color: rgb(250, 255, 255);
-    border-radius: 3px;
-}
+
 #text{
     margin-top: 42px;
 }
@@ -228,6 +220,7 @@ margin-top: 170px;
     color: rgb(244, 235, 235);
     margin-left: 41px;
     font-size: 19px;
+    text-decoration: none;
 }
 #packages{
     margin-top: 104px;
@@ -337,18 +330,9 @@ gap: 245px;
 
 .status-unavailable {
     color: red;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
-/* #searchh{
-    width: 23px;
-}
-#email-address{
-    display: flex;
-    gap: 385px;
-    margin-left: 233px;
-    margin-top: 53px;
 
-} */
 .login-btn {
     padding: 8px 16px;
     background-color:transparent;
@@ -428,7 +412,7 @@ gap: 245px;
     transform: rotate(180deg);
     color: #005bb5;
   }
- /* General Footer Styles */
+
 footer {
     background-color:#C45946;
     color: #fff;
@@ -481,7 +465,7 @@ footer {
  
  
   
-  /* Footer Bottom */
+ 
   .footer-bottom {
     text-align: center;
     margin-top: 50px;
@@ -499,10 +483,7 @@ footer {
   
 
 /* contact us wala */
-/* General Reset */
 
-  
-  /* Contact Section */
   #contactSection {
     width: 100%;
     max-width: 600px;
@@ -539,7 +520,7 @@ footer {
   }
   
   #sendMessageBtn {
-    /* width: 20%; */
+   
     padding: 12px;
     font-size: 15px;
     background-color:#0062cc ;
