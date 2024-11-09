@@ -1,5 +1,5 @@
 *{
-    text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 #mainmenu{
     display:flex;
@@ -7,6 +7,7 @@
     justify-content: center;
     gap: 33px;
     background-color:white;
+    
     
 }
 #drivezylogo{
@@ -59,37 +60,20 @@
     text-decoration: none;
     color: black;
 }
-#search{
-    border-radius:9px;
-}
 
-#fb{
-    margin-left: 23px;
 
-}
-#twitter{
-    margin-left: 23px;
-
-}
-#youtube{
-    margin-left: 23px;
-
-}
-#facebook{
- background-color:rgb(240, 229, 229);
- margin-left:19px;
- border-radius: 12px;
-}
-#twitter{
-    background-color: rgb(240, 229, 229);
-    border-radius: 12px;
-}
 #email-add{
     border-radius: 13px;
     height: 33px;
 }
+#Main{
+    height:600px;
+    margin-bottom: 162px;
+   
+}
 #car1{
-    width:1280px
+    width:1280px;
+
 }
 #text1{
     position: relative;
@@ -119,9 +103,15 @@
 
 
 }
+#div00{
+
+    height:600px;
+    background-color:#FFFAFA;
+    
+}
 #div1{
     background-color:#C45946;
-    height: 700px;
+    height:500px;
 }
 
 #rentalhead{
@@ -181,10 +171,6 @@ text-align: center;
     background-color: white;
     transition: 3s;
 }
- #div00 h1{
-  text-align: center;
-  color:#C45946;
- }
 
 #fleet{
 margin-top: 170px;
@@ -199,11 +185,13 @@ margin-top: 170px;
     font-size:19px;
 }
 #blogs{
+    height:500px;
     display: flex;
     border-radius: 23px;
     gap: 15px;
     width: 1100px;
     margin-left: 85px;
+    align-items: center;
 }
 #blogss{
  background-color: rgb(250, 255, 255);
@@ -271,13 +259,7 @@ gap: 245px;
 
 
 }
-#uss-s{
-    color: rgb(245, 239, 239);
-}
 
-#info .footer-top{
-    display:flex;
-}
 #customerdiv{
     width: 600px;
     position: relative;
@@ -314,18 +296,23 @@ gap: 245px;
 }
 
 .car-list {
+  
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
-    justify-content: center;
+    gap: 10px; 
+    align-items: center;
+ 
 }
 
 .car-item {
+    height:250px;
+    margin-top:50px;
+    align-items: center;
     width: 250px; 
     text-align: center;
     background-color: #fff;
     border-radius: 8px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -335,16 +322,22 @@ gap: 245px;
     object-fit: cover; 
     border-radius: 4px;
 }
+.car-item p{
+    font-size:13px;
+}
+.car-item h3{
+    font-size:15px;
+}
 .status-available {
     color: green;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .status-unavailable {
     color: red;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
-#searchh{
+/* #searchh{
     width: 23px;
 }
 #email-address{
@@ -353,7 +346,7 @@ gap: 245px;
     margin-left: 233px;
     margin-top: 53px;
 
-}
+} */
 .login-btn {
     padding: 8px 16px;
     background-color:transparent;
@@ -372,3 +365,197 @@ gap: 245px;
     display: flex;
     align-items: center;
 }
+#righty a{
+    text-decoration: none;
+}
+.faqSection {
+    width: 100%;
+ display: inline;
+ align-items: center;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #faqSection h2 {
+    text-align: center;
+    color: #C45946;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .faqItem {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    align-items: center;
+  }
+  
+  .faqItem h3 {
+    font-size: 18px;
+    color: #004d40;
+    cursor: pointer;
+    margin: 0;
+    transition: color 0.3s;
+    text-align: center;
+  }
+  
+  .faqItem h3:hover {
+    color: #005bb5;
+  }
+  
+  .faqItem .answer {
+    font-size: 16px;
+    color: #333;
+    display: none;
+    margin-top: 5px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .faqItem .question::after {
+    
+    font-weight: bold;
+    color: #0073e6;
+    transition: transform 0.3s;
+  }
+  
+  .faqItem.active .question::after {
+    transform: rotate(180deg);
+    color: #005bb5;
+  }
+ /* General Footer Styles */
+footer {
+    background-color:#C45946;
+    color: #fff;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-section {
+    max-width: 250px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #4CAF50;
+  }
+  
+  .about p {
+    line-height: 1.6;
+  }
+  
+
+
+  .quick-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .quick-links ul li {
+    margin: 5px 0;
+  }
+  
+ 
+ 
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 12px;
+  }
+  
+  .footer-bottom p {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    color: #4CAF50;
+  }
+  
+
+/* contact us wala */
+/* General Reset */
+
+  
+  /* Contact Section */
+  #contactSection {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    
+    text-align: center;
+  }
+  
+  #contactSection h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #contactForm input:focus, #contactForm textarea:focus {
+   
+    border-color: #0062cc;
+   
+  }
+  
+  #contactForm textarea {
+    height: 100px;
+   
+  }
+  
+  #sendMessageBtn {
+    /* width: 20%; */
+    padding: 12px;
+    font-size: 15px;
+    background-color:#0062cc ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+ 
+    
+  }
+  /* footer ko logo */
+  i {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 10px;
+  }
+  
+
+  
+
+
+  

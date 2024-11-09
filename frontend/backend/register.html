@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./register.css" />
   </head>
   <body>
-    <form class="form" method="POST" action="./insert.php">
+    <form class="form" method="POST" action="./insert.php" onsubmit="return validateForm()">
       <p>WELCOME TO DRIVZY!</p>
 
       <label for="uname">
         <span>Username</span>
         <input placeholder="" type="text" id="uname" name="uname" />
       </label>
-      <div id="uname_error"></div>
+      <div id="uname_error" style="color: red"></div>
 
       <br />
 
@@ -22,7 +22,7 @@
         <span>Email</span>
         <input placeholder="" type="email" id="email" name="email" />
       </label>
-      <div id="email_error"></div>
+      <div id="email_error" style="color: red"></div>
 
       <br />
 
@@ -30,7 +30,7 @@
         <span>Phone</span>
         <input placeholder="" type="text" id="phone" name="phone" />
       </label>
-      <div id="phone_error"></div>
+      <div id="phone_error" style="color: red"></div>
 
       <br />
 
@@ -38,7 +38,7 @@
         <span>Password</span>
         <input placeholder="" type="password" id="pw" name="password" />
       </label>
-      <div id="password_error"></div>
+      <div id="password_error" style="color: red"></div>
 
       <br />
 
@@ -46,7 +46,7 @@
         <span>Confirm Password</span>
         <input placeholder="" type="password" id="cpw" name="cpassword" />
       </label>
-      <div id="cpassword_error"></div>
+      <div id="cpassword_error" style="color: red"></div>
 
       <br />
 
@@ -57,13 +57,100 @@
   <script>
     function validateForm() {
       var isValiduname = validateUname();
-      var isValidemail = vaidateEmail();
+      var isValidemail = validateEmail();
+      var isValidphone = validatePhone();
+      var isValidPassword = validatePassword();
+      var isValidCPassword = validateCPassword();
+
+      return isValiduname && isValidemail && isValidphone && isValidPassword && isValidCPassword;
     }
 
-    validateUname(){
-      var uname=document.getElementById('uname').value.trim();
-      var uname_error=document.getElementById('uname_error');
-      var unamepattern=
+    function validateUname() {
+      var unameInput = document.getElementById("uname").value.trim();
+      var uname_error = document.getElementById("uname_error");
+      var unamepattern = /^[A-Za-z\s]+$/;
+
+      if (unameInput === "") {
+        uname_error.innerHTML = "Cannot have empty field";
+        return false;
+      } else if (!unamepattern.test(unameInput)) {
+        uname_error.innerHTML = "Invalid name";
+        return false;
+      } else if (unameInput.length < 8) {
+        uname_error.innerHTML = "Must be at least 8 characters long";
+        return false;
+      } else {
+        uname_error.innerHTML = "";
+        return true;
+      }
+    }
+
+    function validateEmail() {
+      var emailInput = document.getElementById("email").value.trim();
+      var email_error = document.getElementById("email_error");
+      var emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (emailInput === "") {
+        email_error.innerHTML = " Cannot have an empty field";
+        return false;
+      } else if (!emailpattern.test(emailInput)) {
+        email_error.innerHTML = "Invalid email format";
+        return false;
+      } else {
+        email_error.innerHTML = "";
+        return true;
+      }
+    }
+
+    function validatePhone() {
+      var phoneInput = document.getElementById("phone").value.trim();
+      var phone_error = document.getElementById("phone_error");
+      var phonepattern = /^\d{10}$/;
+
+      if (phoneInput === "") {
+        phone_error.innerHTML = " Cannot have an empty field";
+        return false;
+      } else if (!phonepattern.test(phoneInput)) {
+        phone_error.innerHTML = "Phone number must be 10 digits";
+        return false;
+      } else {
+        phone_error.innerHTML = "";
+        return true;
+      }
+    }
+
+    function validatePassword() {
+      var passwordInput = document.getElementById("pw").value.trim();
+      var password_error = document.getElementById("password_error");
+      var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+      if (passwordInput === "") {
+        password_error.innerHTML = "Cannot have an empty";
+        return false;
+      } else if (!passwordpattern.test(passwordInput)) {
+        password_error.innerHTML = "Password must be at least 8 characters long and include letters and numbers";
+        return false;
+      } else {
+        password_error.innerHTML = "";
+        return true;
+      }
+    }
+
+    function validateCPassword() {
+      var passwordInput = document.getElementById("pw").value.trim();
+      var cpasswordInput = document.getElementById("cpw").value.trim();
+      var cpassword_error = document.getElementById("cpassword_error");
+
+      if (cpasswordInput === "") {
+        cpassword_error.innerHTML = "Cannot have an empty";
+        return false;
+      } else if (passwordInput !== cpasswordInput) {
+        cpassword_error.innerHTML = "Passwords do not match";
+        return false;
+      } else {
+        cpassword_error.innerHTML = "";
+        return true;
+      }
     }
   </script>
 </html>
