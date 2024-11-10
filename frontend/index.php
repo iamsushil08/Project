@@ -20,7 +20,7 @@
         </div>
         <div id="menuBar">
             <a id="home" href="./index.php">Home</a>
-            <a id="about" href="#blogs">About</a>
+            <a id="about" href="#page2">About</a>
             <a id="contact" href="#contactSection">Contact Us</a>
             <a id="blog" href="#faqSection">FAQs</a>
             <a id="search" href="./backend/search.php">Search</a>
