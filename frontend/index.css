@@ -208,22 +208,25 @@ margin-top: 170px;
 }
 #blogss{
  background-color: rgb(250, 255, 255);
-
  height: 250px;
  border-radius:5px;
- border: 1px solid black; 
- padding:5px;
+ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+ padding:7px;
 
 }
 
 #text{
     margin-top: 42px;
+    text-align: center;
 }
 #textt{
     margin-top: 71px;
+    text-align: center;
 }
 #texttt{
     margin-top: 44px;
+    text-align: center;
 }
 #readmore{
     background-color: rgb(36, 99, 236);
@@ -362,9 +365,7 @@ gap: 245px;
     text-decoration: none;
     
 }
-.login-btn:hover {
-    background-color:#C45946;
-}
+
 #righty{
     margin-left: auto;
     display: flex;
