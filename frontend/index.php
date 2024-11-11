@@ -110,7 +110,7 @@ mysqli_close($conn);
                     services to help you secure the pe..
                 </p>
                 <div id="readmore">
-                    <a id="more" href="">Read more</a>
+                    <a id="more" href="">Readmore</a>
                 </div>
             </div>
             <div id="blogss">
@@ -122,7 +122,7 @@ mysqli_close($conn);
                     can be the perfect solution.
                 </p>
                 <div id="readmore">
-                    <a id="more" href="">Read more</a>
+                    <a id="more" href="">Readmore</a>
                 </div>
             </div>
             <div id="blogss">
@@ -133,7 +133,7 @@ mysqli_close($conn);
                     reliability, and customer satisfaction..
                 </p>
                 <div id="readmore">
-                    <a id="more" href="">Read more</a>
+                    <a id="more" href="">Readmore</a>
                 </div>
             </div>
 
@@ -178,14 +178,21 @@ mysqli_close($conn);
 
 
     <div id="contactSection">
-        <h2>Do you have any queries?</h2>
-        <form id="contactForm" method="POST" action="submitcontact.php">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" id="phone" placeholder="Your Phone" required>
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" id="sendMessageBtn">Send Message</button>
-        </form>
+        <div id="formhere">
+            <h2>Do you have any queries?</h2>
+            <form id="contactForm" method="POST" action="./backend/submitcontact.php">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" id="phone" placeholder="Your Phone" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit" id="sendMessageBtn" name="sendMessageBtn">Send Message</button>
+            </form>
+        </div>
+
+        <div id="rightbox">
+            <h5>Office,Butwal</h5>
+            <p></p>
+        </div>
     </div>
     <div id="faqSection">
         <h2>Frequently Asked Questions</h2>
