@@ -26,7 +26,8 @@
             <a id="search" href="./backend/search.php">Search</a>
         </div>
         <div id="righty">
-            <a href="./backend/register.html" style="color: black;">Register |</a>
+            <a href="./backend/register.html" style="color: black;">Register</a>
+            <p>|</p>
 
             <a href="./backend/signup.php" class="login-btn">Log In</a>
 

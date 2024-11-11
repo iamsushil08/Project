@@ -181,14 +181,14 @@ margin-top: 170px;
 #page2{
 
     height:700px;
-    /* background-color:#A9B7A0; */
+    
  
   
 }
 #page2 h3{
     margin-top:10px;
     text-align: center;
-    /* color:white; */
+    
   
 }
 
@@ -372,6 +372,10 @@ gap: 245px;
 }
 #righty a{
     text-decoration: none;
+}
+#righty p{
+margin-left: 5px;
+margin-right:5px;
 }
 .faqSection {
     width: 100%;
