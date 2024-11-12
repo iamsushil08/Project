@@ -100,44 +100,51 @@ mysqli_close($conn);
         </h3>
         <img id="car2" src="./images/car4.webp" alt="" />
 
+        <h2 id="h">Latest Blogs</h2>
         <div id="blogs">
 
-            <div id="blogss">
+            <div class="blogss">
                 <h2>Dashain Travels Made Easy with DriveZy Car Rental: Pre-Booking Now Open!</h2>
-                <p id="text">
+                <p class="text">
                     This year, DriveZy Car Rental is here to make your Dashain travels easier than ever, offering
                     pre-booking
-                    services to help you secure the pe..
+                    services.
                 </p>
-                <div id="readmore">
-                    <a id="more" href="">Readmore</a>
+
+                <div class="readmore">
+                    <a href="" class="more">Readmore</a>
                 </div>
+
             </div>
-            <div id="blogss">
+            <div class="blogss">
                 <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
-                <p id="textt">
-                    Hiace van rental in Kathmandu, Nepal is best when you are traveling in a group, renting a Hiace
+                <p class="textt">
+                    Hiace van rental in Butwal City, Nepal is best when you are traveling in a group, renting a Hiace
                     in
-                    Kathmandu
+                    western Nepal
                     can be the perfect solution.
                 </p>
-                <div id="readmore">
-                    <a id="more" href="">Readmore</a>
+
+                <div class="readmore">
+                    <a href="" class="more">Readmore</a>
                 </div>
+
             </div>
-            <div id="blogss">
+            <div class="blogss">
                 <h2>Why Customers Love Renting from DriveZy: Nepals Leading Vehicle Rental</h2>
-                <p id="texttt">
+                <p class="text">
                     As Nepal's first ISO-certified vehicle rental company, DriveZy Car has set the benchmark for
                     quality,
                     reliability, and customer satisfaction..
                 </p>
-                <div id="readmore">
-                    <a id="more" href="">Readmore</a>
+
+                <div class="readmore">
+                    <a href="" class="more">Readmore</a>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
     <div id="div1">
 

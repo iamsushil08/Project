@@ -180,72 +180,88 @@ margin-top: 170px;
 }
 #page2{
 
-    height:700px;
+    height:740px;
+   
     
  
   
 }
 #page2 h3{
-    margin-top:10px;
+    padding-top:10px;
     text-align: center;
     
   
 }
 
 #car2{
-    width: 500px;
-    margin-left: 300px;
+    width: 600px;
+    height:300px;
+    margin-left: 350px;
    
+}
+#h{
+    text-align: center;
+    color: #37415c;
 }
 #blogs{
-   height:250px;
+ height:300px;
     display: flex;
     gap: 15px;
-    padding-top:95px;
+    padding-top:38px;
     justify-content:space-between;
+    
    
    
 }
-#blogss{
- background-color: rgb(250, 255, 255);
- height: 250px;
- border-radius:5px;
+.blogss{
+ /* background-color: rgb(82, 193, 193); */
+ height: 230px;
+width:400px;
+ border-radius:6px;
  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ padding:4px;
+ display: inline;
+ align-items: center;
+ justify-content: center;
 
- padding:7px;
-
+}
+.blogss h2{
+    COLOR:#54162b;
 }
 
-#text{
-    margin-top: 42px;
-    text-align: center;
+ .text{
+    margin-top: 30px;
+   color:black;
+  
 }
-#textt{
-    margin-top: 71px;
-    text-align: center;
+.textt{
+    margin-top:58px;
+    color:black;
+
 }
-#texttt{
-    margin-top: 44px;
-    text-align: center;
-}
-#readmore{
-    background-color: rgb(36, 99, 236);
-    width: 100px;
-    height: 40px;
-    margin-left:99px;
-    border-radius: 13px;
-    
-}
-#more{
-    
- 
-    color: rgb(244, 235, 235);
-    text-align: center;
-    display: inline;
+.readmore{
    
-    font-size: 12px;
-    text-decoration: none;
+    height:30px;
+    text-align: center;
+    margin-bottom: 10px;
 }
+.readmore:hover{
+    color:blue;
+}
+
+.more{
+    text-decoration: none;
+    font-size: 13px;
+    padding: 7px 18px;
+    border-radius: 4px;
+    color:rgb(255, 255, 255);
+    background-color: #181a2f;;
+
+}
+      
+      
+   
+
 #packages{
     margin-top: 104px;
     margin-left: 540px;
@@ -512,7 +528,7 @@ footer {
 /* contact us wala */
 
 #contactSection{
-    height:500px;
+    height:700px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -583,6 +599,8 @@ footer {
     color: #ffffff;
     margin: 0 10px;
   }
+
+  
   
 
   
