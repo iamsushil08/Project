@@ -16,7 +16,7 @@
 <body>
     <div id="mainmenu">
         <div id="logo">
-            <a href="./index.php"><img id="drivezylogo" src="./images/logo.png" alt="DriveZy Logo" /></a>
+            <a href="./index.php"><img id="drivezylogo" src="./images/rivzy.png" alt="DriveZy Logo" /></a>
         </div>
         <div id="menuBar">
             <a id="home" href="./index.php">Home</a>
@@ -53,9 +53,6 @@ include './backend/connection.php';
 $sql = "SELECT * FROM cars";
 $result = mysqli_query($conn, $sql);
 ?>
-
-
-
 
         <div class="car-list">
             <?php if (mysqli_num_rows($result) > 0): ?>
