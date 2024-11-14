@@ -1,9 +1,14 @@
 <?php
-
-
-
 session_start();
 include './connection.php'; 
+
+require'../PHPMailer-master/src/PHPMailer.php';
+require'../PHPMailer-master/src/Exception.php';
+require'../PHPMailer-master/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 
 if (isset($_POST['reset'])) {
     $to = ($_POST['Email']);
@@ -18,20 +23,41 @@ if (isset($_POST['reset'])) {
     $sql = "UPDATE users SET code = $code WHERE email = '$to'";
     $result = mysqli_query($conn, $sql);
 
-    if (mysqli_affected_rows($conn) > 0) {
-   
-        $subject = "Your Verification Code";
-        $message = "Your verification code is: $code";
-        $headers = "From: paudelsandhya1588@gmail.com";
+    if(mysqli_affected_rows($conn)>0){
+        $mail = new PHPMailer(true);
 
-        if (mail($to, $subject, $message, $headers)) {
-            echo "Email sent successfully with the code.";
-        } else {
-            echo "Failed to send the email.";
+        try{
+            $mail->isSMTP();
+            $mail->Host='smtp.gmail.com';
+            $mail->SMTPAuth=true;
+            $mail->Username='paudelsandhya1588@gmail.com';
+            $mail->Password='rybq rkda yoez lblo';
+            $mail->SMTPSecure= PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port=587;
+
+            $mail->setFrom('paudelsandhya1588@gmail.com','DRIVZY Team!');
+            $mail->addAddress($to);
+            
+
+
+            $mail->isHTML(true);
+            $mail->Subject='Verification Code';
+            $mail->Body='Your Verification Code is :'.$code;
+            $mail->AltBody="Your Verification Code is: $code";
+
+            
+            $mail->send();
+            echo "Email sent successfully";
+            
+
+            
         }
-    } 
-    else {
-        echo "Email address doesnot exist.";
+        catch(Exception $e){
+            echo "Failed to send email. Mailer Error: {$mail->ErrorInfo}";
+    }
+}
+    else{
+        echo "Email doesnot exist";
     }
 }
 ?>
