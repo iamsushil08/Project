@@ -147,7 +147,7 @@ if (isset($_POST['signin'])) {
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
-        <p id="pforget"><a href="#">Forgot Password?</a></p>
+        <p id="pforget"><a href="./forgetpw.html">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
     </form>
 </body>
