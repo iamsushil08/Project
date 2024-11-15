@@ -47,7 +47,9 @@ if (isset($_POST['reset'])) {
 
             
             $mail->send();
-            echo "Email sent successfully";
+            header("Location: vcode.php?email=$to");
+            exit;
+            
             
 
             
