@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 
 
 if (isset($_POST['reset'])) {
-    $to = ($_POST['Email']);
+    $to = ($_POST['email']);
     
    
     

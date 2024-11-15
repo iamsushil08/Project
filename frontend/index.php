@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DriveZy</title>
     <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -29,13 +33,16 @@
             <a href="./backend/register.html" style="color: black;">Register</a>
             <p>|</p>
 
-            <a href="./backend/signup.php" class="login-btn">Log In</a>
+            <button id="login" onclick="window.location.href='./backend/signup.php'">Log in </button>
+            <button id="logout" style="display:none;" onclick="window.location.href='./backend/logout.php'">Log
+                out</button>
+
 
 
         </div>
     </div>
 
-    <div id="Main">
+    <div id=" Main">
         <img id="car1" src="./images/Homepage-Cybertruck-Desktop-v3.avif" alt="Car Image" />
         <div id="text1">
             <h1>WE ARE HERE TO <span style="color: black">TAKE YOU THERE</span> ?</h1>
@@ -116,7 +123,8 @@ mysqli_close($conn);
             <div class="blogss">
                 <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
                 <p class="textt">
-                    Hiace van rental in Butwal City, Nepal is best when you are traveling in a group, renting a Hiace
+                    Hiace van rental in Butwal City, Nepal is best when you are traveling in a group, renting a
+                    Hiace
                     in
                     western Nepal
                     can be the perfect solution.
@@ -288,19 +296,33 @@ mysqli_close($conn);
 
 
 
+    <script>
+    document.querySelectorAll(".question").forEach(question => {
+        question.addEventListener("click", () => {
+            const faqItem = question.parentElement;
+            faqItem.classList.toggle("active");
 
+            const answer = faqItem.querySelector(".answer");
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
 
+    function togglebtns() {
+        const login = document.getElementById('login');
+        const logout = document.getElementById('logout');
 
+        if (<?php  echo isset($_SESSION['username'])?'true':'false';?>) {
+            login.style.display = 'none ';
+            logout.style.display = 'inline';
+        } else {
+            login.style.display = 'inline';
+            logout.style.display = 'none';
+        }
+
+    }
+    window.onload = togglebtns;
+    </script>
+
+</body>
 
 </html>
-<script>
-document.querySelectorAll(".question").forEach(question => {
-    question.addEventListener("click", () => {
-        const faqItem = question.parentElement;
-        faqItem.classList.toggle("active");
-
-        const answer = faqItem.querySelector(".answer");
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
-    });
-});
-</script>

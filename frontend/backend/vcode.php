@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verification Code</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- <style>
     * {
         font-family: "Open Sans", sans-serif;
         box-sizing: border-box;
@@ -65,7 +65,7 @@
         background-color: #4a90e2;
         border: none;
         border-radius: 5px;
-        cursor: pointer;
+
     }
 
     #login {
@@ -77,32 +77,37 @@
         color: blue;
         margin-left: 4px;
     }
-    </style>
+    </style> -->
 </head>
 
 <body>
-
     <div class="container">
         <h2>Enter Verification Code</h2>
         <?php
         if (isset($_GET['email'])) {
             $email = $_GET['email'];
-        } else {
+        } 
+        else {
             $email = 'your email';
         }
         ?>
 
-        <p>We have sent a verification code to <strong><?php echo htmlspecialchars($email); ?></strong>.</p>
+        <p>
+            We have sent a verification code to <strong>
+                <?php echo htmlspecialchars($email); ?>
+            </strong>.
+        </p>
 
-        <form action="verifycode.php" method="POST" onsubmit="combined(event)">
+        <form id="vform" action="./verifycode.php" method="POST">
             <div id="codebox">
-                <input type="text" name="code1" id="code1" maxlength="1" oninput="moveToNext(this, 'code2')" required>
-                <input type="text" name="code2" id="code2" maxlength="1" oninput="moveToNext(this, 'code3')" required>
-                <input type="text" name="code3" id="code3" maxlength="1" oninput="moveToNext(this, 'code4')" required>
-                <input type="text" name="code4" id="code4" maxlength="1" required>
+                <input type="text" name="code1" id="code1" maxlength="1" oninput="moveToNext(this, 'code2')" required />
+                <input type="text" name="code2" id="code2" maxlength="1" oninput="moveToNext(this, 'code3')" required />
+                <input type="text" name="code3" id="code3" maxlength="1" oninput="moveToNext(this, 'code4')" required />
+                <input type="text" name="code4" id="code4" maxlength="1" required />
             </div>
-            <input type="hidden" name="verifiedcode" id="verifiedcode">
-            <button type="submit" id="submit">Verify</button>
+            <input type="hidden" name="verifiedcode" id="verifiedcode" />
+            <button id="verify" type="button" name="verify" onclick="combined()">Verify</button>
+
             <p id="login"><a href="./signup.php">Back to log in</a></p>
         </form>
     </div>
@@ -114,20 +119,21 @@
         }
     }
 
-    function combined(event) {
-        event.preventDefault();
+    function combined() {
 
-        const c1 = document.getElementById('code1').value;
-        const c2 = document.getElementById('code2').value;
-        const c3 = document.getElementById('code3').value;
-        const c4 = document.getElementById('code4').value;
+        const c1 = document.getElementById("code1").value;
+        const c2 = document.getElementById("code2").value;
+        const c3 = document.getElementById("code3").value;
+        const c4 = document.getElementById("code4").value;
         const combinedCode = c1 + c2 + c3 + c4;
 
-        document.getElementById('verifiedcode').value = combinedCode;
-        event.target.submit();
+        document.getElementById("verifiedcode").value = combinedCode;
+        console.log("Combined Code:", combinedCode);
+        document.getElementById("vform").submit();
+
+
     }
     </script>
-
 </body>
 
 </html>

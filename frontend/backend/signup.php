@@ -3,38 +3,39 @@ session_start();
 include "./connection.php";
 
 if (isset($_POST['signin'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $username =  $_POST['username'];
     $password = $_POST['password'];
 
+  
     if (!empty($username) && !empty($password)) {
-        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $sql = "select * from users where username = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
 
+           
             if (password_verify($password, $user['password'])) {
                 $_SESSION['username'] = $user['username'];
 
-                if (isset($_SESSION['redirect_to_checkuser']) && $_SESSION['redirect_to_checkuser'] === true) {
-                    $car_id = $_SESSION['car_id'];
-                    $extra_charge = $_SESSION['extra_charge'];
-
-                    unset($_SESSION['car_id']);
-                    unset($_SESSION['extra_charge']);
-                    unset($_SESSION['redirect_to_checkuser']);
-
-                    header("Location: checkuser.php?car_id=$car_id&extra_charge=$extra_charge");
-                    exit;
-                } else {
-                    header("Location: index.php");
-                    exit;
-                }
+              
+                header("Location:../index.php");
+                exit;
+            } else {
+                
+                echo "Incorrect username or password.";
             }
+        } else {
+           
+            echo "User not found.";
         }
+    } else {
+       
+        echo "Please enter both username and password.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
