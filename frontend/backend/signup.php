@@ -2,6 +2,8 @@
 session_start();
 include "./connection.php";
 
+$error="";
+
 if (isset($_POST['signin'])) {
     $username =  $_POST['username'];
     $password = $_POST['password'];
@@ -21,15 +23,15 @@ if (isset($_POST['signin'])) {
                 exit;
             } else {
                 
-                echo "Incorrect username or password.";
+                $error= "Incorrect username or password.";
             }
         } else {
            
-            echo "User not found.";
+            $error= "User not found.";
         }
     } else {
        
-        echo "Please enter both username and password.";
+        $error= "Please enter both username and password.";
     }
 }
 ?>
@@ -117,7 +119,7 @@ if (isset($_POST['signin'])) {
     #pw_error,
     #uname_error {
         color: red;
-        font-size: 12px;
+        font-size: 11px;
         margin-top: 2px;
         margin-bottom: 8p
     }
@@ -127,6 +129,9 @@ if (isset($_POST['signin'])) {
 <body>
     <form action="./signup.php" method="POST" onsubmit="return validateForm(event)">
         <p id="message">WELCOME BACK!</p>
+        <div id="phperror" style=" font-size:13px;color: red; text-align: center;">
+            <?php if (!empty($error)) { echo $error; } ?>
+        </div>
         <div class="username">
             <label>
                 <span>Username</span>
@@ -148,6 +153,8 @@ if (isset($_POST['signin'])) {
         <button class="submit" name="signin">SIGN IN</button>
         <p id="pforget"><a href="./forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
+
+
     </form>
 </body>
 <script>
