@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    $email = 'your email';
+}
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verification Code</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- <style>
+    <style>
     * {
         font-family: "Open Sans", sans-serif;
         box-sizing: border-box;
@@ -77,20 +87,13 @@
         color: blue;
         margin-left: 4px;
     }
-    </style> -->
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h2>Enter Verification Code</h2>
-        <?php
-        if (isset($_GET['email'])) {
-            $email = $_GET['email'];
-        } 
-        else {
-            $email = 'your email';
-        }
-        ?>
+
 
         <p>
             We have sent a verification code to <strong>
@@ -106,7 +109,7 @@
                 <input type="text" name="code4" id="code4" maxlength="1" required />
             </div>
             <input type="hidden" name="verifiedcode" id="verifiedcode" />
-            <button id="verify" type="button" name="verify" onclick="combined()">Verify</button>
+            <button id="verify" type="submit" name="verify" onclick="combined()">Verify</button>
 
             <p id="login"><a href="./signup.php">Back to log in</a></p>
         </form>

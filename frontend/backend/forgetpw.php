@@ -1,3 +1,59 @@
+<?php
+session_start();
+include './connection.php';
+require '../PHPMailer-master/src/PHPMailer.php';
+require '../PHPMailer-master/src/Exception.php';
+require '../PHPMailer-master/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+if (isset($_POST['reset'])) {
+    $email = $_POST['email'];
+    $_SESSION['email'] = $email;
+
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        $code = random_int(1000, 9999);
+
+        $update_sql = "UPDATE users SET code = '$code' WHERE email = '$email'";
+        $update_result = mysqli_query($conn, $update_sql);
+
+        if (mysqli_affected_rows($conn) > 0) {
+            $mail = new PHPMailer(true);
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'paudelsandhya1588@gmail.com';
+                $mail->Password = 'rybq rkda yoez lblo';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                $mail->setFrom('paudelsandhya1588@gmail.com', 'DRIVZY Team!');
+                $mail->addAddress($email);
+
+                $mail->isHTML(true);
+                $mail->Subject = 'Verification Code';
+                $mail->Body = "Your Verification Code is: <b>$code</b>";
+                $mail->AltBody = "Your Verification Code is: $code";
+
+                $mail->send();
+
+                header("Location: vcode.php?");
+                exit();
+            } catch (Exception $e) {
+                echo "Mailer Error: {$mail->ErrorInfo}";
+            }
+        }
+    } else {
+        echo "No user found with this email address.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +72,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
         background-color: #f0f0f0;
     }
 
@@ -40,7 +95,6 @@
         font-weight: 300px;
     }
 
-
     input[type="text"] {
         width: 95%;
         padding: 10px;
@@ -48,16 +102,13 @@
         border-radius: 8px;
         font-size: 15px;
         margin-top: 10px;
-
         color: #333;
-
     }
 
     input[type="text"]::placeholder {
         color: #666;
         font-size: 13px;
     }
-
 
     .submit {
         border: none;
@@ -69,9 +120,6 @@
         margin-top: 15px;
     }
 
-
-
-
     .submit:hover {
         background-color: rgb(56, 90, 194);
     }
@@ -80,14 +128,10 @@
         text-align: center;
     }
 
-
     #login a {
         font-size: 12px;
         color: blue;
         margin-left: 4px;
-
-
-
     }
 
     #message {
@@ -99,41 +143,36 @@
         margin-top: 3px;
     }
 
-
-
-    #email_error {
-        color: red;
-        font-size: 12px;
-        margin-top: 2px;
-
-    }
-
-
     #smessage {
         color: black;
         font-size: 11px;
         margin-top: -9px;
         text-align: center;
     }
+
+    #email_error {
+        color: red;
+        font-size: 12px;
+        margin-top: 2px;
+    }
     </style>
 </head>
 
 <body>
-    <form action="./resetpw.php" method="POST" onsubmit="return validateForm(event)">
+    <form action="forgetpw.php" method="POST">
         <p id="message">Forget Password?</p>
-        <p id="smessage">No worries,we'll send you reset instructions</p>
+        <p id="smessage">No worries, we'll send you reset instructions.</p>
 
         <div class="email">
             <label>
                 <input type="text" id="email" name="email" placeholder="Enter your email" required />
             </label>
-            <br>
-
+            <br />
         </div>
         <br />
         <button class="submit" name="reset">Reset Password</button>
         <p id="login"><a href="./signup.php">Back to log in</a></p>
-
     </form>
 </body>
-<script>
+
+</html>
