@@ -320,7 +320,7 @@ mysqli_close($conn);
         }
 
     }
-    window.onload = togglebtns;
+    window.onload = togglebtns();
     </script>
 
 </body>
