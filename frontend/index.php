@@ -153,7 +153,7 @@ mysqli_close($conn);
     </div>
     <div id="div1">
 
-        <h1 id="rentalhead">Discover our Car Rental Marketplaces</h1>
+        <h1>Discover our Car Rental Marketplaces</h1>
         <div id="div2">
             <div>
                 <img id="img1con" src="./images/infinity.jpg" alt="Endless Options" />
