@@ -105,29 +105,33 @@
 }
 #div1{
     background-color:#C45946;
-    height:500px;
+    height:600px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:7px;
+    padding-top:20px;
+
 }
 
 #h1{
 
     color: rgb(214, 201, 201);
 }
-#img1con{
-    width: 45px;
+
+.image{
+    height:200px;
+    width:300px;
+    background-color:black;
+    text-align: center;
+    color:white;
+    font-size:14px;
+    gap:19px;
+    
 }
-#img2con{
+.img1con{
     width: 45px;
-}
-#img3con{
-    width: 45px;
-}
-#div2{
-    display: flex;
-    gap: 53px;
-    margin-left: 93px;
-    position: relative;
-    margin-top: 110px;
-    color: rgb(252, 244, 244);
 }
 #endless{
 font-size: 23px;

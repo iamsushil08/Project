@@ -154,36 +154,36 @@ mysqli_close($conn);
     <div id="div1">
 
         <h1>Discover our Car Rental Marketplaces</h1>
-        <div id="div2">
-            <div>
-                <img id="img1con" src="./images/infinity.jpg" alt="Endless Options" />
-                <p id="endless">Endless options</p>
-                <p>
-                    Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up
-                    where
-                    you want
-                    it.
-                </p>
-            </div>
-            <div>
-                <img id="img2con" src="./images/fa headset.jpg" alt="Customer Support" />
-                <p id="customer">24/7 customer support</p>
-                <p>
-                    Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer
-                    support and
-                    roadside assistance are just a click away.
-                </p>
-            </div>
-            <div>
-                <img id="img3con" src="./images/fa sheild.jpg" alt="Confidence" />
-                <p id="trip">Go for a trip confidently</p>
-                <p>
-                    Go for a trip confidently with your choice of protection plans — all plans include varying
-                    levels of
-                    liability insurance provided through Sajilo Rental's Insurance Agency.
-                </p>
-            </div>
+
+        <div class="image">
+            <img class="img1con" src="./images/infinity.jpg" alt="Endless Options" />
+            <p id="endless">Endless options</p>
+            <p>
+                Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up
+                where
+                you want
+                it.
+            </p>
         </div>
+        <div class="image">
+            <img class="img1con" src="./images/fa headset.jpg" alt="Customer Support" />
+            <p id="customer">24/7 customer support</p>
+            <p>
+                Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer
+                support and
+                roadside assistance are just a click away.
+            </p>
+        </div>
+        <div class="image">
+            <img class="img1con" src="./images/fa sheild.jpg" alt="Confidence" />
+            <p id="trip">Go for a trip confidently</p>
+            <p>
+                Go for a trip confidently with your choice of protection plans — all plans include varying
+                levels of
+                liability insurance provided through Sajilo Rental's Insurance Agency.
+            </p>
+        </div>
+
         <div id="perfect-car"><a id="perfectt-car" href="./backend/search.php"> Book the Perfect Car</a></div>
 
     </div>
