@@ -311,7 +311,7 @@ mysqli_close($conn);
         const login = document.getElementById('login');
         const logout = document.getElementById('logout');
 
-        if (<?php  echo isset($_SESSION['username'])?'true':'false';?>) {
+        if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
             login.style.display = 'none ';
             logout.style.display = 'inline';
         } else {
