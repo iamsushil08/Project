@@ -74,7 +74,7 @@ $result = mysqli_query($conn, $sql);
 
 
                 <h3><?php echo htmlspecialchars($car['name']); ?></h3>
-                <p>Cost:<?php echo number_format($car['extra_charge'], 0). '/hr';?></p>
+                <p>Cost:<?php echo number_format($car['charge'], 0). '/hr';?></p>
                 <p>Mileage: <?php echo htmlspecialchars($car['mileage']).' km/l';?> </p>
                 <p class="<?php echo ($car['status'] === 'Available') ? 'status-available' : 'status-unavailable'; ?>">
                     Status: <?php echo htmlspecialchars($car['status']); ?>

@@ -2,19 +2,15 @@
 session_start();
 include "./connection.php";
 
-// Check if the user is logged in
 if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit;
 }
 
-// Retrieve the user's information from the database
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM users WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
-$user = mysqli_fetch_assoc($result);
-
-// Handle password change
+$user = mysqli_fetch_assoc($result)
 if (isset($_POST['change_password'])) {
     $new_password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
 

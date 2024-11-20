@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Search</title>
+    <!-- sushil do internal css asap -->
     <style>
-    /* Style the table */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -64,7 +64,7 @@
                     <th>Color</th>
                     <th>Mileage</th>
                     <th>Description</th>
-                    <th>Extra Charge</th>
+                    <th>Charge</th>
                     <th>Status</th>
                     <th>Plate Number</th>
                     <th>Action</th>
@@ -78,14 +78,14 @@
                 echo "<td>" . $car['color'] . "</td>";
                 echo "<td>" . $car['mileage'] . " km/l</td>";
                 echo "<td>" . $car['description'] . "</td>";
-                echo "<td>" . $car['extra_charge'] . "</td>";
+                echo "<td>" . $car['charge'] . "</td>";
                 echo "<td>" . $car['status'] . "</td>";
                 echo "<td>" . $car['plate_number'] . "</td>";
 
                 
                 if ($car['status'] === 'Available') {
                   
-                        echo "<td><a href='checkuser.php?car_id=" . $car['id'] . "&extra_charge=" . $car['extra_charge'] . "'>Book now</a></td>";
+                        echo "<td><a href='checkuser.php?car_id=" . $car['id'] ."'>Book now</a></td>";
                     
                 }
                  else {

@@ -1,13 +1,26 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
-    $car_id = $_GET['car_id'];
-    $extra_charge = $_GET['extra_charge'];
-    header("Location: bookcar.php?car_id=$car_id&extra_charge=$extra_charge");
+include('./connection.php');
+if(isset($_GET['car_id'])){
+    $car_id=$_GET['car_id'];
+
+    // url bata liyera session ma haleko hai car id
+    $_SESSION['car_id']=$car_id;
+
+if (isset($_SESSION['email'])) {
+  
+    header("Location: bookcar.php?");
     exit;
-} else {
-    $_SESSION['intended_page'] = "bookcar.php?car_id=" . $_GET['car_id'] . "&extra_charge=" . $_GET['extra_charge'];
-    header("Location: signup.php");
+}
+
+else {
+    
+    header("Location:diffsignup.php");
+    exit;
+}
+}
+else{
+    echo "car id missing";
     exit;
 }
 

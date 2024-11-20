@@ -25,8 +25,8 @@
         <label for="">Description</label>
         <textarea name="description" rows="3" cols="20" required></textarea>
         <br>
-        <label for="">Extra Charge</label>
-        <input type="text" name="extra_charge">
+        <label for="">Charge</label>
+        <input type="text" name="charge">
         <br>
 
         <label for="">Status</label>
@@ -55,7 +55,7 @@ $model = $_POST['model'];
 $color = $_POST['color'];
 $mileage = $_POST['mileage'];
 $description = $_POST['description'];
-$extra_charge = $_POST['extra_charge'];
+$charge = $_POST['charge'];
 $status = $_POST['status'];
 $plate_number = $_POST['plate_number'];
 
@@ -76,8 +76,8 @@ $destination = "carimages/" . $unique_file;
 
 if (move_uploaded_file($filetemp, $destination)) {
    
-$query = "INSERT INTO cars (name, model, color, mileage, description, extra_charge, status, plate_number, image_url)
-VALUES ('$name', '$model', '$color', '$mileage', '$description', '$extra_charge', '$status', '$plate_number',
+$query = "INSERT INTO cars (name, model, color, mileage, description, charge, status, plate_number, image_url)
+VALUES ('$name', '$model', '$color', '$mileage', '$description', '$charge', '$status', '$plate_number',
 '$destination')";
 
 if (mysqli_query($conn, $query)) {
