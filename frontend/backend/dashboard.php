@@ -8,7 +8,8 @@ if (!isset($_SESSION['admin_id'])) {
 
 <html>
 <button><a href="./addcars.php">Add Cars</a></button>
-<button><a href="">Delete Cars</a></button>
+<button><a href="./feedbacks.php">feedbacks</a></button>
+<button><a href="./managecars.php">Manage Cars</a></button>
 <button><a href="">Manage Users</a></button>
 <button><a href="">Manage Payment</a></button>
 
