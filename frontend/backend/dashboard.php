@@ -12,5 +12,6 @@ if (!isset($_SESSION['admin_id'])) {
 <button><a href="./managecars.php">Manage Cars</a></button>
 <button><a href="">Manage Users</a></button>
 <button><a href="">Manage Payment</a></button>
+<button><a href="./adminlogout.php">Log out</a></button>
 
 </html>
