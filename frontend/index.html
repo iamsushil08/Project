@@ -49,17 +49,17 @@ session_start();
         </div>
 
     </div>
-    <!-- second page ho -->
-    <div id="div00">
+    
+ <!-- <div id="div00"> 
 
-        <?php
+         <?php
 
-include './backend/connection.php';
+include './backend/connection.php'; 
 
 
-$sql = "SELECT * FROM cars";
-$result = mysqli_query($conn, $sql);
-?>
+ $sql = "SELECT * FROM cars";
+ $result = mysqli_query($conn, $sql);
+ ?>
 
         <div class="car-list">
             <?php if (mysqli_num_rows($result) > 0): ?>
@@ -78,24 +78,24 @@ $result = mysqli_query($conn, $sql);
                 <p>Mileage: <?php echo htmlspecialchars($car['mileage']).' km/l';?> </p>
                 <p class="<?php echo ($car['status'] === 'Available') ? 'status-available' : 'status-unavailable'; ?>">
                     Status: <?php echo htmlspecialchars($car['status']); ?>
-                </p>
+                </p> 
 
             </div>
             <?php endwhile; ?>
             <?php else: ?>
             <p>No cars available at the moment.</p>
             <?php endif; ?>
-        </div>
+    </div>
     </div>
 
     <?php
 
-mysqli_close($conn);
-?>
+mysqli_close($conn) ; 
+?>   -->
 
 
 
-    <!-- third page ho hai -->
+    <-- third page ho hai -->
 
     <div id="page2">
         <h3>
