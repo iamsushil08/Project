@@ -120,6 +120,7 @@ mysqli_close($conn) ;
                 </div>
 
             </div>
+
             <div class="blogss">
                 <h2>Hiace Van Rental in Kathmandu, Nepal</h2>
                 <p class="textt">
@@ -135,6 +136,7 @@ mysqli_close($conn) ;
                 </div>
 
             </div>
+
             <div class="blogss">
                 <h2>Why Customers Love Renting from DriveZy: Nepals Leading Vehicle Rental</h2>
                 <p class="text">
@@ -147,6 +149,8 @@ mysqli_close($conn) ;
                     <a href="" class="more">Readmore</a>
                 </div>
             </div>
+
+            
         </div>
 
     </div>
@@ -155,6 +159,8 @@ mysqli_close($conn) ;
 
         <h1>Discover our Car Rental Marketplaces</h1>
 
+
+        <div class="imagecontainer">
         <div class="image">
             <img class="img1con" src="./images/infinity.jpg" alt="Endless Options" />
             <p id="endless">Endless options</p>
@@ -183,9 +189,11 @@ mysqli_close($conn) ;
                 liability insurance provided through Sajilo Rental's Insurance Agency.
             </p>
         </div>
+         </div>
 
         <div id="perfect-car"><a id="perfectt-car" href="./backend/search.php"> Book the Perfect Car</a></div>
 
+   
     </div>
 
 
@@ -310,13 +318,13 @@ mysqli_close($conn) ;
         const login = document.getElementById('login');
         const logout = document.getElementById('logout');
 
-        if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
-            login.style.display = 'none ';
-            logout.style.display = 'inline';
-        } else {
-            login.style.display = 'inline';
-            logout.style.display = 'none';
-        }
+        // if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
+        //     login.style.display = 'none ';
+        //     logout.style.display = 'inline';
+        // } else {
+        //     login.style.display = 'inline';
+        //     logout.style.display = 'none';
+        // }
 
     }
     window.onload = togglebtns();

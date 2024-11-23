@@ -105,31 +105,35 @@
 }
 #div1{
     background-color:#C45946;
-    height:600px;
+    height:450px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top:7px;
-    padding-top:20px;
+   
+    padding:40px;
 
 }
+.imagecontainer {
+  margin-top:70px;
 
-#h1{
-
-    color: rgb(214, 201, 201);
+  display: flex; 
+  gap: 60px; 
+  align-items: center;
+  justify-content: center; 
+  margin-left: 0px;
 }
 
-.image{
-    height:200px;
-    width:300px;
+.image {
  
-    text-align: center;
-    color:white;
-    font-size:14px;
-    gap:19px;
-    
+  height: 250px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  align-items: center;
+
 }
+
 .img1con{
     width: 45px;
 }
@@ -142,25 +146,20 @@ font-size: 23px;
 #trip{
     font-size: 23px;
 }
-#perfect-car{
-background-color: rgb(36, 99, 236);
-margin-left:570px;
-height: 45px;
-width:265px;
-border-radius: 14px;
-margin-top: 49px;
-text-align: center;
 
+#perfect-car {
+  text-align: center;
+  margin-top: 20px;
 }
-#perfectt-car{
-    padding-top: 10px; 
-    display: block;
-    color: white;
 
-}
-#perfectt-car:hover{
-    color: black;
-    transition: 3s;
+#perfectt-car {
+  color: white;
+  background-color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
 }
 #perfect-car:hover{
     background-color: white;
@@ -182,6 +181,7 @@ margin-top: 170px;
 #page2{
 
     height:740px;
+    background-color: black;
    
     
  
@@ -205,17 +205,17 @@ margin-top: 170px;
     color: #37415c;
 }
 #blogs{
- height:300px;
+    height:300px;
     display: flex;
     gap: 15px;
-    padding-top:38px;
+    padding-top:30px;
     justify-content:space-between;
+    background-color: red;
+    margin-bottom:15px;
     
-   
-   
 }
-.blogss{
- /* background-color: rgb(82, 193, 193); */
+/* .blogss{
+ background-color: rgb(82, 193, 193);
  height: 230px;
 width:400px;
  border-radius:6px;
@@ -224,8 +224,9 @@ width:400px;
  display: inline;
  align-items: center;
  justify-content: center;
+ margin-bottom: 30px;
 
-}
+} */
 .blogss h2{
     COLOR:#54162b;
 }
