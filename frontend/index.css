@@ -1,5 +1,6 @@
 *{
     font-family: Arial, sans-serif;
+  
 }
 #mainmenu{
     display:flex;
@@ -7,18 +8,18 @@
     justify-content: center;
     gap: 33px;
     background-color:white;
+  
     
     
 }
 #drivezylogo{
     height:60px;
     width: 120px;
-    /* margin-top: 1px; */
-    margin-left: 44px;
+      margin-left: 44px;
 }
 #menuBar{
    margin-left:190px;
-   /* margin-top:19px; */
+ 
    gap: 33px;
    
 }
@@ -67,8 +68,8 @@
     height: 33px;
 }
 #Main{
-    height:600px;
-    margin-bottom: 162px;
+    height:500px;
+ 
    
 }
 #car1{
@@ -98,9 +99,11 @@
 
 }
 #div00{
-
-    height:600px;
+  width:100vw;
+    height:700px;
     background-color:#FFFAFA;
+    margin-top:-80px;
+    /* padding-top:-20px; */
     
 }
 #div1{
@@ -181,7 +184,7 @@ margin-top: 170px;
 #page2{
 
     height:740px;
-    background-color: black;
+   
    
     
  
@@ -210,12 +213,12 @@ margin-top: 170px;
     gap: 15px;
     padding-top:30px;
     justify-content:space-between;
-    background-color: red;
+  
     margin-bottom:15px;
     
 }
-/* .blogss{
- background-color: rgb(82, 193, 193);
+.blogss{
+
  height: 230px;
 width:400px;
  border-radius:6px;
@@ -226,7 +229,7 @@ width:400px;
  justify-content: center;
  margin-bottom: 30px;
 
-} */
+}
 .blogss h2{
     COLOR:#54162b;
 }
@@ -597,14 +600,33 @@ footer {
   }
   /* footer ko logo */
   i {
-    font-size: 24px;
-    color: #ffffff;
+    font-size: 20px;
+    color: white;
     margin: 0 10px;
   }
   #advertis{
     height:300px;
     width:400px;
   }
+  /* circle banauna lako social links lai */
+  a{
+    gap:4px;
+  }
+  #fbiconn,#isiconn,#linkiconn,#yticonn {
+    background-color: #C45946;
+    color: black;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
 
   
   

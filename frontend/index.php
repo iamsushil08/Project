@@ -1,7 +1,7 @@
-<!-- <?php 
+<?php 
 session_start();
 
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,10 +49,10 @@ session_start();
         </div>
 
     </div>
-    
- <!-- <div id="div00"> 
 
-         <?php
+    <div id="div00">
+
+        <?php
 
 include './backend/connection.php'; 
 
@@ -78,20 +78,20 @@ include './backend/connection.php';
                 <p>Mileage: <?php echo htmlspecialchars($car['mileage']).' km/l';?> </p>
                 <p class="<?php echo ($car['status'] === 'Available') ? 'status-available' : 'status-unavailable'; ?>">
                     Status: <?php echo htmlspecialchars($car['status']); ?>
-                </p> 
+                </p>
 
             </div>
             <?php endwhile; ?>
             <?php else: ?>
             <p>No cars available at the moment.</p>
             <?php endif; ?>
-    </div>
+        </div>
     </div>
 
     <?php
 
 mysqli_close($conn) ; 
-?>   -->
+?>
 
 
 
@@ -150,7 +150,7 @@ mysqli_close($conn) ;
                 </div>
             </div>
 
-            
+
         </div>
 
     </div>
@@ -161,39 +161,39 @@ mysqli_close($conn) ;
 
 
         <div class="imagecontainer">
-        <div class="image">
-            <img class="img1con" src="./images/infinity.jpg" alt="Endless Options" />
-            <p id="endless">Endless options</p>
-            <p>
-                Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up
-                where
-                you want
-                it.
-            </p>
+            <div class="image">
+                <img class="img1con" src="./images/infinity.jpg" alt="Endless Options" />
+                <p id="endless">Endless options</p>
+                <p>
+                    Choose from thousands of vehicles you won't find anywhere else. Choose it and get picked up
+                    where
+                    you want
+                    it.
+                </p>
+            </div>
+            <div class="image">
+                <img class="img1con" src="./images/fa headset.jpg" alt="Customer Support" />
+                <p id="customer">24/7 customer support</p>
+                <p>
+                    Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer
+                    support and
+                    roadside assistance are just a click away.
+                </p>
+            </div>
+            <div class="image">
+                <img class="img1con" src="./images/fa sheild.jpg" alt="Confidence" />
+                <p id="trip">Go for a trip confidently</p>
+                <p>
+                    Go for a trip confidently with your choice of protection plans — all plans include varying
+                    levels of
+                    liability insurance provided through Sajilo Rental's Insurance Agency.
+                </p>
+            </div>
         </div>
-        <div class="image">
-            <img class="img1con" src="./images/fa headset.jpg" alt="Customer Support" />
-            <p id="customer">24/7 customer support</p>
-            <p>
-                Rest easy knowing that everyone in the Sajilo rental community is screened, and 24/7 customer
-                support and
-                roadside assistance are just a click away.
-            </p>
-        </div>
-        <div class="image">
-            <img class="img1con" src="./images/fa sheild.jpg" alt="Confidence" />
-            <p id="trip">Go for a trip confidently</p>
-            <p>
-                Go for a trip confidently with your choice of protection plans — all plans include varying
-                levels of
-                liability insurance provided through Sajilo Rental's Insurance Agency.
-            </p>
-        </div>
-         </div>
 
         <div id="perfect-car"><a id="perfectt-car" href="./backend/search.php"> Book the Perfect Car</a></div>
 
-   
+
     </div>
 
 
@@ -217,33 +217,32 @@ mysqli_close($conn) ;
         <h2>Frequently Asked Questions</h2>
 
         <div class="faqItem">
-            <h3 class="question">1. How do I book a car?</h3>
-            <p class="answer">You can book a car by selecting your desired car model, rental dates, and filling out
-                the booking form. Make sure you are logged in to complete the booking.</p>
+            <h3 class="question">1.How do I book a car?</h3>
+            <p class="answer">You can book a car by selecting your desired car, rental dates, and filling out
+                the booking form but for that you have to be logged in.</p>
         </div>
 
         <div class="faqItem">
-            <h3 class="question">2. What are the requirements for renting a car?</h3>
-            <p class="answer">To rent a car, you must be at least 18 years old and hold a valid driver’s license.
-                Additional age requirements or fees may apply depending on the car model.</p>
+            <h3 class="question">2.What are the requirements for renting a car?</h3>
+            <p class="answer">To rent a car,you must select the car,log in and do downpayment of 15%.</p>
         </div>
 
         <div class="faqItem">
-            <h3 class="question">3. How does the payment process work?</h3>
-            <p class="answer">You are required to make a 15% down payment during booking. The remaining balance can
-                be paid at the time of car pickup. We accept various payment methods for your convenience.</p>
+            <h3 class="question">3.How does the payment process work?</h3>
+            <p class="answer">You must pay 15% as advance payment and remaining via cash or online method after service
+                is provided.</p>
         </div>
 
         <div class="faqItem">
-            <h3 class="question">4. Can I cancel my booking?</h3>
-            <p class="answer">Yes, you can cancel your booking up to 24 hours before your rental start time. Please
-                note that cancellation fees may apply. Check our cancellation policy for details.</p>
+            <h3 class="question">4.Can I cancel my booking?</h3>
+            <p class="answer">Yes, you can cancel your booking up to 24hours of time period but 15% payment cannot be
+                refunded> </p>
         </div>
 
         <div class="faqItem">
-            <h3 class="question">5. Are there any additional charges?</h3>
-            <p class="answer">Additional charges may apply for late returns, extra mileage, or specific car models.
-                Details of additional charges will be displayed during the booking process.</p>
+            <h3 class="question">5.Are there any additional charges?</h3>
+            <p class="answer">Additional charges may not apply but if car gets problem you must solve the issue before
+                returning the car.</p>
         </div>
     </div>
 
@@ -264,7 +263,7 @@ mysqli_close($conn) ;
                 <h3>Contact Info</h3>
                 <p> <i class="fas fa-map-marker-alt"></i>Rupandehi,Nepal</p>
                 <p><i class="fas fa-phone"></i>9867556559</p>
-                <p><i class="fas fa-envelope"></i><a href="mailto:paudelsandhya1588@gmail.com">paudelsadhya@gmail.com
+                <p><i class="fas fa-envelope"></i><a href="mailto:paudelsandhya1588@gmail.com">teamdrivZy@gmail.com
                 </p>
 
 
@@ -285,14 +284,14 @@ mysqli_close($conn) ;
 
             <div class="footer-section social-network">
                 <h3>Social Network</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i>
+                <div class="socialicons">
+                    <a href="#" id="fbiconn"><i class="fab fa-facebook"></i>
                     </a>
-                    <a href="#"> <i class="fab fa-instagram"></i>
+                    <a href="#" id="isiconn"> <i class=" fab fa-instagram"></i>
                     </a>
-                    <a href="#"> <i class="fab fa-linkedin"></i>
+                    <a href="#" id="linkiconn"> <i class=" fab fa-linkedin"></i>
                     </a>
-                    <a href="#"> <i class="fab fa-youtube"></i>
+                    <a href="#" id="yticonn"> <i class=" fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
@@ -304,6 +303,65 @@ mysqli_close($conn) ;
 
 
     <script>
+    const fbicon = document.getElementById('fbiconn');
+
+    fbicon.addEventListener('mouseover', function() {
+        fbicon.style.backgroundColor = 'blue';
+        fbicon.style.color = 'black';
+
+    });
+
+
+
+    fbicon.addEventListener('mouseout', function() {
+        fbicon.style.backgroundColor = '#C45946';
+        fbicon.style.color = 'black';
+    });
+
+    const isicon = document.getElementById('isiconn');
+
+    isicon.addEventListener('mouseover', function() {
+        isicon.style.backgroundColor = '#C13584';
+        isicon.style.color = 'black';
+
+    });
+
+
+
+    isicon.addEventListener('mouseout', function() {
+        isicon.style.backgroundColor = '#C45946';
+        isicon.style.color = 'black';
+    });
+
+    const linkicon = document.getElementById('linkiconn');
+
+    linkicon.addEventListener('mouseover', function() {
+        linkicon.style.backgroundColor = '#0A66C2';
+        linkicon.style.color = 'black';
+
+    });
+
+    linkicon.addEventListener('mouseout', function() {
+        linkicon.style.backgroundColor = '#C45946';
+        linkicon.style.color = 'black';
+    });
+
+    const yticon = document.getElementById('yticonn');
+
+    yticon.addEventListener('mouseover', function() {
+        yticon.style.backgroundColor = '#FF0000';
+        yticon.style.color = 'black';
+
+    });
+
+    yticon.addEventListener('mouseout', function() {
+        yticon.style.backgroundColor = '#C45946';
+        yticon.style.color = 'black';
+    });
+
+
+
+
     document.querySelectorAll(".question").forEach(question => {
         question.addEventListener("click", () => {
             const faqItem = question.parentElement;
@@ -318,13 +376,13 @@ mysqli_close($conn) ;
         const login = document.getElementById('login');
         const logout = document.getElementById('logout');
 
-        // if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
-        //     login.style.display = 'none ';
-        //     logout.style.display = 'inline';
-        // } else {
-        //     login.style.display = 'inline';
-        //     logout.style.display = 'none';
-        // }
+        if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
+            login.style.display = 'none ';
+            logout.style.display = 'inline';
+        } else {
+            login.style.display = 'inline';
+            logout.style.display = 'none';
+        }
 
     }
     window.onload = togglebtns();
