@@ -15,12 +15,6 @@ if (!isset($_SESSION['details'])) {
 }
 
 
-if (empty($car_id)) {
-    die("Error: Car ID cannot be empty.");
-}
-
-
-
 $details = $_SESSION['details'];
 $car_id = $details['car_id'];
 $fromloc = $details['fromloc'];

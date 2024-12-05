@@ -21,11 +21,7 @@ if (isset($_POST['signin'])) {
            
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-                $car_id = isset($_GET['car_id']) ? $_GET['car_id'] : '';
-                if ($car_id) {
-                    header("Location: checkuser.php?car_id=$car_id"); 
-                    exit;
-                } else {
+            
                     header("Location: checkuser.php"); 
                     exit;
                 }

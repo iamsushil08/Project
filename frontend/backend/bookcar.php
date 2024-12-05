@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['car_id'])) {
+    echo "Car ID is missing.";
+    exit;
+}
+
+$car_id = $_SESSION['car_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +22,8 @@
     <form method="POST" action="./payment.php">
 
 
-        <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($car_id); ?>">
-        <input type="hidden" name="car_charge" value="<?php echo htmlspecialchars($car['charge']); ?>">
-
-
-        <label for="">From:</label>
+        <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($_SESSION['car_id']); ?>">
+        <label for=""> From:</label>
         <input type="text" id="from" name="fromloc" placeholder="Enter pickup location" required>
         <br><br>
 

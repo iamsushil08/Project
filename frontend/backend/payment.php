@@ -8,12 +8,23 @@ if (!isset($_SESSION['email'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   echo  $car_id = $_POST['car_id'];
-    $car_charge = floatval($_POST['car_charge']);
+    $car_id = $_POST['car_id'];
     $fromloc = trim($_POST['fromloc']);
     $toloc =trim($_POST['toloc']);
     $start = $_POST['start'];
     $end = $_POST['end'];
+
+    
+    $query = "SELECT charge FROM cars WHERE id = " . $car_id;
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $car = mysqli_fetch_assoc($result);
+        $car_charge = floatval($car['charge']); 
+    } else {
+        echo "Invalid car ID.";
+        exit;
+    }
 
     $start_time = strtotime($start);
     $end_time = strtotime($end);
@@ -38,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'downpay' => $downpay,
     ];
 
-    // header("Location: ./finalbooking.php");
+    header("Location: ./finalbooking.php");
     exit;
 } else {
     echo "Invalid request.";

@@ -20,7 +20,7 @@ session_start();
 <body>
     <div id="mainmenu">
         <div id="logo">
-            <a href="./index.php"><img id="drivezylogo" src="./images/rivzy.png" alt="DriveZy Logo" /></a>
+            <a href="./index.php"><img id="drivezylogo" src="./images/drivzy (2).png " alt=" DriveZy Logo" /></a>
         </div>
         <div id="menuBar">
             <a id="home" href="./index.php">Home</a>
@@ -376,6 +376,7 @@ mysqli_close($conn) ;
         if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
             login.style.display = 'none ';
             logout.style.display = 'inline';
+
         } else {
             login.style.display = 'inline';
             logout.style.display = 'none';
