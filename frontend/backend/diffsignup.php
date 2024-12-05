@@ -4,6 +4,8 @@ include "./connection.php";
 
 $error="";
 
+   
+
 if (isset($_POST['signin'])) {
     $username =  $_POST['username'];
     $password = $_POST['password'];
@@ -19,8 +21,15 @@ if (isset($_POST['signin'])) {
            
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-                header("Location:../index.php");
-                exit;
+                $car_id = isset($_GET['car_id']) ? $_GET['car_id'] : '';
+                if ($car_id) {
+                    header("Location: checkuser.php?car_id=$car_id"); 
+                    exit;
+                } else {
+                    header("Location: checkuser.php"); 
+                    exit;
+                }
+      
             } else {
                 
                 $error= "Incorrect username or password.";
@@ -34,6 +43,7 @@ if (isset($_POST['signin'])) {
         $error= "Please enter both username and password.";
     }
 }
+
 ?>
 
 
@@ -127,7 +137,9 @@ if (isset($_POST['signin'])) {
 </head>
 
 <body>
-    <form action="./signup.php" method="POST" onsubmit="return validateForm(event)">
+    <form
+        action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?car_id=<?php echo isset($_GET['car_id']) ? $_GET['car_id'] : ''; ?>"
+        method="POST" onsubmit="return validateForm(event)">
         <p id="message">WELCOME BACK!</p>
         <div id="phperror" style=" font-size:13px;color: red; text-align: center;">
             <?php if (!empty($error)) { echo $error; } ?>
@@ -208,3 +220,9 @@ function validatePassword() {
 </script>
 
 </html>
+<?php
+if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
+}
+?>

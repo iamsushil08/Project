@@ -1,32 +1,3 @@
-<?php 
-session_start();
-include('./connection.php');
-
-if(!isset($_SESSION['email'])){
-    header("Location: ./diffsignup.php");
-    exit;
-    
-}
-if(!isset($_SESSION['car_id'])){
-
-    echo "Car id is not seen.Retry booking a car";
-    exit;
-}
-
-  $car_id=$_SESSION['car_id'];
-
-    $query="select * from cars where id='$car_id'";
-    $result=mysqli_query($conn,$query);
-
-    if($result && mysqli_num_rows($result)>0){
-        $car=mysqli_fetch_assoc($result);
-    }
-    else{
-        echo "car not found";
-        exit;
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,30 +9,55 @@ if(!isset($_SESSION['car_id'])){
 
 <body>
 
-
     <form method="POST" action="./payment.php">
 
-        <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($car_id);?>">
-        <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($car['charge']);?>">
-        <label for="">Location:</label>
-        <input type=" text" id="location" name="location" required>
+
+        <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($car_id); ?>">
+        <input type="hidden" name="car_charge" value="<?php echo htmlspecialchars($car['charge']); ?>">
+
+
+        <label for="">From:</label>
+        <input type="text" id="from" name="fromloc" placeholder="Enter pickup location" required>
         <br><br>
 
 
+        <label for="">To:<label>
+                <input type="text" id="to" name="toloc" placeholder="Enter drop-off location" required>
+                <br><br>
 
-        <label for="">Start Date:</label>
-        <input type="datetime-local" id="start" name="start" required>
-        <br><br>
 
-        <label for="">End Date:</label>
-        <input type="datetime-local" id="end" name="end" required>
-        <br><br>
+                <label for="">From Date:</label>
+                <input type="datetime-local" id="starting" name="start" required>
+                <br><br>
 
-        <button type="submit" name="confirm">Proceed to Booking</button>
+
+                <label for="">To Date:</label>
+                <input type="datetime-local" id="ending" name="end" required>
+                <br><br>
+
+
+                <button type="submit" name="confirm">Proceed to Booking</button>
     </form>
-
-
 
 </body>
 
 </html>
+<script>
+document.querySelector('form').addEventListener('submit', function(a) {
+    const starting = new Date(document.getElementById('starting').value);
+    const ending = new Date(document.getElementById('ending').value);
+
+    if (starting >= ending) {
+
+        alert("End date must be after start date");
+        a.preventDefault();
+
+    }
+
+})
+// document.getElementById('starting').value = formatDate(now);
+// document.getElementById('starting').placeholder = formatDate(now);
+
+// document.getElementById('ending').value = formatDate(nextDay);
+// document.getElementById('ending').placeholder = formatDate(nextDay);
+</script>

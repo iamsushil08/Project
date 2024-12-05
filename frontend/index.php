@@ -94,9 +94,6 @@ mysqli_close($conn) ;
 ?>
 
 
-
-
-
     <div id="page2">
         <h3>
             Hiring a vehicle? You're at the right place.
