@@ -34,10 +34,8 @@ if (isset($_POST['signin'])) {
            
             $error= "User not found.";
         }
-    } else {
-       
-        $error= "Please enter both username and password.";
-    }
+    
+  
 }
 
 ?>

@@ -30,17 +30,52 @@ session_start();
             <a id="search" href="./backend/search.php">Search</a>
         </div>
         <div id="righty">
-            <a href="./backend/register.html" style="color: black;">Register</a>
-            <p>|</p>
+            <?php 
+            include("./backend/connection.php");
 
-            <button id="login" onclick="window.location.href='./backend/signup.php'">Log in </button>
-            <button id="logout" style="display:none;" onclick="window.location.href='./backend/logout.php'">Log
-                out</button>
+            if(isset($_SESSION['email'])){
+                $email=$_SESSION['email'];
+                $query = "select profile_image from users where email='$email'";
+                $result =mysqli_query($conn,$query);
+                if (!$result) {
+                    echo "Error fetching data: " . mysqli_error($conn);
+                }
+                
+
+                if(mysqli_num_rows($result)>0){
+                    $users = mysqli_fetch_assoc($result);
+                }       
+                else{
+                    $users = null;
+                }
+           
+
+                 }
+            
+            ?>
+
+            <?php if (isset($_SESSION['email']) && isset($users['profile_image'])): ?>
+            <div id="userSection">
+
+
+                <img src="backend/<?php echo $users['profile_image']; ?>" id="profileImage" class="circular">
+
+            </div>
+            <?php else: ?>
+
+            <a href="./backend/signup.php">Login </a> | <a href="./backend/register.html">Register</a>
+            <?php endif; ?>
+
+
+
 
 
 
         </div>
+
+
     </div>
+
 
     <div id=" Main">
         <img id="car1" src="./images/Homepage-Cybertruck-Desktop-v3.avif" alt="Car Image" />
@@ -273,7 +308,7 @@ mysqli_close($conn) ;
                     <li><a href="#blogs">About</a></li>
                     <li><a href="#faqSection">FAQs</a></li>
                     <li><a href="#contactSection">Contact</a></li>
-                    <li><a href="./backend/register.html">Register</a></li>
+                    <li><a href="./backend/logout.php">log out</a></li>
                     <li><a href="./backend/admin.html">Admin</a></li>
                 </ul>
 
@@ -297,94 +332,124 @@ mysqli_close($conn) ;
     </footer>
 
 
+    <div id="profileSlider" class="slider">
+        <div class="sliderContent">
+            <h3>Welcome, <?php echo $users['name']; ?></h3>
+            <a href="./edit-profile.php">Edit Profile</a>
+            <a href="./logout.php">Log Out</a>
+        </div>
 
+        <script>
+        const fbicon = document.getElementById('fbiconn');
 
-    <script>
-    const fbicon = document.getElementById('fbiconn');
+        fbicon.addEventListener('mouseover', function() {
+            fbicon.style.backgroundColor = 'blue';
+            fbicon.style.color = 'black';
 
-    fbicon.addEventListener('mouseover', function() {
-        fbicon.style.backgroundColor = 'blue';
-        fbicon.style.color = 'black';
-
-    });
-
-
-
-    fbicon.addEventListener('mouseout', function() {
-        fbicon.style.backgroundColor = '#C45946';
-        fbicon.style.color = 'black';
-    });
-
-    const isicon = document.getElementById('isiconn');
-
-    isicon.addEventListener('mouseover', function() {
-        isicon.style.backgroundColor = '#C13584';
-        isicon.style.color = 'black';
-
-    });
-
-
-
-    isicon.addEventListener('mouseout', function() {
-        isicon.style.backgroundColor = '#C45946';
-        isicon.style.color = 'black';
-    });
-
-    const linkicon = document.getElementById('linkiconn');
-
-    linkicon.addEventListener('mouseover', function() {
-        linkicon.style.backgroundColor = '#0A66C2';
-        linkicon.style.color = 'black';
-
-    });
-
-    linkicon.addEventListener('mouseout', function() {
-        linkicon.style.backgroundColor = '#C45946';
-        linkicon.style.color = 'black';
-    });
-
-    const yticon = document.getElementById('yticonn');
-
-    yticon.addEventListener('mouseover', function() {
-        yticon.style.backgroundColor = '#FF0000';
-        yticon.style.color = 'black';
-
-    });
-
-    yticon.addEventListener('mouseout', function() {
-        yticon.style.backgroundColor = '#C45946';
-        yticon.style.color = 'black';
-    });
-
-
-
-
-    document.querySelectorAll(".question").forEach(question => {
-        question.addEventListener("click", () => {
-            const faqItem = question.parentElement;
-            faqItem.classList.toggle("active");
-
-            const answer = faqItem.querySelector(".answer");
-            answer.style.display = answer.style.display === "block" ? "none" : "block";
         });
-    });
 
-    function togglebtns() {
-        const login = document.getElementById('login');
-        const logout = document.getElementById('logout');
 
-        if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
-            login.style.display = 'none ';
-            logout.style.display = 'inline';
 
-        } else {
-            login.style.display = 'inline';
-            logout.style.display = 'none';
+        fbicon.addEventListener('mouseout', function() {
+            fbicon.style.backgroundColor = '#C45946';
+            fbicon.style.color = 'black';
+        });
+
+        const isicon = document.getElementById('isiconn');
+
+        isicon.addEventListener('mouseover', function() {
+            isicon.style.backgroundColor = '#C13584';
+            isicon.style.color = 'black';
+
+        });
+
+
+
+        isicon.addEventListener('mouseout', function() {
+            isicon.style.backgroundColor = '#C45946';
+            isicon.style.color = 'black';
+        });
+
+        const linkicon = document.getElementById('linkiconn');
+
+        linkicon.addEventListener('mouseover', function() {
+            linkicon.style.backgroundColor = '#0A66C2';
+            linkicon.style.color = 'black';
+
+        });
+
+        linkicon.addEventListener('mouseout', function() {
+            linkicon.style.backgroundColor = '#C45946';
+            linkicon.style.color = 'black';
+        });
+
+        const yticon = document.getElementById('yticonn');
+
+        yticon.addEventListener('mouseover', function() {
+            yticon.style.backgroundColor = '#FF0000';
+            yticon.style.color = 'black';
+
+        });
+
+        yticon.addEventListener('mouseout', function() {
+            yticon.style.backgroundColor = '#C45946';
+            yticon.style.color = 'black';
+        });
+
+
+
+
+        document.querySelectorAll(".question").forEach(question => {
+            question.addEventListener("click", () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle("active");
+
+                const answer = faqItem.querySelector(".answer");
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+            });
+        });
+
+        function togglebtns() {
+            const login = document.getElementById('login');
+            const logout = document.getElementById('logout');
+
+            if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
+                login.style.display = 'none ';
+                logout.style.display = 'inline';
+
+            } else {
+                login.style.display = 'inline';
+                logout.style.display = 'none';
+            }
+
         }
 
-    }
-    window.onload = togglebtns();
-    </script>
+        <
+        script >
+            // Function to toggle the visibility of the profile slider with a sliding effect
+            function toggleSlider() {
+                var slider = document.getElementById("profileSlider");
+                var currentRight = slider.style.right;
+
+                // If the slider is off the screen, slide it in
+                if (currentRight === "" || currentRight === "-300px") {
+                    slider.style.right = "0"; // Slide in
+                } else {
+                    slider.style.right = "-300px"; // Slide out
+                }
+            }
+
+        // Ensure the slider starts in the hidden position on load
+        window.onload = function() {
+            const slider = document.getElementById("profileSlider");
+            slider.style.right = "-300px"; // Make sure the slider starts hidden
+        };
+
+        // Add the click event to toggle the slider
+        document.getElementById("profileImage").onclick = toggleSlider; // Ensure this ID matches your image ID
+        </script>
+
+        </script>
 
 </body>
 

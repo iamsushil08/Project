@@ -630,8 +630,48 @@ footer {
 
 
 
+.circular {
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px; 
+  object-fit: cover; 
+}
 
-  
+/* Style for profile slider */
+.slider {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Animation for sliding */
+    z-index: 1000;
+}
+
+/* Content inside the slider */
+.sliderContent {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.sliderContent a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Style for the circular image */
+
+
+/* Optional: Styling the user section */
+#userSection {
+    display: inline-block;
+    padding: 10px;
+}
+
   
 
   

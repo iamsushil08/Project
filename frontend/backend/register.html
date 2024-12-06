@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   </head>
   <body>
-    <form class="form" method="POST" action="./insert.php" onsubmit="return validateForm()">
+    <form
+      class="form"
+      method="POST"
+      action="./insert.php"
+      enctype="multipart/form-data"
+      onsubmit="return validateForm()"
+    >
       <p>WELCOME TO DRIVZY!</p>
 
-      <label for="uname">
-        <span>Username</span>
+      <label for="">
+        <span>Username </span>
+
         <input placeholder="" type="text" id="uname" name="uname" />
       </label>
       <div id="uname_error" style="color: red"></div>
 
       <br />
 
-      <label for="email">
+      <label for="">
         <span>Email</span>
         <input placeholder="" type="email" id="email" name="email" />
       </label>
@@ -26,7 +34,7 @@
 
       <br />
 
-      <label for="phone">
+      <label for="">
         <span>Phone</span>
         <input placeholder="" type="text" id="phone" name="phone" />
       </label>
@@ -34,7 +42,7 @@
 
       <br />
 
-      <label for="pw">
+      <label for="">
         <span>Password</span>
         <input placeholder="" type="password" id="pw" name="password" />
       </label>
@@ -42,12 +50,17 @@
 
       <br />
 
-      <label for="cpw">
+      <label for="">
         <span>Confirm Password</span>
         <input placeholder="" type="password" id="cpw" name="cpassword" />
       </label>
       <div id="cpassword_error" style="color: red"></div>
 
+      <br />
+      <label for="">
+        <span>Profile Image</span>
+        <input type="file" id="file" name="file" accept="image/*" />
+      </label>
       <br />
 
       <button class="submit" name="submit">SUBMIT</button>
@@ -111,7 +124,10 @@
         phone_error.innerHTML = " Cannot have an empty field";
         return false;
       } else if (!phonepattern.test(phoneInput)) {
-        phone_error.innerHTML = "Phone number must be 10 digits";
+        phone_error.innerHTML = "Phone number must be in digits";
+        return false;
+      } else if (phoneInput.length != 10) {
+        phone_error.innerHTML = "Phone number must be of 10 digits";
         return false;
       } else {
         phone_error.innerHTML = "";
