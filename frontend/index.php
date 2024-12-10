@@ -31,44 +31,55 @@ session_start();
         </div>
         <div id="righty">
             <?php 
-            include("./backend/connection.php");
+    include("./backend/connection.php");
 
-            if(isset($_SESSION['email'])){
-                $email=$_SESSION['email'];
-                $query = "select profile_image from users where email='$email'";
-                $result =mysqli_query($conn,$query);
-                if (!$result) {
-                    echo "Error fetching data: " . mysqli_error($conn);
-                }
-                
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+        $query = "SELECT username, email, profile_image FROM users WHERE email='$email'";
+        $result = mysqli_query($conn, $query);
 
-                if(mysqli_num_rows($result)>0){
-                    $users = mysqli_fetch_assoc($result);
-                }       
-                else{
-                    $users = null;
-                }
-           
+        if (!$result) {
+            echo "Error fetching data: " . mysqli_error($conn);
+        }
 
-                 }
-            
-            ?>
+        if (mysqli_num_rows($result) > 0) {
+            $users = mysqli_fetch_assoc($result);
+        } else {
+            $users = null;
+        }
+    }
+?>
 
             <?php if (isset($_SESSION['email']) && isset($users['profile_image'])): ?>
-            <div id="userSection">
-
-
+            <div id="uection" onmouseover="toggleProfile(true)" onmouseout="toggleProfile(false)">
                 <img src="backend/<?php echo $users['profile_image']; ?>" id="profileImage" class="circular">
 
+                <div id="slidesection">
+                    <h2>Your Dashboard</h2>
+                    <h3><?php echo $users['username']; ?></h3>
+                    <p><?php echo $users['email']; ?></p>
+                    <a href="edit-profile.php" id="bluebtn">Edit Profile</a>
+                    <a href="" id="bluebtn">Your Reservations</a>
+                    <a href="" id="bluebtn">Payments</a>
+                    <a href="./backend/logout.php" id="bluebtn">Log Out</a>
+                </div>
             </div>
-            <?php else: ?>
 
+            <script>
+            function toggleProfile(show) {
+                const slidesection = document.getElementById("slidesection");
+
+                if (show) {
+                    slidesection.classList.add("show");
+                } else {
+                    slidesection.classList.remove("show");
+                }
+            }
+            </script>
+
+            <?php else: ?>
             <a href="./backend/signup.php">Login </a> | <a href="./backend/register.html">Register</a>
             <?php endif; ?>
-
-
-
-
 
 
         </div>
@@ -80,7 +91,7 @@ session_start();
     <div id=" Main">
         <img id="car1" src="./images/Homepage-Cybertruck-Desktop-v3.avif" alt="Car Image" />
         <div id="text1">
-            <h1>WE ARE HERE TO <span style="color: black">TAKE YOU THERE</span> ?</h1>
+            <h1>DRIVZY MAKES YOUR TRAVEL EASY :<span style="color: black">BOOK US NOW!</span></h1>
         </div>
 
     </div>
@@ -332,125 +343,78 @@ mysqli_close($conn) ;
     </footer>
 
 
-    <div id="profileSlider" class="slider">
-        <div class="sliderContent">
-            <h3>Welcome, <?php echo $users['name']; ?></h3>
-            <a href="./edit-profile.php">Edit Profile</a>
-            <a href="./logout.php">Log Out</a>
-        </div>
 
-        <script>
-        const fbicon = document.getElementById('fbiconn');
 
-        fbicon.addEventListener('mouseover', function() {
-            fbicon.style.backgroundColor = 'blue';
-            fbicon.style.color = 'black';
 
+    <script>
+    const fbicon = document.getElementById('fbiconn');
+    fbicon.addEventListener('mouseover', function() {
+        fbicon.style.backgroundColor = 'blue';
+        fbicon.style.color = 'black';
+
+    });
+
+
+
+    fbicon.addEventListener('mouseout', function() {
+        fbicon.style.backgroundColor = '#C45946';
+        fbicon.style.color = 'black';
+    });
+
+    const isicon = document.getElementById('isiconn');
+
+    isicon.addEventListener('mouseover', function() {
+        isicon.style.backgroundColor = '#C13584';
+        isicon.style.color = 'black';
+
+    });
+
+
+
+    isicon.addEventListener('mouseout', function() {
+        isicon.style.backgroundColor = '#C45946';
+        isicon.style.color = 'black';
+    });
+
+    const linkicon = document.getElementById('linkiconn');
+
+    linkicon.addEventListener('mouseover', function() {
+        linkicon.style.backgroundColor = '#0A66C2';
+        linkicon.style.color = 'black';
+
+    });
+
+    linkicon.addEventListener('mouseout', function() {
+        linkicon.style.backgroundColor = '#C45946';
+        linkicon.style.color = 'black';
+    });
+
+    const yticon = document.getElementById('yticonn');
+
+    yticon.addEventListener('mouseover', function() {
+        yticon.style.backgroundColor = '#FF0000';
+        yticon.style.color = 'black';
+
+    });
+
+    yticon.addEventListener('mouseout', function() {
+        yticon.style.backgroundColor = '#C45946';
+        yticon.style.color = 'black';
+    });
+
+
+
+
+    document.querySelectorAll(".question").forEach(question => {
+        question.addEventListener("click", () => {
+            const faqItem = question.parentElement;
+            faqItem.classList.toggle("active");
+
+            const answer = faqItem.querySelector(".answer");
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
         });
-
-
-
-        fbicon.addEventListener('mouseout', function() {
-            fbicon.style.backgroundColor = '#C45946';
-            fbicon.style.color = 'black';
-        });
-
-        const isicon = document.getElementById('isiconn');
-
-        isicon.addEventListener('mouseover', function() {
-            isicon.style.backgroundColor = '#C13584';
-            isicon.style.color = 'black';
-
-        });
-
-
-
-        isicon.addEventListener('mouseout', function() {
-            isicon.style.backgroundColor = '#C45946';
-            isicon.style.color = 'black';
-        });
-
-        const linkicon = document.getElementById('linkiconn');
-
-        linkicon.addEventListener('mouseover', function() {
-            linkicon.style.backgroundColor = '#0A66C2';
-            linkicon.style.color = 'black';
-
-        });
-
-        linkicon.addEventListener('mouseout', function() {
-            linkicon.style.backgroundColor = '#C45946';
-            linkicon.style.color = 'black';
-        });
-
-        const yticon = document.getElementById('yticonn');
-
-        yticon.addEventListener('mouseover', function() {
-            yticon.style.backgroundColor = '#FF0000';
-            yticon.style.color = 'black';
-
-        });
-
-        yticon.addEventListener('mouseout', function() {
-            yticon.style.backgroundColor = '#C45946';
-            yticon.style.color = 'black';
-        });
-
-
-
-
-        document.querySelectorAll(".question").forEach(question => {
-            question.addEventListener("click", () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle("active");
-
-                const answer = faqItem.querySelector(".answer");
-                answer.style.display = answer.style.display === "block" ? "none" : "block";
-            });
-        });
-
-        function togglebtns() {
-            const login = document.getElementById('login');
-            const logout = document.getElementById('logout');
-
-            if (<?php  echo isset($_SESSION['email'])?'true':'false';?>) {
-                login.style.display = 'none ';
-                logout.style.display = 'inline';
-
-            } else {
-                login.style.display = 'inline';
-                logout.style.display = 'none';
-            }
-
-        }
-
-        <
-        script >
-            // Function to toggle the visibility of the profile slider with a sliding effect
-            function toggleSlider() {
-                var slider = document.getElementById("profileSlider");
-                var currentRight = slider.style.right;
-
-                // If the slider is off the screen, slide it in
-                if (currentRight === "" || currentRight === "-300px") {
-                    slider.style.right = "0"; // Slide in
-                } else {
-                    slider.style.right = "-300px"; // Slide out
-                }
-            }
-
-        // Ensure the slider starts in the hidden position on load
-        window.onload = function() {
-            const slider = document.getElementById("profileSlider");
-            slider.style.right = "-300px"; // Make sure the slider starts hidden
-        };
-
-        // Add the click event to toggle the slider
-        document.getElementById("profileImage").onclick = toggleSlider; // Ensure this ID matches your image ID
-        </script>
-
-        </script>
-
+    });
+    </script>
 </body>
 
 </html>

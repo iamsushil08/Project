@@ -19,7 +19,7 @@ if (isset($_POST['signin'])) {
            
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-                header("Location:../udashboard.php");
+                header("Location:../index.php");
                 exit;
             } else {
                 
