@@ -375,7 +375,7 @@ mysqli_close($conn) ;
                         <li><a href="./backend/admin.php">Admin</a></li>
                         <?php if ($message): ?>
                         <div class="message"
-                            style="font-family: 'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">
+                            style="font-family:'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">
 
                             <p><?php echo $message; ?></p>
                         </div>

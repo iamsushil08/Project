@@ -46,54 +46,64 @@
     }
 
 
-
+    /* 
     #drivezylogo {
         height: 60px;
         width: auto;
 
-    }
+    } */
 
     nav {
         height: 60px;
         display: flex;
-        background-color: white;
+        /* background-color: white; */
         align-items: center;
+        justify-content: center;
         padding-left: 4px;
 
     }
 
-    button {
-        height: 40px;
-        padding: 5px 10px;
-        border: none;
-        background-color: red;
-        color: white;
-        border-radius: 5px;
 
-    }
-
-    form {
-        display: flex;
-        align-items: center;
-        margin-left: 600px;
-    }
 
     input[type="text"] {
         width: 300px;
-        padding: 10px;
-        border-radius: 50px;
-        border: 1 px;
-        height: 20px;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        font-size: 14px;
+        outline: none;
+        transition: box-shadow 0.3s ease;
+    }
 
-
+    input[type="text"]:focus {
+        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
+        border-color:
+            #C4594;
     }
 
     input[type="text"]::placeholder {
-
-        font-size: 15px;
         color: #aaa;
 
     }
+
+    form button {
+        height: 40px;
+        padding: 0 20px;
+        border: none;
+        background-color: #C45946;
+        color: #fff;
+        border-radius: 20px;
+        margin-left: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+
+
 
 
 
@@ -101,15 +111,20 @@
         text-align: center;
 
     }
+
+    p {
+        color: red;
+        text-align: center;
+    }
     </style>
 </head>
 
 <body>
     <nav>
-        <button onclick="history.back()">Go Back</button>
-        <img src="../images/drivzy (2).png" alt="" id="drivezylogo">
+        <!-- <button onclick="history.back()">Go Back</button> -->
+        <!-- <img src="../images/drivzy (2).png" alt="" id="drivezylogo"> -->
 
-        <form action=" search.php" method="GET">
+        <form action="search.php" method="GET">
             <input type="text" name="searching" placeholder="Search for cars" required>
             <button type="submit">Search</button>
         </form>
