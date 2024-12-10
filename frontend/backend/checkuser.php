@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('./connection.php');
-
+//search bata url ma lyayera session ma fill gardai
 if (isset($_GET['car_id'])) {
     $_SESSION['car_id'] = $_GET['car_id'];
 }

@@ -47,8 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        font-family: "Roboto", sans-serif;
-        background-color: #c45946;
+        font-family: "Segoe UI Historic",
+            "Segoe UI",
+            Helvetica,
+            Arial,
+            sans background-color: #c45946;
     }
 
     form {

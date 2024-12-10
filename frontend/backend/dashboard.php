@@ -114,8 +114,9 @@
     }
 
     #feedbacks {
-        background-color: white;
+        /* background-color: white; */
         height: 100vh;
+        background-color: red;
     }
 
 
@@ -134,6 +135,17 @@
 
         padding: 8px;
 
+    }
+
+    #feedbacks h3 {
+        text-align: center;
+
+    }
+
+    button {
+        color: white;
+        border: none;
+        border-radius: 4px;
     }
     </style>
 
@@ -159,7 +171,7 @@
     <br><br>
 
     <div id="addcars">
-        <!-- First Half -->
+
         <div class="box">
             <h3>Add Cars</h3>
             <form action="./addcars.php" method="POST" enctype="multipart/form-data">
@@ -175,7 +187,7 @@
                 <textarea name="description" rows="3" cols="20" required></textarea>
             </form>
         </div>
-        <!-- Second Half -->
+
         <div class="box">
             <h3>Additional Details</h3>
             <form action="./addcars.php" method="POST" enctype="multipart/form-data">
@@ -197,6 +209,7 @@
         </div>
     </div>
     <div id="feedbacks">
+        <h3>Feedbacks</h3>
         <?php
         include"./connection.php";
 
@@ -205,7 +218,7 @@
         $result=mysqli_query($conn,$query);
 
         if(mysqli_num_rows($result)>0){
-            echo "<h3> Feedbacks </h3>";
+          
             echo "<table>";
             echo "<thead>
             <tr>
@@ -215,6 +228,8 @@
             <th>Email</th>
             <th>Message</th>
             <th>Edit</th>
+            <th>Delete</th>
+            
             </tr>
             <thead >";      
             echo "<tbody>";
@@ -224,6 +239,14 @@
               echo "<td>".$row['name']."</td>";
                 echo "<td>".$row['email']."</td>";
                  echo "<td>".$row['message']."</td>";
+                 //edit page ma redirect yaha bata
+                 echo "<td><a href='id=".$row['id']."'>
+                 <button style=\"background-color:green;\">Edit</button></a></td>";
+
+                 //lets do delete thingy
+                 echo "<td><a href='./delete.php?id=".$row['id']."'>
+                 <button style=\"background-color:red;\">Delete</button></a></td>";
+                 echo "</tr>";
                   
 
             }
@@ -233,6 +256,47 @@
         else{
             echo"<p> No data avalable. </p>";
         }
+    
+        ?>
+
+    </div>
+    <div id="users">
+        <h3>Users Data</h3>
+        <?php 
+        include"./connection.php"
+        $query= "select * from users";
+        $result=mysqli_query($conn,$query);
+
+        if(mysqli_fetch_assoc($result)>0){
+            echo "<table>"
+            echo"<thead>
+            <tr>
+            <th>
+            ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+            </tr>
+            <thead >";      
+            echo "<tbody>";
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr>";
+                echo "<td>".$row['id']."</td>";
+                  echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['email']."</td>";
+                     echo "<td>".$row['message']."</td>";
+            
+        }
+        
+        
+        
+        
+        
+        
+        
         
         
         

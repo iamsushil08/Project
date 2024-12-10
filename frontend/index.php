@@ -67,7 +67,7 @@ if (isset($_SESSION['message'])) {
                     <h2>Your Dashboard</h2>
                     <h3><?php echo $users['username']; ?></h3>
                     <p><?php echo $users['email']; ?></p>
-                    <a href="edit-profile.php" id="bluebtn">Edit Profile</a>
+                    <a href="" id="bluebtn">Edit Profile</a>
                     <a href="" id="bluebtn">Your Reservations</a>
                     <a href="" id="bluebtn">Payments</a>
                     <a href="./backend/logout.php" id="bluebtn">Log Out</a>
@@ -374,7 +374,9 @@ mysqli_close($conn) ;
                         <li><a href="#contactSection">Contact</a></li>
                         <li><a href="./backend/admin.php">Admin</a></li>
                         <?php if ($message): ?>
-                        <div class="message">
+                        <div class="message"
+                            style="font-family: 'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">
+
                             <p><?php echo $message; ?></p>
                         </div>
                         <?php endif; ?>
@@ -382,7 +384,7 @@ mysqli_close($conn) ;
 
                 </div>
 
-                <div id="footernetwork">
+                <div id=" footernetwork">
                     <h3>Social Network</h3>
                     <div class="socialicons">
                         <a href="#" id="fbiconn"><i class="fab fa-facebook"></i>

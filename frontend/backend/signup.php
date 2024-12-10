@@ -46,7 +46,12 @@ if (isset($_POST['signin'])) {
     <title>Login</title>
     <style>
     * {
-        font-family: "Open Sans", sans-serif;
+        font-family: "Segoe UI Historic",
+            "Segoe UI",
+            Helvetica,
+            Arial,
+
+            sans-serif;
     }
 
     body {
@@ -144,7 +149,7 @@ if (isset($_POST['signin'])) {
         <div class="password">
             <label>
                 <span>Password</span>
-                <input type="password" id="pw" name="password" />
+                <input type="text" id="pw" name="password" />
             </label>
             <br>
             <div id="pw_error"></div>

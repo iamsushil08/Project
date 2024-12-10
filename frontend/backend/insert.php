@@ -1,6 +1,5 @@
 <?php 
 
-
 if($_SERVER['REQUEST_METHOD']=='POST'){
     include("./connection.php");
     
@@ -25,24 +24,15 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         
         $extensions= array("image/jpeg","images/png","image/jpg");
         if(in_array($filetype,$extensions)){
-            //overwrite avod gardaii chu repeat nagarna
+            //overwrite avoid gardaii chu repeat nagarna
             $unique_file=time() . "_" . basename($filename);
             $destination="userimages/".$unique_file;
 
 
             if(move_uploaded_file($filetemp, $destination)){
-                $sql="INSERT INTO users(username,email,phone,password,profile_image) VALUES ('$uname','$email','$phone','$password_hashed','$destination')";
-                $result=mysqli_query($conn,$sql);
-                
-                if($result){
-                   header("Location:./signup.php");
-                   exit();
-                }
-                else{
-                    echo "Error:".mysqli_error($conn);
-                }
-                
+                $profile_image=$destination;
             }
+         
             else{
                 echo "Failed to move uploaded file";
             }
@@ -51,13 +41,30 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             echo "File is invalid type";
         }
     }
+    else{
+        $profile_image="./userimages/default.jpeg";
+        
+    }
+    $sql="INSERT INTO users(username,email,phone,password,profile_image) VALUES ('$uname','$email','$phone','$password_hashed','$profile_image')";
+    $result=mysqli_query($conn,$sql);
+    
+    if($result){
+       header("Location:./signup.php");
+       exit();
+    }
+    else{
+        echo "Error:".mysqli_error($conn);
+    }
+    
+}
+
         
   
 
 
   
   
-}
+
 
 
 

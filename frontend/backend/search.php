@@ -5,12 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 
     <style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #f2f2f2;
+        height: 100vh;
+        font-family: "Segoe UI Historic",
+            "Segoe UI",
+            Helvetica,
+            Arial,
+            sans-serif;
+    }
+
     table {
+        table-layout: fixed;
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        margin-left: 5px;
+        border-radius: 2px;
+
     }
 
     th,
@@ -20,30 +39,86 @@
         border: 1px solid #ddd;
     }
 
-    th {
-        background-color: #f2f2f2;
-    }
 
     img {
         width: 100px;
         height: auto;
     }
 
+
+
+    #drivezylogo {
+        height: 60px;
+        width: auto;
+
+    }
+
+    nav {
+        height: 60px;
+        display: flex;
+        background-color: white;
+        align-items: center;
+        padding-left: 4px;
+
+    }
+
+    button {
+        height: 40px;
+        padding: 5px 10px;
+        border: none;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+
+    }
+
     form {
-        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        margin-left: 600px;
+    }
+
+    input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        border-radius: 50px;
+        border: 1 px;
+        height: 20px;
+
+
+    }
+
+    input[type="text"]::placeholder {
+
+        font-size: 15px;
+        color: #aaa;
+
+    }
+
+
+
+    h3 {
+        text-align: center;
+
     }
     </style>
 </head>
 
 <body>
+    <nav>
+        <button onclick="history.back()">Go Back</button>
+        <img src="../images/drivzy (2).png" alt="" id="drivezylogo">
 
-    <form action="search.php" method="GET">
-        <input type="text" name="searching" placeholder="Search for cars" required>
-        <button type="submit">Search</button>
-    </form>
+        <form action=" search.php" method="GET">
+            <input type="text" name="searching" placeholder="Search for cars" required>
+            <button type="submit">Search</button>
+        </form>
+
+    </nav>
+
 
     <?php 
-    session_start();
+  
 
     include("connection.php"); 
 
@@ -57,6 +132,7 @@
 
         
         if (mysqli_num_rows($result) > 0) {
+            echo"<h3> ALL - AVAILABLE - CARS</h3>";
             echo "<table>";
             echo "<tr>
                     <th>Car Name</th>

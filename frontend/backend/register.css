@@ -5,7 +5,12 @@ body {
   justify-content: center;
   align-items: center;
  
-  font-family: Arial, sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Segoe UI", "Roboto", "Noto Color Emoji";
+  font-family: "Segoe UI Historic",
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  
+  sans-serif;
 
   
   

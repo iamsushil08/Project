@@ -2,7 +2,12 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Roboto', sans-serif;
+  font-family: "Segoe UI Historic",
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  
+  sans-serif;
 }
 #mainmenu {
   display: flex;
@@ -218,7 +223,7 @@ margin-top: 170px;
   .more {
       font-size:15px;
       color: #007bff;
-      text-decoration: none;
+   
       margin-left: 10px; 
       
  
@@ -435,7 +440,7 @@ footer {
     background-color:#C45946;
     color: #fff;
     padding: 30px 0;
-    font-family: Arial, sans-serif;
+   
   }
   
   #footerbox {
@@ -594,6 +599,7 @@ footer {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border:1px solid black;
 }
 
 #slidesection {
