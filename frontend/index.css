@@ -1,70 +1,36 @@
-*{
-    font-family: Arial, sans-serif;
-  
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Roboto', sans-serif;
 }
-#mainmenu{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 33px;
-    background-color:white;
-  
-    
-    
+#mainmenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color:white;
+  color:black;
 }
 #drivezylogo{
     height:60px;
     width: 120px;
-      margin-left: 44px;
-
-     
+    margin-left: 44px;   
 
 }
 #menuBar{
    margin-left:190px;
- 
    gap: 33px;
+   display: flex;
+   justify-content: space-between;
    
 }
-
-
-#home{
-   margin-left: 27px;
-   text-decoration: none;
-   color: rgb(64, 33, 33);
-   size:20px;
+#menuBar a{
+  text-decoration: none;
+  color:black;
+  font-size:17px;
 }
-#blog{
-    margin-left: 27px;
-    text-decoration: none;
-    color: black;
-}
-#about{
-    margin-left: 27px;
-    text-decoration: none;
-    color: black;
-}
-#contact{
-    margin-left: 27px;
-    text-decoration: none;
-    color:black;
-
-}
-
-
-#admin{
-    margin-left: 27px;
-    text-decoration: none;
-    color:black;
-
-}
-
-#search{
-    margin-left: 27px;
-    text-decoration: none;
-    color: black;
-}
-
 
 #email-add{
     border-radius: 13px;
@@ -76,14 +42,15 @@
    
 }
 #car1{
-    width:1280px;
+    width:100%;
 
 }
 #text1{
     position: relative;
     bottom:603px;
-    margin-left:85px;
-    color: rgb(255, 253, 249);
+    /* margin-left:85px; */
+    color:white;
+    text-align:center;
 }
 #dreamyz{
      position: relative;
@@ -106,6 +73,7 @@
     height:700px;
     background-color:#FFFAFA;
     margin-top:-80px;
+    margin-bottom:0px;
     /* padding-top:-20px; */
     
 }
@@ -160,7 +128,7 @@ font-size: 23px;
 
 #perfectt-car {
   color: white;
-  background-color: #333;
+  background-color:#5C6BC0;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -186,89 +154,78 @@ margin-top: 170px;
 }
 #page2{
 
-    height:740px;
+    height:830px;
+    background-color:#FFFAFA;
    
    
-    
- 
   
 }
 #page2 h3{
     padding-top:10px;
-    text-align: center;
-    
+    text-align: center;  
   
 }
 
 #car2{
     width: 600px;
     height:300px;
-    margin-left: 350px;
+    /* margin-left: 300px; */
+    align-self: center;
    
 }
 #h{
     text-align: center;
-    color: #37415c;
-}
-#blogs{
-    height:300px;
-    display: flex;
-    gap: 15px;
-    padding-top:30px;
-    justify-content:space-between;
-  
-    margin-bottom:15px;
-    
-}
-.blogss{
-
- height: 230px;
-width:400px;
- border-radius:6px;
- box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
- padding:4px;
- display: inline;
- align-items: center;
- justify-content: center;
- margin-bottom: 30px;
-
-}
-.blogss h2{
-    COLOR:#54162b;
-}
-
- .text{
-    margin-top: 30px;
-   color:black;
-  
-}
-.textt{
-    margin-top:58px;
     color:black;
-
-}
-.readmore{
-   
-    height:30px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.readmore:hover{
-    color:blue;
 }
 
-.more{
-    text-decoration: none;
-    font-size: 13px;
-    padding: 7px 18px;
-    border-radius: 4px;
-    color:rgb(255, 255, 255);
-    background-color: #181a2f;;
+    .blogss {
+      background-color: #f9f9f9;
+      margin: 20px 5px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+     
+  }
 
-}
+  .blogss:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .blogss h2 {
+      font-size: 20px;
+      color:#1E3A8A;
+      margin-bottom: 3px;
+      line-height: 1.2;
+      margin-top: -10px;
+      text-align:center;
+  }
+ 
+  .text, .textt {
+    text-align:center;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #555;
+      margin-bottom: 10px;
+      flex-grow: 1;
+  }
+
+  .more {
+      font-size:15px;
+      color: #007bff;
+      text-decoration: none;
+      margin-left: 10px; 
       
-      
-   
+ 
+  }
+
+
+
 
 #packages{
     margin-top: 104px;
@@ -356,6 +313,18 @@ gap: 245px;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+.view-details-btn {
+  background-color: #5C6BC0;  
+  color: #fff; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 25px; 
+  font-size: 16px;  
+
+   transition: background-color 0.3s ease, transform 0.3s ease;   
 }
 
 .car-item img {
@@ -370,7 +339,7 @@ gap: 245px;
 }
 .car-item h3{
     font-size:15px;
-    margin-top:-2px;
+    margin-top:2px;
 }
 .status-available {
     color: green;
@@ -432,16 +401,14 @@ margin-right:5px;
   
   .faqItem h3 {
     font-size: 18px;
-    color: #004d40;
+    color:#1E3A8A;
     cursor: pointer;
     margin: 0;
     transition: color 0.3s;
     text-align: center;
   }
   
-  .faqItem h3:hover {
-    color: #005bb5;
-  }
+  
   
   .faqItem .answer {
     font-size: 16px;
@@ -471,76 +438,59 @@ footer {
     font-family: Arial, sans-serif;
   }
   
-  .footer-container {
+  #footerbox {
     display: flex;
     justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  .footer-section {
+  #footerabout {
     max-width: 250px;
   }
   
-  .footer-section h3 {
+  #footerabout h3 {
     font-size: 18px;
     margin-bottom: 10px;
   }
   
-  .footer-section p,
-  .footer-section a {
+  #footerabout p
+  ,#footerbox a
+  {
     font-size: 14px;
     color: #fff;
     text-decoration: none;
   }
   
-  .footer-section a:hover {
+  #footerbox a:hover {
     color: #4CAF50;
   }
   
-  .about p {
-    line-height: 1.6;
+  #footerbox p {
+    line-height: 1.4;
   }
   
 
 
-  .quick-links ul {
+  #footerlinks ul {
     list-style: none;
     padding: 0;
   }
   
-  .quick-links ul li {
+  #footerlinks ul li {
     margin: 5px 0;
   }
   
- 
- 
-  
- 
-  .footer-bottom {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 12px;
-  }
-  
-  .footer-bottom p {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-bottom a:hover {
-    color: #4CAF50;
-  }
-  
+
 
 /* contact us wala */
 
-#contactSection{
+#contactsection{
     height:700px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #FFFFF0;
+    background-color:#FFFAFA;
     
 
 }
@@ -548,8 +498,6 @@ footer {
   
     max-width: 500px;
     padding: 20px;
-    /* background-color: #fff; */
-   
     text-align: center;
     align-items: center;
    
@@ -557,7 +505,7 @@ footer {
   
   #formhere h2 {
     font-size: 24px;
-    color: grey;
+    color:blue;
     margin-bottom: 20px;
   }
   
@@ -693,3 +641,4 @@ footer {
 #bluebtn:hover {
   background-color: #0056b3;
 }
+
