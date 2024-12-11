@@ -158,7 +158,7 @@ include './backend/connection.php';
 
             if (detailsDiv.style.display === 'none' || detailsDiv.style.display === '') {
                 detailsDiv.style.display = 'block';
-                carItem.style.height = '300px';
+                carItem.style.height = '350px';
                 button.textContent = 'Hide Details';
             } else {
                 detailsDiv.style.display = 'none';

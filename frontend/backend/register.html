@@ -9,10 +9,10 @@
   </head>
   <body>
     <form
-      class="form"
       method="POST"
       action="./insert.php"
       enctype="multipart/form-data"
+      class="form"
       onsubmit="return validateForm()"
     >
       <p>WELCOME TO DRIVZY!</p>
@@ -63,7 +63,7 @@
       </label>
       <br />
 
-      <button class="submit" name="submit">SUBMIT</button>
+      <button type="submit" class="submit" name="submit">SUBMIT</button>
       <p id="signup">Already have an account? <a href="./signup.php">Sign In</a></p>
     </form>
   </body>
@@ -126,9 +126,6 @@
       } else if (!phonepattern.test(phoneInput)) {
         phone_error.innerHTML = "Phone number must be in digits";
         return false;
-      } else if (phoneInput.length != 10) {
-        phone_error.innerHTML = "Phone number must be of 10 digits";
-        return false;
       } else {
         phone_error.innerHTML = "";
         return true;
@@ -144,7 +141,7 @@
         password_error.innerHTML = "Cannot have an empty";
         return false;
       } else if (!passwordpattern.test(passwordInput)) {
-        password_error.innerHTML = "Password must be at least 8 characters long and include letters and numbers";
+        password_error.innerHTML = "Password must be at least of 8 characters containn";
         return false;
       } else {
         password_error.innerHTML = "";

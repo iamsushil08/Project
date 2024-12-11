@@ -259,50 +259,20 @@
     
         ?>
 
-    </div>
-    <div id="users">
-        <h3>Users Data</h3>
-        <?php 
-        include"./connection.php"
-        $query= "select * from users";
-        $result=mysqli_query($conn,$query);
 
-        if(mysqli_fetch_assoc($result)>0){
-            echo "<table>"
-            echo"<thead>
-            <tr>
-            <th>
-            ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Edit</th>
-            <th>Delete</th>
-            
-            </tr>
-            <thead >";      
-            echo "<tbody>";
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr>";
-                echo "<td>".$row['id']."</td>";
-                  echo "<td>".$row['name']."</td>";
-                    echo "<td>".$row['email']."</td>";
-                     echo "<td>".$row['message']."</td>";
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        ?>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
