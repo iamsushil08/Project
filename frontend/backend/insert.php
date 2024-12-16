@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
     }
     else{
-        $profile_image="./userimages/default.jpeg";
+        $profile_image="userimages/default.jpeg";
         
     }
     $sql="INSERT INTO users(username,email,phone,password,profile_image) VALUES ('$uname','$email','$phone','$password_hashed','$profile_image')";

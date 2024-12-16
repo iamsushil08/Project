@@ -304,14 +304,14 @@ mysqli_close($conn) ;
 
             <div class="faqItem">
                 <h3 class="question">1.How do I book a car?</h3>
-                <p class="answer">You can book a car by selecting your desired car, rental dates, and filling
+                <p class="answer">You can book a car by searching your desired car and filling
                     out
                     the booking form but for that you have to be logged in.</p>
             </div>
 
             <div class="faqItem">
                 <h3 class="question">2.What are the requirements for renting a car?</h3>
-                <p class="answer">To rent a car,you must select the car,log in and do downpayment of 15%.</p>
+                <p class="answer">To rent a car,you must search the car,log in and do downpayment of 15%.</p>
             </div>
 
             <div class="faqItem">
@@ -324,7 +324,8 @@ mysqli_close($conn) ;
 
             <div class="faqItem">
                 <h3 class="question">4.Can I cancel my booking?</h3>
-                <p class="answer">Yes, you can cancel your booking up to 24hours of time period but 15% payment
+                <p class="answer">Yes, you can cancel your booking up to 12 hours of time period but after 12 hours 15%
+                    payment
                     cannot
                     be
                     refunded> </p>
@@ -332,7 +333,7 @@ mysqli_close($conn) ;
 
             <div class="faqItem">
                 <h3 class="question">5.Are there any additional charges?</h3>
-                <p class="answer">Additional charges may not apply but if car gets problem you must solve the
+                <p class="answer">Additional charges may not apply but if car met accidents you must solve the
                     issue
                     before
                     returning the car.</p>

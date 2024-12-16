@@ -10,6 +10,8 @@
         padding: 0;
         margin: 0;
         font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+
 
     }
 
@@ -113,43 +115,62 @@
         background-color: rgb(56, 90, 194);
     }
 
-    #feedbacks {
-        /* background-color: white; */
-        height: 100vh;
+    #fdb {
+        width: 100%;
+        height: 600px;
+        background-color: yellow;
+
+
+    }
+
+    #manage-users {
+        height: 650px;
+        width: 100%;
         background-color: red;
     }
 
 
+
+
+
     table {
+
         width: 100%;
         text-align: left;
         border-collapse: collapse;
-
-        border: 1px solid black;
-
+        border: 2px solid white;
+        background-color: black;
+        color: white;
+        margin: 20px 0;
+        padding: 0px;
     }
 
     th,
     td {
         border: 1px solid black;
-
         padding: 8px;
 
     }
 
-    #feedbacks h3 {
+    h3 {
         text-align: center;
 
     }
 
     button {
-        color: white;
+        color: black;
         border: none;
         border-radius: 4px;
     }
+
+    #manage-cars {
+        height: 650px;
+        width: 100%;
+
+    }
     </style>
 
-    </style>
+
 </head>
 
 <body>
@@ -157,10 +178,11 @@
         <nav>
             <img src="../images/drivzy (2).png" alt="car image" id="drivzylogo">
             <a href="#addcars" id="ac">Add Cars</a>
-            <a href="#feedbacks" id="mf">Manage Feedbacks</a>
-            <a href="" id="u">Manage Users</a>
+            <a href="#fdb" id="mf">Manage Feedbacks</a>
+            <a href="#manage-users" id="u">Manage Users</a>
+            <a href="#manage-cars">Manage Cars</a>
             <a href="" id="pay">Payments</a>
-            <a href="">Log Out</a>
+            <a href="./alogout.php">Log Out</a>
         </nav>
         <br><br>
 
@@ -202,13 +224,14 @@
                 <label for="plate_number">Plate Number</label>
                 <input type="text" name="plate_number">
                 <label for="file">Car Image</label>
-                <input type="file" name="file" accept="image/*">
+                <input type="file" name="file" accept="image/*" required>
                 <input type="submit" name="submit" value="Submit">
                 <input type="reset" name="reset" value="Reset">
             </form>
         </div>
     </div>
-    <div id="feedbacks">
+    <!-- page2 -->
+    <div id="fdb">
         <h3>Feedbacks</h3>
         <?php
         include"./connection.php";
@@ -231,9 +254,9 @@
             <th>Delete</th>
             
             </tr>
-            <thead >";      
+            </thead >";      
             echo "<tbody>";
-            while($row =mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_assoc($result)){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
               echo "<td>".$row['name']."</td>";
@@ -241,38 +264,178 @@
                  echo "<td>".$row['message']."</td>";
                  //edit page ma redirect yaha bata
                  echo "<td><a href='id=".$row['id']."'>
-                 <button style=\"background-color:green;\">Edit</button></a></td>";
+                 <button>Edit</button></a></td>";
 
                  //lets do delete thingy
                  echo "<td><a href='./delete.php?id=".$row['id']."'>
-                 <button style=\"background-color:red;\">Delete</button></a></td>";
+                 <button>Delete</button></a></td>";
                  echo "</tr>";
                   
 
             }
-            echo "</tbody";
-            echo"</table>";
+            echo "</tbody>";
+            echo "</table>";
+           
         }
         else{
             echo"<p> No data avalable. </p>";
         }
     
         ?>
+    </div>
 
 
 
 
 
 
+    <div id="manage-users">
+
+
+
+
+        <h3>User Data</h3>
+        <?php 
+        include("./connection.php");
+
+        $query="select * from users";
+        $result=mysqli_query($conn,$query);
+
+       if(mysqli_num_rows($result)>0){
+        echo "<table>";
+        echo "<thead>
+        <tr>
+        <th>
+        User_id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Profile_image</th>
+        <th>Booking_count</th>
+          <th>Edit</th>
+            <th>Delete</th>
+        
+
+        
+        </tr>
+        </thead >";
+        echo "<tbody>";
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<td>".$row['user_id']."</td>";
+              echo "<td>".$row['username']."</td>";
+                echo "<td>".$row['email']."</td>";
+                 echo "<td>".$row['phone']."</td>";
+                 $profileimg =$row['profile_image'];
+                       if (file_exists($profileimg)) {
+                             echo "<td><img src='$profileimg' style='width:100px;height:60px;'></td>";
+                                   }
+
+ else {
+    echo "<td>No Image</td>";
+}
+echo "<td>".$row['booking_count']."</td>";
+echo "<td><a href='id=".$row['user_id']."'>
+<button>Edit</button></a></td>";
+
+
+echo "<td><a href='./delete.php?id=".$row['user_id']."'>
+<button>Delete</button></a></td>";
+
+
+                 echo "</tr>";
+               
+       }
+                //    echo"</tbody>";
+                   echo"</table>";           
+           }
+                   else{
+                   echo "<p> No data found </p>";
+           }
 
 
 
 
 
+        ?>
+    </div>
+    <!-- page4 -->
+    <div id="manage-cars">
+
+        <h3>Car Data</h3>
+        <?php 
+        include("./connection.php");
+
+        $query="select * from cars";
+        $result=mysqli_query($conn,$query);
+
+       if(mysqli_num_rows($result)>0){
+        echo "<table>";
+        echo "<thead>
+        <tr>
+        <th>
+        id</th>
+        <th>name</th>
+        <th>charge</th>
+        <th>status</th>
+        <th>image_url</th>
+        
+         <th>color</th>
+          <th>description</th>
+          <th>mileage</th>
+          <th>plate_number</th>
+        
+          <th>Edit</th>
+            <th>Delete</th>
+        
+
+        
+        </tr>
+        </thead >";
+        echo "<tbody>";
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<td>".$row['id']."</td>";
+              echo "<td>".$row['name']."</td>";
+                echo "<td>".$row['charge']."</td>";
+                 echo "<td>".$row['status']."</td>";
+                 $carimg =$row['image_url'];
+                       if (file_exists($carimg)) {
+                             echo "<td><img src='$carimg' style='width:100px;height:60px;'></td>";
+                                   }
+
+ else {
+    echo "<td>No Image</td>";
+}
+echo "<td>".$row['color']."</td>";
+echo "<td>".$row['description']."</td>";
+echo "<td>".$row['mileage']."</td>";
+echo "<td>".$row['plate_number']."</td>";
+
+// echo "<td>";
+// <button>Edit</button></a></td>";
+
+
+// echo "<td><a href='?carid=".$row['id']."'>
+// <button>Delete</button></a></td>";
+
+
+                 echo "</tr>";
+               
+       }
+                   echo"</tbody>";
+                   echo"</table>";           
+           }
+                   else{
+                   echo "<p> No data found </p>";
+           }
 
 
 
 
+
+        ?>
+    </div>
 </body>
 
 </html>
