@@ -15,10 +15,10 @@ if (isset($_POST['signin'])) {
                 header("Location:../..index.php");
                 exit;
             } else {
-                $error = "Incorrect username or password.";
+                $error = "Incorrect username or password right here";
             }
         } else {
-            $error = "Invalid User.";
+            $error = "User doenot exist";
         }
     } else {
         $error = "Please enter both username and password.";
