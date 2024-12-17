@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-include 'connection.php';
+include '../connection.php';
 //user cha nai vanera checking first 
 if (isset($_SESSION['email'])) {
     if ($_SESSION['role'] == 'admin') {
-        header('Location:admin.php');
+        header('Location:./admin.php');
         exit;
     } else {
         $_SESSION['message'] = "Please Log out first to log in as Admin";

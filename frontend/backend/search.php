@@ -124,7 +124,7 @@
         <!-- <button onclick="history.back()">Go Back</button> -->
         <!-- <img src="../images/drivzy (2).png" alt="" id="drivezylogo"> -->
 
-        <form action="search.php" method="GET">
+        <form action="./search.php" method="GET">
             <input type="text" name="searching" placeholder="Search for cars" required>
             <button type="submit">Search</button>
         </form>
@@ -135,7 +135,7 @@
     <?php 
   
 
-    include("connection.php"); 
+    include("./connect/connection.php"); 
 
 
     if (isset($_GET['searching'])) {

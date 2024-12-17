@@ -1,42 +1,30 @@
-<?php
-session_start();
-include "./connection.php";
-
-$error="";
-
+<?php 
+include"./connection.php";
 if (isset($_POST['signin'])) {
-    $username =  $_POST['username'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-  
     if (!empty($username) && !empty($password)) {
-        $sql = "select * from users where username = '$username'";
+        $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
-
-           
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-                header("Location:../index.php");
+                header("Location: ../index.php");
                 exit;
             } else {
-                
-                $error= "Incorrect username or password.";
+                $error = "Incorrect username or password.";
             }
         } else {
-           
-            $error= "User not found.";
+            $error = "Invalid User.";
         }
     } else {
-       
-        $error= "Please enter both username and password.";
+        $error = "Please enter both username and password.";
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +38,6 @@ if (isset($_POST['signin'])) {
             "Segoe UI",
             Helvetica,
             Arial,
-
             sans-serif;
     }
 
@@ -126,90 +113,39 @@ if (isset($_POST['signin'])) {
         color: red;
         font-size: 11px;
         margin-top: 2px;
-        margin-bottom: 8p
+        margin-bottom: 8px;
     }
     </style>
 </head>
 
 <body>
-    <form action="./signup.php" method="POST" onsubmit="return validateForm(event)">
+    <form action="./signup.php" method="POST">
         <p id="message">WELCOME BACK!</p>
-        <div id="phperror" style=" font-size:13px;color: red; text-align: center;">
-            <?php if (!empty($error)) { echo $error; } ?>
-        </div>
+
         <div class="username">
             <label>
                 <span>Username</span>
                 <input type="text" id="uname" name="username" />
             </label>
             <br>
-            <div id="uname_error"></div>
+            <div id="phperror" style="font-size:13px;color: red;">
+                <?php if (!empty($error)) { echo $error; } ?>
+            </div>
+
         </div>
         <br />
         <div class="password">
             <label>
                 <span>Password</span>
-                <input type="text" id="pw" name="password" />
+                <input type="password" id="pw" name="password" />
             </label>
-            <br>
-            <div id="pw_error"></div>
+
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
         <p id="pforget"><a href="./forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
-
-
     </form>
 </body>
-<script>
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-    }
-});
-
-function validateForm(event) {
-    var isUnameValid = validateUname();
-    var isPasswordValid = validatePassword();
-    return isUnameValid && isPasswordValid;
-}
-
-function validateUname() {
-    var unameInput = document.getElementById('uname').value.trim();
-    var unameError = document.getElementById('uname_error');
-    var unamePattern = /^[A-Za-z\s]+$/;
-
-    if (unameInput === "") {
-        unameError.innerHTML = "Cannot have empty field";
-        return false;
-    } else if (!unamePattern.test(unameInput)) {
-        unameError.innerHTML = "Invalid name";
-        return false;
-    } else if (unameInput.length < 8) {
-        unameError.innerHTML = "Insufficient characters";
-        return false;
-    } else {
-        unameError.innerHTML = "";
-        return true;
-    }
-}
-
-function validatePassword() {
-    var pwInput = document.getElementById('pw').value.trim();
-    var pwError = document.getElementById('pw_error');
-
-    if (pwInput === "") {
-        pwError.innerHTML = "Cannot have empty field";
-        return false;
-    } else if (pwInput.length < 8) {
-        pwError.innerHTML = "Password must be at least 8 characters";
-        return false;
-    } else {
-        pwError.innerHTML = "";
-        return true;
-    }
-}
-</script>
 
 </html>

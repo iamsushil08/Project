@@ -8,6 +8,7 @@ require '../PHPMailer-master/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
 if (isset($_POST['reset'])) {
     $email = $_POST['email'];
     $_SESSION['email'] = $email;

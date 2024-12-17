@@ -138,11 +138,12 @@
         width: 100%;
         text-align: left;
         border-collapse: collapse;
-        border: 2px solid white;
-        background-color: black;
-        color: white;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
         margin: 20px 0;
         padding: 0px;
+
     }
 
     th,
@@ -158,9 +159,10 @@
     }
 
     button {
-        color: black;
+        color: white;
         border: none;
         border-radius: 4px;
+        background-color: black;
     }
 
     #manage-cars {
@@ -176,7 +178,7 @@
 <body>
     <div class="divv">
         <nav>
-            <img src="../images/drivzy (2).png" alt="car image" id="drivzylogo">
+            <a href="./dashboard.php"> <img src="../images/drivzy (2).png" alt="car image" id="drivzylogo"></a>
             <a href="#addcars" id="ac">Add Cars</a>
             <a href="#fdb" id="mf">Manage Feedbacks</a>
             <a href="#manage-users" id="u">Manage Users</a>
@@ -214,16 +216,16 @@
             <h3>Additional Details</h3>
             <form action="./addcars.php" method="POST" enctype="multipart/form-data">
 
-                <label for="charge">Charge</label>
+                <label for="">Charge</label>
                 <input type="text" name="charge">
-                <label for="status">Status</label>
+                <label for="">Status</label>
                 <select name="status" required>
                     <option value="Available">Available</option>
                     <option value="Booked">Booked</option>
                 </select>
-                <label for="plate_number">Plate Number</label>
+                <label for="">Plate Number</label>
                 <input type="text" name="plate_number">
-                <label for="file">Car Image</label>
+                <label for="">Car Image</label>
                 <input type="file" name="file" accept="image/*" required>
                 <input type="submit" name="submit" value="Submit">
                 <input type="reset" name="reset" value="Reset">
@@ -335,11 +337,11 @@
     echo "<td>No Image</td>";
 }
 echo "<td>".$row['booking_count']."</td>";
-echo "<td><a href='id=".$row['user_id']."'>
+echo "<td><a href='user_id=".$row['user_id']."'>
 <button>Edit</button></a></td>";
 
 
-echo "<td><a href='./delete.php?id=".$row['user_id']."'>
+echo "<td><a href='./delete.php?user_id=".$row['user_id']."'>
 <button>Delete</button></a></td>";
 
 
@@ -412,13 +414,13 @@ echo "<td>".$row['description']."</td>";
 echo "<td>".$row['mileage']."</td>";
 echo "<td>".$row['plate_number']."</td>";
 
-// echo "<td>";
-// <button>Edit</button></a></td>";
+echo "<td><a href='car_id=".$row['id']."'>
+<button>Edit</button></a></td>";
 
 
-// echo "<td><a href='?carid=".$row['id']."'>
-// <button>Delete</button></a></td>";
-
+echo "<td><a href='./delete.php?car_id=".$row['id']."'>
+<button>Delete</button></a></td>";
+echo "</tr>";
 
                  echo "</tr>";
                

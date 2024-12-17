@@ -3,8 +3,7 @@ session_start();
 if (isset($_SESSION['message'])) {
    
     $message = $_SESSION['message'];
-    
-   
+
     unset($_SESSION['message']);
 } else {
     $message = "";
@@ -18,7 +17,7 @@ if (isset($_SESSION['message'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DriveZy</title>
+    <title>DRIVZY</title>
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -33,14 +32,14 @@ if (isset($_SESSION['message'])) {
         <div id="menuBar">
             <a id="home" href="./index.php">Home</a>
             <a id="about" href="#page2">About</a>
-            <a id="contact" href="#contactSection">Contact Us</a>
+            <a id="contact" href="#contactsection">Contact Us</a>
             <a id="blog" href="#faqSection">FAQs</a>
             <a id="search" href="./backend/search.php">Search
             </a>
         </div>
         <div id="righty">
             <?php 
-    include("./backend/connection.php");
+    include("./backend/connect/connection.php");
 
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
@@ -70,7 +69,7 @@ if (isset($_SESSION['message'])) {
                     <a href="" id="bluebtn">Edit Profile</a>
                     <a href="" id="bluebtn">Your Reservations</a>
                     <a href="" id="bluebtn">Payments</a>
-                    <a href="./backend/logout.php" id="bluebtn">Log Out</a>
+                    <a href="./backend/connect/logout.php" id="bluebtn">Log Out</a>
                 </div>
             </div>
 
@@ -87,7 +86,7 @@ if (isset($_SESSION['message'])) {
             </script>
 
             <?php else: ?>
-            <a href="./backend/signup.php">Login </a> | <a href="./backend/register.html">Register</a>
+            <a href="./backend/connect/signup.php">Login </a> | <a href="./backend/connect/register.html">Register</a>
             <?php endif; ?>
 
 
@@ -109,7 +108,7 @@ if (isset($_SESSION['message'])) {
 
         <?php
 
-include './backend/connection.php'; 
+include './backend/connect/connection.php'; 
 
 
  $sql = "SELECT * FROM cars";
@@ -373,7 +372,7 @@ mysqli_close($conn) ;
                         <li><a href="#blogs">About</a></li>
                         <li><a href="#faqSection">FAQs</a></li>
                         <li><a href="#contactSection">Contact</a></li>
-                        <li><a href="./backend/admin.php">Admin</a></li>
+                        <li><a href="./backend/admin/admin.php">Admin</a></li>
                         <?php if ($message): ?>
                         <div class="message"
                             style="font-family:'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">

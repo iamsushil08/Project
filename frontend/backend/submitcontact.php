@@ -1,5 +1,5 @@
 <?php 
-include("./connection.php");
+include("./connect/connection.php");
 if(isset($_POST['sendMessageBtn'])){
     $name=$_POST['name'];
     $email=$_POST['email'];
