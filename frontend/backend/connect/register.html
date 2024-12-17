@@ -17,7 +17,7 @@
     >
       <p>WELCOME TO DRIVZY!</p>
 
-      <label for="">
+      <label>
         <span>Username </span>
 
         <input placeholder="" type="text" id="uname" name="uname" />
@@ -26,7 +26,7 @@
 
       <br />
 
-      <label for="">
+      <label>
         <span>Email</span>
         <input placeholder="" type="email" id="email" name="email" />
       </label>
@@ -34,7 +34,7 @@
 
       <br />
 
-      <label for="">
+      <label>
         <span>Phone</span>
         <input placeholder="" type="text" id="phone" name="phone" />
       </label>
@@ -42,7 +42,7 @@
 
       <br />
 
-      <label for="">
+      <label>
         <span>Password</span>
         <input placeholder="" type="text" id="pw" name="password" />
       </label>
@@ -50,14 +50,14 @@
 
       <br />
 
-      <label for="">
+      <label>
         <span>Confirm Password</span>
         <input placeholder="" type="text" id="cpw" name="cpassword" />
       </label>
       <div id="cpassword_error" style="color: red"></div>
 
       <br />
-      <label for="">
+      <label>
         <span>Profile Image</span>
         <input type="file" id="file" name="file" accept="image/*" />
       </label>
@@ -135,7 +135,7 @@
     function validatePassword() {
       var passwordInput = document.getElementById("pw").value.trim();
       var password_error = document.getElementById("password_error");
-      var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
 
       if (passwordInput === "") {
         password_error.innerHTML = "Cannot have an empty";
