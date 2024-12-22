@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./connect/connection.php";
+include "./connection.php";
 
 $error="";
 
@@ -22,7 +22,7 @@ if (isset($_POST['signin'])) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
             
-                    header("Location:../checkuser.php"); 
+                    header("Location:../bookings/checkuser.php"); 
                     exit;
                 }
       
@@ -163,7 +163,7 @@ if (isset($_POST['signin'])) {
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
-        <p id="pforget"><a href="./forgetpw.php">Forgot Password?</a></p>
+        <p id="pforget"><a href="../forgetpw/forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./connect/register.html">Create One</a></p>
 
 

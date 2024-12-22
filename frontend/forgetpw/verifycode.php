@@ -1,8 +1,9 @@
 <?php
 session_start();
+include('../connect/connection.php');
 
 if (isset($_SESSION['email'])) {
-    echo "Session email: " . $_SESSION['email'];
+    // echo "Session email: " . $_SESSION['email'];
 } else {
     echo "Session 'email' is not set.";
 }
@@ -11,7 +12,7 @@ if (isset($_POST['verify'])) {
     $vcode = $_POST['verifiedcode'];
     $email = $_SESSION['email'];
 
-    include('./connection.php');
+  
 
     $sql = "SELECT code FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
@@ -26,8 +27,7 @@ if (isset($_POST['verify'])) {
 
             if($result)
             {
-            
-            header("Location: changep.php");
+            header("Location:./changep.php");
             exit();
             }
             else{

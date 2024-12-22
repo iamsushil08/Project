@@ -1,6 +1,6 @@
 <?php
 // deleting feedback wala
-include"./connection.php";
+include"../connect/connection.php";
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];

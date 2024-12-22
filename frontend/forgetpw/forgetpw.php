@@ -1,6 +1,6 @@
 <?php
 session_start();
-include './connection.php';
+include '../connect/connection.php';
 require '../PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/src/SMTP.php';
@@ -28,12 +28,12 @@ if (isset($_POST['reset'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'paudelsandhya1588@gmail.com';
-                $mail->Password = 'rybq rkda yoez lblo';
+                $mail->Username = 'paudel18sandhya@gmail.com';
+                $mail->Password = 'hwoz wtzw eivr iblv';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
-                $mail->setFrom('paudelsandhya1588@gmail.com', 'DRIVZY Team!');
+                $mail->setFrom('paudel18sandhya@gmail.com', 'DRIVZY Team!');
                 $mail->addAddress($email);
 
                 $mail->isHTML(true);
@@ -160,7 +160,7 @@ if (isset($_POST['reset'])) {
 </head>
 
 <body>
-    <form action="forgetpw.php" method="POST">
+    <form action="./forgetpw.php" method="POST">
         <p id="message">Forget Password?</p>
         <p id="smessage">No worries, we'll send you reset instructions.</p>
 
@@ -172,7 +172,7 @@ if (isset($_POST['reset'])) {
         </div>
         <br />
         <button class="submit" name="reset">Reset Password</button>
-        <p id="login"><a href="./signup.php">Back to log in</a></p>
+        <p id="login"><a href="./connect/signup.php">Back to log in</a></p>
     </form>
 </body>
 

@@ -34,12 +34,12 @@ if (isset($_SESSION['message'])) {
             <a id="about" href="#page2">About</a>
             <a id="contact" href="#contactsection">Contact Us</a>
             <a id="blog" href="#faqSection">FAQs</a>
-            <a id="search" href="./backend/search.php">Search
+            <a id="search" href="./bookings/search.php">Search
             </a>
         </div>
         <div id="righty">
             <?php 
-    include("./backend/connect/connection.php");
+    include("./connect/connection.php");
 
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
@@ -60,7 +60,8 @@ if (isset($_SESSION['message'])) {
 
             <?php if (isset($_SESSION['email']) && isset($users['profile_image'])): ?>
             <div id="uection" onmouseover="toggleProfile(true)" onmouseout="toggleProfile(false)">
-                <img src="backend/<?php echo $users['profile_image']; ?>" id="profileImage" class="circular">
+
+                <img src="<?php echo $users['profile_image']; ?>" id="profileImage" class="circular">
 
                 <div id="slidesection">
                     <h2>Your Dashboard</h2>
@@ -69,7 +70,7 @@ if (isset($_SESSION['message'])) {
                     <a href="" id="bluebtn">Edit Profile</a>
                     <a href="" id="bluebtn">Your Reservations</a>
                     <a href="" id="bluebtn">Payments</a>
-                    <a href="./backend/connect/logout.php" id="bluebtn">Log Out</a>
+                    <a href="./connect/logout.php" id="bluebtn">Log Out</a>
                 </div>
             </div>
 
@@ -86,7 +87,7 @@ if (isset($_SESSION['message'])) {
             </script>
 
             <?php else: ?>
-            <a href="./backend/connect/signup.php">Login </a> | <a href="./backend/connect/register.html">Register</a>
+            <a href="./connect/signup.php">Login </a> | <a href="./connect/register.html">Register</a>
             <?php endif; ?>
 
 
@@ -108,7 +109,7 @@ if (isset($_SESSION['message'])) {
 
         <?php
 
-include './backend/connect/connection.php'; 
+include ("./connect/connection.php"); 
 
 
  $sql = "SELECT * FROM cars";
@@ -120,7 +121,7 @@ include './backend/connect/connection.php';
             <?php while ($car = mysqli_fetch_assoc($result)): ?>
             <div class="car-item" id="car-item-<?php echo $car['id']; ?>">
                 <?php if (!empty($car['image_url'])): ?>
-                <img src="./backend/<?php echo htmlspecialchars($car['image_url']); ?>" alt="Car Image">
+                <img src="<?php echo htmlspecialchars($car['image_url']); ?>" alt="Car Image">
                 <?php else: ?>
                 <p>No image available</p>
                 <?php endif; ?>
@@ -275,7 +276,7 @@ mysqli_close($conn) ;
                 </div>
             </div>
 
-            <div id="perfect-car"><a id="perfectt-car" href="./backend/search.php"> Book the Perfect Car</a>
+            <div id="perfect-car"><a id="perfectt-car" href="./bookings/search.php"> Book the Perfect Car</a>
             </div>
 
 
@@ -285,7 +286,7 @@ mysqli_close($conn) ;
         <div id="contactsection">
             <div id="formhere">
                 <h2>Do you have any queries?</h2>
-                <form id="contactForm" method="POST" action="./backend/submitcontact.php">
+                <form id="contactForm" method="POST" action="./dashboard/submitcontact.php">
                     <input type="text" name="name" id="name" placeholder="Your Name" required>
                     <input type="email" name="email" id="email" placeholder="Your Email" required>
                     <input type="tel" name="phone" id="phone" placeholder="Your Phone" required>
@@ -372,7 +373,7 @@ mysqli_close($conn) ;
                         <li><a href="#blogs">About</a></li>
                         <li><a href="#faqSection">FAQs</a></li>
                         <li><a href="#contactSection">Contact</a></li>
-                        <li><a href="./backend/admin/admin.php">Admin</a></li>
+                        <li><a href="./admin/admin.php">Admin</a></li>
                         <?php if ($message): ?>
                         <div class="message"
                             style="font-family:'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">

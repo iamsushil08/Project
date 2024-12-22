@@ -58,41 +58,66 @@
         text-align: center;
     }
 
-    #addcars {
-        margin-top: -36px;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-        background-color: #FFF5EE;
-    }
-
-    .box {
-        flex: 1;
-        max-width: 400px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .box h3 {
+    #addcars h3 {
         text-align: center;
+
+    }
+
+
+    #addcars {
+        background-color: #FFF5EE;
+        padding: 20px;
+        height: 500px;
+        width: 100%;
+
+    }
+
+    .formm {
+        height: 400px;
+        /* background-color: red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     form {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
     }
 
-    form label {
+
+    .box {
+        flex: 1;
+        box-sizing: border-box;
+        max-width: 400px;
+        height: 390px;
+        background-color: white;
+        padding: 20px;
+        gap: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+
+    }
+
+
+
+
+
+    .box label {
         font-size: 14px;
+
     }
 
-    form input,
-    form textarea,
-    form select {
+    .box input[type="text"],
+
+    .box textarea,
+    .box select {
         width: 100%;
         padding: 8px;
         border: 1px solid rgba(105, 105, 105, 0.4);
@@ -101,8 +126,22 @@
         box-sizing: border-box;
     }
 
-    form input[type="submit"] {
-        padding: 10px;
+
+
+
+
+    .formbuttons {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    .formbuttons input[type="submit"],
+    .formbuttons input[type="reset"] {
+        height: 30px;
         border: none;
         background-color: royalblue;
         color: white;
@@ -111,16 +150,18 @@
         cursor: pointer;
     }
 
-    form input[type="submit"]:hover {
-        background-color: rgb(56, 90, 194);
-    }
 
     #fdb {
+        margin-top: -19px;
         width: 100%;
         height: 600px;
-        background-color: yellow;
+        background-color: #F5FFFA;
 
 
+    }
+
+    #fdb h3 {
+        text-align: center;
     }
 
     #manage-users {
@@ -129,9 +170,21 @@
         background-color: red;
     }
 
+    .cart {
+        display: flex;
+        align-items: center;
 
+    }
 
+    input#electric,
+    input#nonelectric {
+        width: 25px;
+        margin: 0px;
+    }
 
+    #status {
+        font-size: 12px;
+    }
 
     table {
 
@@ -153,22 +206,12 @@
 
     }
 
-    h3 {
-        text-align: center;
-
-    }
 
     button {
         color: white;
         border: none;
         border-radius: 4px;
         background-color: black;
-    }
-
-    #manage-cars {
-        height: 650px;
-        width: 100%;
-
     }
     </style>
 
@@ -184,7 +227,7 @@
             <a href="#manage-users" id="u">Manage Users</a>
             <a href="#manage-cars">Manage Cars</a>
             <a href="" id="pay">Payments</a>
-            <a href="./alogout.php">Log Out</a>
+            <a href="../admin/alogout.php">Log Out</a>
         </nav>
         <br><br>
 
@@ -192,51 +235,64 @@
             <p>WELCOME, TO ADMIN DASHBOARD!</p>
         </div>
     </div>
-    <br><br>
+
 
     <div id="addcars">
-
-        <div class="box">
-            <h3>Add Cars</h3>
+        <h3>Car Details</h3>
+        <div class="formm">
             <form action="./addcars.php" method="POST" enctype="multipart/form-data">
-                <label for="name">Car Name</label>
-                <input type="text" name="name">
-                <label for="model">Car Model</label>
-                <input type="text" name="model">
-                <label for="color">Car Color</label>
-                <input type="text" name="color">
-                <label for="mileage">Car Mileage</label>
-                <input type="text" name="mileage">
-                <label for="description">Description</label>
-                <textarea name="description" rows="3" cols="20" required></textarea>
+                <div class="box">
+                    <label>Car Name</label>
+                    <input type="text" name="name">
+                    <label>Car Model</label>
+                    <input type="text" name="model">
+                    <label>Car Color</label>
+                    <input type="text" name="color">
+                    <label>Car Mileage</label>
+                    <input type="text" name="mileage">
+                    <div class="cart">
+                        <label>Type</label>
+                        <input type="radio" name="cartype" value="Electric" id="electric">
+                        <label>Electric</label>
+                        <input type="radio" name="cartype" value="Non-Electric" id="nonelectric">
+                        <label>Non-Electric</label>
+                    </div>
+
+                    <label>Description</label>
+                    <textarea name="description" rows="2" cols="20" required></textarea>
+
+                </div>
+
+                <div class="box">
+                    <label>No of Seats</label>
+                    <input type="text" name="noofseats">
+
+                    <label>Charge</label>
+                    <input type="text" name="charge">
+                    <label>Status</label>
+                    <select name="status" id="status" required>
+                        <option value="Available">Available</option>
+                        <option value="Booked">Booked</option>
+                    </select>
+                    <label>Plate Number</label>
+                    <input type="text" name="plate_number">
+                    <label>Car Image</label>
+                    <input type="file" name="file" accept="image/*" required>
+                    <div class="formbuttons">
+                        <input type="submit" name="submit" value="Submit">
+
+                        <input type="reset" name="reset" value="Reset">
+                    </div>
+                </div>
             </form>
         </div>
 
-        <div class="box">
-            <h3>Additional Details</h3>
-            <form action="./addcars.php" method="POST" enctype="multipart/form-data">
-
-                <label for="">Charge</label>
-                <input type="text" name="charge">
-                <label for="">Status</label>
-                <select name="status" required>
-                    <option value="Available">Available</option>
-                    <option value="Booked">Booked</option>
-                </select>
-                <label for="">Plate Number</label>
-                <input type="text" name="plate_number">
-                <label for="">Car Image</label>
-                <input type="file" name="file" accept="image/*" required>
-                <input type="submit" name="submit" value="Submit">
-                <input type="reset" name="reset" value="Reset">
-            </form>
-        </div>
     </div>
     <!-- page2 -->
     <div id="fdb">
         <h3>Feedbacks</h3>
         <?php
-        include"./connection.php";
+        include "../connect/connection.php";
 
 
         $query="select * from contacts";
@@ -298,7 +354,7 @@
 
         <h3>User Data</h3>
         <?php 
-        include("./connection.php");
+        include("../connect/connection.php");
 
         $query="select * from users";
         $result=mysqli_query($conn,$query);
@@ -328,9 +384,10 @@
               echo "<td>".$row['username']."</td>";
                 echo "<td>".$row['email']."</td>";
                  echo "<td>".$row['phone']."</td>";
-                 $profileimg =$row['profile_image'];
-                       if (file_exists($profileimg)) {
-                             echo "<td><img src='$profileimg' style='width:100px;height:60px;'></td>";
+                 $profileimg = $row['profile_image'];
+                 $imagepath = "../" . $profileimg;
+                       if (file_exists($imagepath)) {
+                             echo "<td><img src='$imagepath' style='width:100px;height:90px;'></td>";
                                    }
 
  else {
@@ -366,7 +423,7 @@ echo "<td><a href='./delete.php?user_id=".$row['user_id']."'>
 
         <h3>Car Data</h3>
         <?php 
-        include("./connection.php");
+        include("../connect/connection.php");
 
         $query="select * from cars";
         $result=mysqli_query($conn,$query);

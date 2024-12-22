@@ -1,6 +1,10 @@
 <?php
 session_start();
-include './connection.php';
+include '../connect/connection.php';
+if (!isset($_SESSION['email'])) {
+    header("Location:../connect/connection.php");
+    exit();
+}
  if(isset($_POST['resetpw'])){
     $email= $_SESSION['email'];
     $newpassword = $_POST['newpassword'];
@@ -14,9 +18,10 @@ include './connection.php';
 
 
         if($result){
-            echo "Password updated successfully";
+          
             unset($_SESSION['email']);
-            header("Location : ./signup.php");
+            header("Location:../connect/signup.php");
+            exit;
         }
         else{
             echo "Failed to update password";
@@ -155,7 +160,7 @@ input[type="password"] {
         </div>
         <br />
         <button class="submit" name="resetpw">Reset Password</button>
-        <p id="login"><a href="./signup.php">Back to log in</a></p>
+        <p id="login"><a href="../connect/signup.php">Back to log in</a></p>
 
     </form>
 </body>

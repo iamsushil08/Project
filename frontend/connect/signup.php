@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include"./connection.php";
 if (isset($_POST['signin'])) {
     $username = $_POST['username'];
@@ -12,7 +13,7 @@ if (isset($_POST['signin'])) {
             $user = mysqli_fetch_assoc($result);
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-                header("Location:../..index.php");
+                header("Location:../index.php");
                 exit;
             } else {
                 $error = "Incorrect username or password right here";
@@ -143,7 +144,7 @@ if (isset($_POST['signin'])) {
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
-        <p id="pforget"><a href="./forgetpw.php">Forgot Password?</a></p>
+        <p id="pforget"><a href="../forgetpw/forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
     </form>
 </body>

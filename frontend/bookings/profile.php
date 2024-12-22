@@ -1,9 +1,9 @@
 <!-- <?php
 session_start();
-include "./connection.php";
+include "../connect/connection.php";
 
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location:../connect/signup.php");
     exit;
 }
 

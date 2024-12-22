@@ -13,6 +13,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         echo "Passwords do not match!";
   
     }
+    
+    $uploadimg = "../userimages/";  
     $password_hashed= password_hash($password, PASSWORD_DEFAULT);
 
     if(isset($_FILES['file']) && $_FILES['file']['error']== 0){
@@ -26,11 +28,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         if(in_array($filetype,$extensions)){
             //overwrite avoid gardaii chu repeat nagarna
             $unique_file=time() . "_" . basename($filename);
-            $destination="userimages/".$unique_file;
+            $destination= $uploadimg.$unique_file;
 
 
             if(move_uploaded_file($filetemp, $destination)){
-                $profile_image=$destination;
+                $profile_image="userimages/".$unique_file;
             }
          
             else{

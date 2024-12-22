@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('./connection.php');
+include('../connect/connection.php');
 
 if (!isset($_SESSION['email'])) {
-    header("Location: ./diffsignup.php");
+    header("Location:../connect/diffsignup.php");
     exit;
 }
 

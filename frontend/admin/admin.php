@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-include '../connection.php';
+// session_start();
+include '../connect/connection.php';
 //user cha nai vanera checking first 
 if (isset($_SESSION['email'])) {
     if ($_SESSION['role'] == 'admin') {
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($admin && password_verify($password, $admin['password'])) {
         $_SESSION['admin_id'] = $admin['id'];
    
-        header('Location: dashboard.php'); 
+        header('Location:../dashboard/dashboard.php'); 
         exit;
     } else {
         echo "Invalid username or password";

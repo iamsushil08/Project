@@ -111,7 +111,7 @@ if (isset($_SESSION['email'])) {
             <input type="hidden" name="verifiedcode" id="verifiedcode" />
             <button id="verify" type="submit" name="verify" onclick="combined()">Verify</button>
 
-            <p id="login"><a href="./signup.php">Back to log in</a></p>
+            <p id="login"><a href="../connect/connection.php">Back to log in</a></p>
         </form>
     </div>
 
