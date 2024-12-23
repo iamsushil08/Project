@@ -197,10 +197,10 @@ $sql = "SELECT * FROM cars where name='$searching'";
 
 
 </body>
-<script>
+<!-- <script>
 function refreshPage() {
     window.location.href = "search.php"; // Redirect without query parameters
 }
-</script>
+</script> -->
 
 </html>
