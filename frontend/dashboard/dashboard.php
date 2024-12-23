@@ -242,7 +242,7 @@
 
 
     <div id="addcars">
-        <h3>Car Details</h3>
+        <!-- <h3>Car Details</h3> -->
         <div class="formm">
             <form action="./addcars.php" method="POST" enctype="multipart/form-data">
                 <div class="box">
