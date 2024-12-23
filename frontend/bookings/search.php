@@ -117,29 +117,13 @@ $sql = "SELECT * FROM cars where name='$searching'";
 
 
     .search {
-        margin-top: 5px;
-        margin-left: 10px;
-    }
+        margin-left: 310px;
+        width:855px;
+        height:210px;
+        margin-top:95px;
+        
 
-    input[type="text"] {
-        width: 300px;
-        padding: 10px 15px;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        font-size: 14px;
-        outline: none;
-        transition: box-shadow 0.3s ease;
-    }
-
-    input[type="text"]:focus {
-        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
-        border-color:
-            #C4594;
-    }
-
-    input[type="text"]::placeholder {
-        color: #aaa;
-
+    
     }
 
     form button {
@@ -169,6 +153,28 @@ $sql = "SELECT * FROM cars where name='$searching'";
         color: red;
         text-align: center;
     }
+    .refreshpage{
+        width: 175px;
+        height:35px;
+        margin-left: 329px; 
+        border-radius: 12px;
+        margin-top:53px;
+        color:black;
+
+
+    }
+    .searchinginbooking{
+        border-radius: 20px;
+        width:270px;
+        height:50px;
+        outline: none;
+        border-color: #C4594;
+        font-size: 14px;
+        margin-left:155px;
+        margin-top:33px;
+        color:black;
+        text-align:center;
+    }
     </style>
 </head>
 
@@ -180,16 +186,14 @@ $sql = "SELECT * FROM cars where name='$searching'";
 
         <form action="./search.php" method="GET">
 
-            <input type="text" name="searching" placeholder="Search for cars" required>
-
-
-
+            <input class="searchinginbooking" type="text" name="searching" placeholder="Search for cars" required>
 
             <button type="submit">Search</button>
         </form>
+        <button class="refreshpage" onclick="refreshPage()">Refresh Page</button >
 
     </div>
-    <button onclick="refreshPage()">Refresh Page</button>
+
 
 
 
@@ -197,10 +201,10 @@ $sql = "SELECT * FROM cars where name='$searching'";
 
 
 </body>
-<!-- <script>
+<script>
 function refreshPage() {
     window.location.href = "search.php"; // Redirect without query parameters
 }
-</script> -->
+</script>
 
 </html>
