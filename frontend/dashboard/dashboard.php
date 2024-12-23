@@ -74,7 +74,6 @@
 
     .formm {
         height: 400px;
-        /* background-color: red; */
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -95,7 +94,7 @@
         flex: 1;
         box-sizing: border-box;
         max-width: 400px;
-        height: 390px;
+        height: 430px;
         background-color: white;
         padding: 20px;
         gap: 10px;
@@ -105,26 +104,13 @@
 
     }
 
-
-
-
-
-    .box label {
+    input::placeholder,
+    textarea::placeholder {
+        color: #aaa;
         font-size: 14px;
-
+        font-family: Arial, sans-serif;
     }
 
-    /* .box input[type="text"],
-
-    .box textarea,
-    .box select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid rgba(105, 105, 105, 0.4);
-        border-radius: 5px;
-        font-size: 14px;
-        box-sizing: border-box;
-    } */
     input,
     textarea,
     select {
@@ -134,11 +120,19 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         box-sizing: border-box;
-        /* Ensures padding doesn't affect width */
+        width: 100%;
+    }
+
+    textarea {
+        resize: none;
+        line-height: 1.5;
     }
 
 
+    label {
+        font-size: 14px;
 
+    }
 
     .formbuttons {
         margin-top: 10px;
@@ -298,7 +292,7 @@
                     <span id="num-error" style="color:red;"></span>
                     <label>Car Image</label>
                     <input type=" file" name="file" accept="image/*" required>
-                    <span id="img-error" style="color:red;"></span>
+                    <!-- <span id="img-error" style="color:red;"></span> -->
                     <div class="formbuttons">
                         <input type="submit" name="submit" value="Submit">
                         <input type="reset" name="reset" value="Reset">
