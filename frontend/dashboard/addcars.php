@@ -1,5 +1,6 @@
 <?php
 include("../connect/connection.php");
+
  $uploadcarimg = "../carimages/"; 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

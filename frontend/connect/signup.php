@@ -6,7 +6,7 @@ if (isset($_POST['signin'])) {
     $password = $_POST['password'];
 
     if (!empty($username) && !empty($password)) {
-        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $sql = "select * from users where username = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -19,7 +19,7 @@ if (isset($_POST['signin'])) {
                 $error = "Incorrect username or password right here";
             }
         } else {
-            $error = "User doenot exist";
+            $error = "User doesnot exist";
         }
     } else {
         $error = "Please enter both username and password.";

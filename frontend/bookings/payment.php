@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $end = $_POST['end'];
 
     
-    $query = "SELECT charge FROM cars WHERE id = " . $car_id;
+    $query = "SELECT charge FROM cars WHERE id = '$car_id'";
     $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $car_charge = floatval($car['charge']); 
     } else {
         echo "Invalid car ID.";
-        exit;
+        exit;                         
     }
 
     $start_time = strtotime($start);

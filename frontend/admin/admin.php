@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 include '../connect/connection.php';
 //user cha nai vanera checking first 
 if (isset($_SESSION['email'])) {
@@ -9,6 +9,9 @@ if (isset($_SESSION['email'])) {
         exit;
     } else {
         $_SESSION['message'] = "Please Log out first to log in as Admin";
+        session_unset(); 
+        session_destroy(); 
+
         header('Location:../index.php#footerlinks');
         exit;
     }

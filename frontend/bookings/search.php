@@ -1,28 +1,14 @@
-<?php 
-  
-  include("../connect/connection.php"); 
-  
-  if (isset($_GET['searching'])&& isset($_GET['color'])&& isset($_GET['cartype'])) {
-      $searching = $_GET['searching'];
-      $color=$_GET['color'];
-      $cartype=$_GET['cartype'];
+<?php  
+include("../connect/connection.php");  
+
+if(isset($_GET['searching'])){ 
+    $searching=$_GET['searching'];
+$sql = "SELECT * FROM cars where name='$searching'";
+      
+      $result =mysqli_query($conn, $sql);
 
       
-    
-      $query = "select * from cars where name LIKE '%$searching%'";
-
-     
-      if ($color) {
-          $query .= " AND color = '$color'";
-      }
-      if ($cartype) {
-          $query .= " AND cartype = '$cartype'";
-      }
-      
-      $result = mysqli_query($conn, $query);
-
-      
-      if (mysqli_num_rows($result) > 0) {
+      if(mysqli_num_rows($result) > 0) {
           echo"<h3> ALL - AVAILABLE - CARS </h3>";
           echo "<table>";
           echo "<tr>
@@ -36,12 +22,13 @@
                   <th>Charge</th>
                    <th>Status</th>
                   <th>Plate Number</th>
-                  <th>Action</th>
+                
                   <th>Image</th>
+                    <th>Action</th>
                 </tr>";
 
 
-          while ($car = mysqli_fetch_assoc($result)) {
+          while($car = mysqli_fetch_assoc($result)) {
 
             
               echo "<tr>";
@@ -49,14 +36,14 @@
               echo "<td>" . $car['model'] . "</td>";
               echo "<td>" . $car['color'] . "</td>";
               echo "<td>" . $car['mileage'] . " km/l</td>";
-              echo "<td>" . $car['cartype'] . "</td>";
+              echo "<td>" . $car['type'] . "</td>";
               echo "<td>" . $car['description'] . "</td>";
               echo "<td>" . $car['noofseats'] . "</td>";
               echo "<td>" . $car['charge'] . "</td>";
               echo "<td>" . $car['status'] . "</td>";
               echo "<td>" . $car['plate_number'] . "</td>";
             //   echo "<td>" . $car['action'] . "</td>";
-              echo "<td><img src='" . $car['image_url'] . "' alt='" . $car['model'] . "'></td>";
+              echo "<td><img src='../" . $car['image_url'] . "' alt='" . $car['model'] . "'></td>";
 
               
               if ($car['status'] === 'Available') {
@@ -74,11 +61,8 @@
           echo "</table>";
         }
       
-        
-      else {
-          echo "<p>No cars found with the specified model.</p>";
-      }
     }
+     
     
   
   ?>
@@ -99,12 +83,13 @@
         margin: 0px;
         padding: 0px;
         background-color: #f2f2f2;
-        /* height: 100vh; */
+        height: 100vh;
         font-family: "Segoe UI Historic",
             "Segoe UI",
             Helvetica,
             Arial,
             sans-serif;
+
     }
 
     table {
@@ -175,11 +160,6 @@
         background-color: #0056b3;
     }
 
-
-
-
-
-
     h3 {
         text-align: center;
 
@@ -204,34 +184,23 @@
 
 
 
-            <div class="filter">
-                <h4>Color</h4>
-                <label>
-                    <input type="radio" name="color" value="Black"> Black
 
-                    <input type="radio" name="color" value="pearlWhite">Pearl White
-
-                    <input type="radio" name="color" value="Red"> Red
-                </label>
-            </div>
-
-
-            <div class="filter">
-                <h4>Type</h4>
-                <label>
-                    <input type="radio" name="cartype" value="Electric"> Electric
-
-                    <input type="radio" name="cartype" value="Non-Electric"> Non-Electric
-                </label>
-            </div>
-            <br>
             <button type="submit">Search</button>
         </form>
+
     </div>
+    <button onclick="refreshPage()">Refresh Page</button>
+
+
 
 
 
 
 </body>
+<script>
+function refreshPage() {
+    window.location.href = "search.php"; // Redirect without query parameters
+}
+</script>
 
 </html>

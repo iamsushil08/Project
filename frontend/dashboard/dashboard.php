@@ -114,7 +114,7 @@
 
     }
 
-    .box input[type="text"],
+    /* .box input[type="text"],
 
     .box textarea,
     .box select {
@@ -124,8 +124,18 @@
         border-radius: 5px;
         font-size: 14px;
         box-sizing: border-box;
+    } */
+    input,
+    textarea,
+    select {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        /* Ensures padding doesn't affect width */
     }
-
 
 
 
@@ -244,12 +254,16 @@
                 <div class="box">
                     <label>Car Name</label>
                     <input type="text" name="name">
+                    <span id="name-error" style="color:red;"></span>
                     <label>Car Model</label>
-                    <input type="text" name="model">
+                    <input type=" text" name="model">
+                    <span id="model-error" style="color:red;"></span>
                     <label>Car Color</label>
-                    <input type="text" name="color">
+                    <input type=" text" name="color">
+                    <span id="color-error" style="color:red;"></span>
                     <label>Car Mileage</label>
-                    <input type="text" name="mileage">
+                    <input type=" text" name="mileage">
+                    <span id="mileage-error" style="color:red;"></span>
                     <div class="cart">
                         <label>Type</label>
                         <input type="radio" name="cartype" value="Electric" id="electric">
@@ -257,32 +271,39 @@
                         <input type="radio" name="cartype" value="Non-Electric" id="nonelectric">
                         <label>Non-Electric</label>
                     </div>
+                    <span id="type-error" style="color:red;"></span>
 
                     <label>Description</label>
-                    <textarea name="description" rows="2" cols="20" required></textarea>
+                    <textarea name=" description" rows="2" cols="20" required></textarea>
+                    <span id="des-error" style="color:red;"></span>
 
                 </div>
 
                 <div class="box">
                     <label>No of Seats</label>
                     <input type="text" name="noofseats">
+                    <span id="seat-error" style="color:red;"></span>
 
                     <label>Charge</label>
-                    <input type="text" name="charge">
+                    <input type=" text" name="charge">
+                    <span id="charge-error" style="color:red;"></span>
                     <label>Status</label>
-                    <select name="status" id="status" required>
+                    <select name=" status" id="status" required>
                         <option value="Available">Available</option>
                         <option value="Booked">Booked</option>
                     </select>
+                    <span id="status-error" style="color:red;"></span>
                     <label>Plate Number</label>
                     <input type="text" name="plate_number">
+                    <span id="num-error" style="color:red;"></span>
                     <label>Car Image</label>
-                    <input type="file" name="file" accept="image/*" required>
+                    <input type=" file" name="file" accept="image/*" required>
+                    <span id="img-error" style="color:red;"></span>
                     <div class="formbuttons">
                         <input type="submit" name="submit" value="Submit">
-
                         <input type="reset" name="reset" value="Reset">
                     </div>
+
                 </div>
             </form>
         </div>
@@ -459,8 +480,9 @@ echo "<td><a href='./delete.php?user_id=".$row['user_id']."'>
                 echo "<td>".$row['charge']."</td>";
                  echo "<td>".$row['status']."</td>";
                  $carimg =$row['image_url'];
-                       if (file_exists($carimg)) {
-                             echo "<td><img src='$carimg' style='width:100px;height:60px;'></td>";
+                 $carimage="../".$carimg;
+                       if (file_exists($carimage)) {
+                             echo "<td><img src='$carimage' style='width:100px;height:60px;'></td>";
                                    }
 
  else {
