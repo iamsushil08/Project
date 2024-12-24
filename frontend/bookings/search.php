@@ -1,71 +1,7 @@
 <?php  
 include("../connect/connection.php");  
+?>
 
-if(isset($_GET['searching'])){ 
-    $searching=$_GET['searching'];
-$sql = "SELECT * FROM cars where name='$searching'";
-      
-      $result =mysqli_query($conn, $sql);
-
-      
-      if(mysqli_num_rows($result) > 0) {
-          echo"<h3> ALL - AVAILABLE - CARS </h3>";
-          echo "<table>";
-          echo "<tr>
-                  <th>Car Name</th>
-                  <th>Model</th>
-                  <th>Color</th>
-                  <th>Mileage</th>
-                  <th>CarType</th>
-                  <th>Description</th>
-                  <th>Noofseats</th>
-                  <th>Charge</th>
-                   <th>Status</th>
-                  <th>Plate Number</th>
-                
-                  <th>Image</th>
-                    <th>Action</th>
-                </tr>";
-
-
-          while($car = mysqli_fetch_assoc($result)) {
-
-            
-              echo "<tr>";
-              echo "<td>" . $car['name'] . "</td>";
-              echo "<td>" . $car['model'] . "</td>";
-              echo "<td>" . $car['color'] . "</td>";
-              echo "<td>" . $car['mileage'] . " km/l</td>";
-              echo "<td>" . $car['type'] . "</td>";
-              echo "<td>" . $car['description'] . "</td>";
-              echo "<td>" . $car['noofseats'] . "</td>";
-              echo "<td>" . $car['charge'] . "</td>";
-              echo "<td>" . $car['status'] . "</td>";
-              echo "<td>" . $car['plate_number'] . "</td>";
-            //   echo "<td>" . $car['action'] . "</td>";
-              echo "<td><img src='../" . $car['image_url'] . "' alt='" . $car['model'] . "'></td>";
-
-              
-              if ($car['status'] === 'Available') {
-                
-                      echo "<td><a href='checkuser.php?car_id=" . $car['id'] ."'>Book now</a></td>";
-                  
-              }
-               else {
-                  echo "<td>Rented Out</td>";
-              }
-            
-              echo "</tr>";
-            
-          }
-          echo "</table>";
-        }
-      
-    }
-     
-    
-  
-  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,137 +10,167 @@ $sql = "SELECT * FROM cars where name='$searching'";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Search</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-
     <style>
     body {
-        overflow: auto;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         background-color: #f2f2f2;
-        height: 100vh;
-        font-family: "Segoe UI Historic",
-            "Segoe UI",
-            Helvetica,
-            Arial,
-            sans-serif;
-
+        font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
     }
-
-    table {
-        table-layout: fixed;
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        margin-left: 5px;
-        border-radius: 2px;
-
-    }
-
-    th,
-    td {
-        padding: 10px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
-
-
-    img {
-        width: 100px;
-        height: auto;
-    }
-
 
     .search {
-        margin-left: 310px;
-        width:855px;
-        height:210px;
-        margin-top:95px;
-        
-
-    
+        text-align: center;
+        margin: 20px;
+        background-color: #fff;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
 
-    form button {
-        height: 40px;
-        padding: 0 20px;
-        border: none;
+    .car-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .car-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        /* Increased gap between image and details */
+        width: 100%;
+        /* Full width of the page */
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+    .car-image {
+        flex: 0 0 300px;
+        /* Increased size of the image container */
+    }
+
+    .car-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .car-details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        margin-left: 50px;
+        /* Push details further to the right */
+    }
+
+    .car-details div {
+        font-size: 18px;
+        /* Slightly larger font */
+        line-height: 1.6;
+    }
+
+    .car-details a {
+        display: inline-block;
+        padding: 10px;
         background-color: #C45946;
-        color: #fff;
-        border-radius: 20px;
-        /* margin-left: 10px; */
-        font-size: 14px;
-        transition: background-color 0.3s ease;
-        width: 300px;
-
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
     }
 
-    form button:hover {
+    .car-details a:hover {
         background-color: #0056b3;
     }
 
     h3 {
         text-align: center;
-
     }
 
-    p {
-        color: red;
-        text-align: center;
+    input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
     }
-    .refreshpage{
-        width: 175px;
-        height:35px;
-        margin-left: 329px; 
-        border-radius: 12px;
-        margin-top:53px;
-        color:black;
 
-
+    button {
+        padding: 10px 20px;
+        background-color: #C45946;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
     }
-    .searchinginbooking{
-        border-radius: 20px;
-        width:270px;
-        height:50px;
-        outline: none;
-        border-color: #C4594;
-        font-size: 14px;
-        margin-left:155px;
-        margin-top:33px;
-        color:black;
-        text-align:center;
+
+    button:hover {
+        background-color: #0056b3;
     }
     </style>
 </head>
 
 <body>
-
-    <!-- <button onclick="history.back()">Go Back</button> -->
-
+    <!-- Static search form -->
     <div class="search">
-
         <form action="./search.php" method="GET">
-
             <input class="searchinginbooking" type="text" name="searching" placeholder="Search for cars" required>
-
             <button type="submit">Search</button>
         </form>
-        <button class="refreshpage" onclick="refreshPage()">Refresh Page</button >
-
     </div>
 
+    <?php  
+    if (isset($_GET['searching'])) { 
+        $searching = $_GET['searching'];
+        $sql = "SELECT * FROM cars WHERE name='$searching'";
+        $result = mysqli_query($conn, $sql);
 
+        if (mysqli_num_rows($result) > 0) {
+            echo "<h3>ALL - AVAILABLE - CARS</h3>";
+            echo "<div class='car-list'>"; // Wrap all cars in one container
+            
+            while ($car = mysqli_fetch_assoc($result)) {
+                echo "<div class='car-container'>";
+                
+                // Car image on the left
+                echo "<div class='car-image'>";
+                echo "<img src='../" . $car['image_url'] . "' alt='" . $car['model'] . "'>";
+                echo "</div>";
 
+                echo "<div class='car-details'>";
+                echo "<div><strong>Name:</strong> " . $car['name'] . "</div>";
+                echo "<div><strong>Type:</strong> " . $car['type'] . "</div>";
+                echo "<div><strong>Model:</strong> " . $car['model'] . "</div>";
+                echo "<div><strong>Color:</strong> " . $car['color'] . "</div>";
+                echo "<div><strong>Mileage:</strong> " . $car['mileage'] . " km/l</div>";
+                echo "<div><strong>No of Seats:</strong> " . $car['noofseats'] . "</div>";
+                echo "<div><strong>Charge:</strong> " . $car['charge'] . "</div>";
+                echo "<div><strong>Status:</strong> " . $car['status'] . "</div>";
+                echo "<div><strong>Plate Number:</strong> " . $car['plate_number'] . "</div>";
 
-
-
-
+                // Action button based on availability
+                if ($car['status'] === 'Available') {
+                    echo "<div><a href='checkuser.php?car_id=" . $car['id'] ."'>Book now</a></div>";
+                } else {
+                    echo "<div>Rented Out</div>";
+                }
+                echo "</div>"; // Closing car-details div
+                
+                echo "</div>"; // Closing the car-container div
+            }
+            
+            echo "</div>"; // Closing car-list div
+        } else {
+            echo "<h3 style='text-align:center;'>No cars found matching your search.</h3>";
+        }
+    }
+    ?>
 </body>
-<script>
-function refreshPage() {
-    window.location.href = "search.php"; // Redirect without query parameters
-}
-</script>
 
 </html>

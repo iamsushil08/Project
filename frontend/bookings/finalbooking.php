@@ -108,7 +108,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                     purchase_units: [{
                         amount: {
                             currency_code: "USD",
-                            value: "<?php echo $downpay; ?>" // Dynamically pass PHP variable
+                            value: "<?php echo $totalpayment; ?>" // Dynamically pass PHP variable
                         }
                     }]
                 });

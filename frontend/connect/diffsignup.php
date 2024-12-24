@@ -2,44 +2,37 @@
 session_start();
 include "./connection.php";
 
-$error="";
+$error = "";
 
-   
+//user check here
+if (!isset($_SESSION['email'])) {
+    $error = "Please log in first to book a car.";
+}
 
 if (isset($_POST['signin'])) {
-    $username =  $_POST['username'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-  
     if (!empty($username) && !empty($password)) {
-        $sql = "select * from users where username = '$username'";
+        $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
 
-           
             if (password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
-            
-                    header("Location:../bookings/checkuser.php"); 
-                    exit;
-                }
-      
+                header("Location:../bookings/checkuser.php");
+                exit;
             } else {
-                
-                $error= "Incorrect username or password.";
+                $error = "Incorrect username or password.";
             }
         } else {
-           
-            $error= "User not found.";
+            $error = "User not found.";
         }
-    
-  
+    }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,13 +43,7 @@ if (isset($_POST['signin'])) {
     <title>Login</title>
     <style>
     * {
-        font-family: "Segoe UI Historic",
-            "Segoe UI",
-            Helvetica,
-            Arial,
-
-            sans-serif;
-
+        font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -131,19 +118,29 @@ if (isset($_POST['signin'])) {
         color: red;
         font-size: 11px;
         margin-top: 2px;
-        margin-bottom: 8p
+        margin-bottom: 8px;
+    }
+
+
+    .error-message {
+        text-align: center;
+        color: red;
+        margin-bottom: 10px;
     }
     </style>
 </head>
 
 <body>
     <form
-        action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?car_id=<?php echo isset($_GET['car_id']) ? $_GET['car_id'] : ''; ?>"
+        action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?car_id=<?php echo isset($_GET['car_id']) ? $_GET['car_id'] : ''; ?>"
         method="POST" onsubmit="return validateForm(event)">
         <p id="message">WELCOME BACK!</p>
-        <div id="phperror" style=" font-size:13px;color: red; text-align: center;">
-            <?php if (!empty($error)) { echo $error; } ?>
-        </div>
+
+
+        <?php if (!empty($error)) { ?>
+        <div class="error-message"><?php echo $error; ?></div>
+        <?php } ?>
+
         <div class="username">
             <label>
                 <span>Username</span>
@@ -152,77 +149,27 @@ if (isset($_POST['signin'])) {
             <br>
             <div id="uname_error"></div>
         </div>
+
         <br />
+
         <div class="password">
             <label>
                 <span>Password</span>
-                <input type="text" id="pw" name="password" />
+                <input type="password" id="pw" name="password" />
             </label>
             <br>
             <div id="pw_error"></div>
         </div>
+
         <br />
         <button class="submit" name="signin">SIGN IN</button>
         <p id="pforget"><a href="../forgetpw/forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./connect/register.html">Create One</a></p>
 
-
     </form>
 </body>
-<script>
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-    }
-});
 
-function validateForm(event) {
-    var isUnameValid = validateUname();
-    var isPasswordValid = validatePassword();
-    return isUnameValid && isPasswordValid;
-}
 
-function validateUname() {
-    var unameInput = document.getElementById('uname').value.trim();
-    var unameError = document.getElementById('uname_error');
-    var unamePattern = /^[A-Za-z\s]+$/;
 
-    if (unameInput === "") {
-        unameError.innerHTML = "Cannot have empty field";
-        return false;
-    } else if (!unamePattern.test(unameInput)) {
-        unameError.innerHTML = "Invalid name";
-        return false;
-    } else if (unameInput.length < 8) {
-        unameError.innerHTML = "Insufficient characters";
-        return false;
-    } else {
-        unameError.innerHTML = "";
-        return true;
-    }
-}
-
-function validatePassword() {
-    var pwInput = document.getElementById('pw').value.trim();
-    var pwError = document.getElementById('pw_error');
-
-    if (pwInput === "") {
-        pwError.innerHTML = "Cannot have empty field";
-        return false;
-    } else if (pwInput.length < 8) {
-        pwError.innerHTML = "Password must be at least 8 characters";
-        return false;
-    } else {
-        pwError.innerHTML = "";
-        return true;
-    }
-}
-</script>
 
 </html>
-<?php
-if (isset($_SESSION['error'])) {
-    echo $_SESSION['error'];
-    unset($_SESSION['error']);
-}
-?>
