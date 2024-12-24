@@ -16,16 +16,17 @@ if (isset($_POST['signin'])) {
                 header("Location:../index.php");
                 exit;
             } else {
-                $error = "Incorrect username or password right here";
+                $error = "Incorrect username or password.";
             }
         } else {
-            $error = "User doesnot exist";
+            $error = "User does not exist.";
         }
     } else {
         $error = "Please enter both username and password.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,11 +36,7 @@ if (isset($_POST['signin'])) {
     <title>Login</title>
     <style>
     * {
-        font-family: "Segoe UI Historic",
-            "Segoe UI",
-            Helvetica,
-            Arial,
-            sans-serif;
+        font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -120,7 +117,7 @@ if (isset($_POST['signin'])) {
 </head>
 
 <body>
-    <form action="./signup.php" method="POST">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <p id="message">WELCOME BACK!</p>
 
         <div class="username">
@@ -129,10 +126,7 @@ if (isset($_POST['signin'])) {
                 <input type="text" id="uname" name="username" />
             </label>
             <br>
-            <div id="phperror" style="font-size:13px;color: red;">
-                <?php if (!empty($error)) { echo $error; } ?>
-            </div>
-
+            <div id="uname_error"></div>
         </div>
         <br />
         <div class="password">
@@ -140,13 +134,17 @@ if (isset($_POST['signin'])) {
                 <span>Password</span>
                 <input type="password" id="pw" name="password" />
             </label>
-
+            <br>
+            <div id="pw_error"></div>
         </div>
         <br />
         <button class="submit" name="signin">SIGN IN</button>
         <p id="pforget"><a href="../forgetpw/forgetpw.php">Forgot Password?</a></p>
         <p id="createone">Don't have an account? <a href="./register.html">Create One</a></p>
     </form>
+
+
+
 </body>
 
 </html>
