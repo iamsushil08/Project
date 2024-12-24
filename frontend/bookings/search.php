@@ -81,9 +81,18 @@ include("../connect/connection.php");
         display: inline-block;
         padding: 10px;
         background-color: #C45946;
+<<<<<<< HEAD
         color: white;
         text-decoration: none;
         border-radius: 5px;
+=======
+        color: #fff;
+        border-radius: 20px;
+        /* margin-left: 10px; */
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        width: 300px;
+>>>>>>> 0be039d0aeadf57ae22edacf06869316a7396a4f
     }
 
     .car-details a:hover {
@@ -100,6 +109,20 @@ include("../connect/connection.php");
         border: 1px solid #ddd;
         border-radius: 25px;
     }
+<<<<<<< HEAD
+=======
+    .refreshpage{
+        width: 175px;
+        height:35px;
+        margin-left: 329px; 
+        border-radius: 12px;
+        margin-top:53px;
+        color:black;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
+
+
+>>>>>>> 0be039d0aeadf57ae22edacf06869316a7396a4f
 
     button {
         padding: 10px 20px;
@@ -109,9 +132,24 @@ include("../connect/connection.php");
         border-radius: 25px;
         cursor: pointer;
     }
+<<<<<<< HEAD
 
     button:hover {
         background-color: #0056b3;
+=======
+    .searchinginbooking{
+        border-radius: 20px;
+        width:270px;
+        height:50px;
+        outline: none;
+        font-size: 14px;
+        margin-left:155px;
+        margin-top:33px;
+        text-align:center;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
+
+>>>>>>> 0be039d0aeadf57ae22edacf06869316a7396a4f
     }
     </style>
 </head>

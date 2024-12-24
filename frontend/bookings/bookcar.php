@@ -15,35 +15,97 @@ $car_id = $_SESSION['car_id'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Form</title>
+    <style>
+        .bookcarform{
+            width:559px;
+            margin-left:399px;
+            margin-top:55px;
+            height:355px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .labelforfrom{
+            width:155px;
+            height: 42px;
+            border-radius:12px;
+
+            
+        }
+        .forfrom{
+            margin-left:133px;
+            margin-top:2px;
+            font-size:22px;
+            
+        }
+        #to{
+            width:155px;
+            height: 42px;
+            border-radius:12px;
+        }
+        .forto{
+            margin-left:155px;
+            font-size:22px;
+            
+        }
+        .fromdate{
+            margin-left:90px;
+            font-size:22px;
+        }
+        #starting{
+            width:155px;
+            height: 42px;
+            border-radius:12px;
+            
+        }
+        #ending{
+            width:155px;
+            height: 42px;
+            border-radius:12px;
+            
+        }
+        .todate{
+            margin-left:113px;
+            font-size:22px;
+        }
+        #proceedtobooking{
+            margin-left:123px;
+            font-size:22px;
+            width:300px;
+            height:42px;
+            border-radius:12px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <form method="POST" action="./payment.php">
+    <form class="bookcarform" method="POST" action="./payment.php">
 
 
         <input type="hidden" name="car_id" id="car_id" value="<?php echo htmlspecialchars($_SESSION['car_id']); ?>">
-        <label for=""> From:</label>
-        <input type="text" id="from" name="fromloc" placeholder="Enter pickup location" required>
+        <label class="forfrom" for=""> From:</label>
+        <input class="labelforfrom" type="text" id="from" name="fromloc" placeholder="Enter pickup location" required>
         <br><br>
 
 
-        <label for="">To:<label>
+        <label class="forto" for="">To:<label>
                 <input type="text" id="to" name="toloc" placeholder="Enter drop-off location" required>
                 <br><br>
 
 
-                <label for="">From Date:</label>
+                <label class="fromdate" for="">From Date:</label>
                 <input type="datetime-local" id="starting" name="start" required>
                 <br><br>
 
 
-                <label for="">To Date:</label>
+                <label class="todate" for="">To Date:</label>
                 <input type="datetime-local" id="ending" name="end" required>
                 <br><br>
 
 
-                <button type="submit" name="confirm">Proceed to Booking</button>
+                <button id="proceedtobooking" type="submit" name="confirm">Proceed to Booking</button>
     </form>
 
 </body>
