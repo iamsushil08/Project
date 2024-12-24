@@ -137,7 +137,6 @@ $sql = "SELECT * FROM cars where name='$searching'";
         font-size: 14px;
         transition: background-color 0.3s ease;
         width: 300px;
-
     }
 
     form button:hover {
@@ -160,6 +159,9 @@ $sql = "SELECT * FROM cars where name='$searching'";
         border-radius: 12px;
         margin-top:53px;
         color:black;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
+
 
 
     }
@@ -168,12 +170,13 @@ $sql = "SELECT * FROM cars where name='$searching'";
         width:270px;
         height:50px;
         outline: none;
-        border-color: #C4594;
         font-size: 14px;
         margin-left:155px;
         margin-top:33px;
-        color:black;
         text-align:center;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 0 8px rgba(196, 89, 52, 0.5);
+
     }
     </style>
 </head>
