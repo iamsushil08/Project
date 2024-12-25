@@ -290,16 +290,16 @@ mysqli_close($conn) ;
                 <form id="contactForm" method="POST" action="./dashboard/submitcontact.php"
                     onsubmit="return validateContactForm()">
                     <input type="text" name="name" id="name" placeholder="Your Name">
-                    <div id="name_error" style="color:red;"></div>
+                    <div id="name_error" style="color:red;font-size:11px;"></div>
 
                     <input type="email" name="email" id="email" placeholder="Your Email">
-                    <div id="email_error" style="color:red;"></div>
+                    <div id="email_error" style="color:red;font-size:11px;"></div>
 
                     <input type=" tel" name="phone" id="phone" placeholder="Your Phone">
-                    <div id="phone_error" class="error"></div>
+                    <div id="phone_error" style="color:red;font-size:11px;"></div>
 
                     <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                    <div id="message_error" class="error"></div>
+                    <div id="message_error" style="color:red;font-size:11px;"></div>
 
                     <button type="submit" id="sendMessageBtn" name="sendMessageBtn">Send Message</button>
                 </form>
