@@ -291,7 +291,7 @@
                     <input type="text" name="plate_number">
                     <span id="num-error" style="color:red;"></span>
                     <label>Car Image</label>
-                    <input type=" file" name="file" accept="image/*" required>
+                    <input type="file" name="file" accept="image/*" required>
                     <!-- <span id="img-error" style="color:red;"></span> -->
                     <div class="formbuttons">
                         <input type="submit" name="submit" value="Submit">
