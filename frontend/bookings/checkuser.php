@@ -2,11 +2,11 @@
 session_start();
 include("../connect/connection.php");
 //search bata url ma lyayera session ma fill gardai
-if (isset($_GET['car_id'])) {
-    $_SESSION['car_id'] = $_GET['car_id'];
+if (isset($_GET['id'])) {
+    $_SESSION['id'] = $_GET['id'];
 }
 
-if (!isset($_SESSION['car_id'])) {
+if (!isset($_SESSION['id'])) {
     echo "Car ID is missing.";
     exit;
 }
