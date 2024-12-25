@@ -93,11 +93,11 @@ include("../connect/connection.php");
 
     <?php  
     if (isset($_GET['searching'])) {
-        $searching = mysqli_real_escape_string($conn, $_GET['searching']); // Prevent SQL Injection
-        $sql = "SELECT * FROM cars WHERE name LIKE '%$searching%'"; // Inline variable usage
+        $searching =  $_GET['searching']; 
+        $sql = "SELECT * FROM cars WHERE name LIKE '%$searching%'"; 
         $result = mysqli_query($conn, $sql);
 
-        if ($result && mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) {
             echo "<h3 style='text-align:center;'>ALL - AVAILABLE - CARS</h3>";
             echo "<div class='car-list'>";
             
@@ -117,7 +117,7 @@ include("../connect/connection.php");
                 echo "<div><strong>Status:</strong> " . htmlspecialchars($car['status']) . "</div>";
                 echo "<div><strong>Plate Number:</strong> " . htmlspecialchars($car['plate_number']) . "</div>";
                 if ($car['status'] === 'Available') {
-                    echo "<div><a href='checkuser.php?car_id=" . $car['id'] ."'>Book now</a></div>";
+                    echo "<div><a href='checkuser.php?id=" . $car['id'] ."'>Book now</a></div>";
                 } else {
                     echo "<div>Rented Out</div>";
                 }
