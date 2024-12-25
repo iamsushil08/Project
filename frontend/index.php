@@ -69,7 +69,7 @@ if (isset($_SESSION['message'])) {
                     <p><?php echo $users['email']; ?></p>
                     <a href="" id="bluebtn">Edit Profile</a>
                     <a href="" id="bluebtn">Your Reservations</a>
-                    <a href="" id="bluebtn">Payments</a>
+
                     <a href="./connect/logout.php" id="bluebtn">Log Out</a>
                 </div>
             </div>
@@ -134,8 +134,8 @@ include ("./connect/connection.php");
 
 
                 <div class="car-details" id="details-<?php echo $car['id']; ?>" style="display: none;">
-                    <p>Cost: <?php echo number_format($car['charge'], 0). '/hr'; ?></p>
-                    <p>Mileage: <?php echo htmlspecialchars($car['mileage']) . ' km/l'; ?> </p>
+                    <p>Cost:$<?php echo number_format($car['charge'], 0). '/hr'; ?></p>
+                    <p>Mileage:<?php echo htmlspecialchars($car['mileage']) . ' km/l'; ?> </p>
                     <p
                         class="<?php echo ($car['status'] === 'Available') ? 'status-available' : 'status-unavailable'; ?>">
                         Status: <?php echo htmlspecialchars($car['status']); ?>

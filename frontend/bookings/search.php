@@ -25,8 +25,8 @@ include("../connect/connection.php");
         padding: 15px;
         border-bottom: 1px solid #ddd;
         position: sticky;
-        top: 0;
-        z-index: 10;
+        border-radius: 3px;
+
     }
 
     .search input,
@@ -34,6 +34,13 @@ include("../connect/connection.php");
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 25px;
+
+
+    }
+
+    .search button {
+        background-color: #C45946;
+        color: White;
     }
 
     .car-list {
@@ -58,9 +65,10 @@ include("../connect/connection.php");
     }
 
     .car-image img {
-        width: 300px;
+        width: 400px;
         height: auto;
         border-radius: 8px;
+        margin-top: 13px;
     }
 
     .car-details {
@@ -119,7 +127,7 @@ include("../connect/connection.php");
                 if ($car['status'] === 'Available') {
                     echo "<div><a href='checkuser.php?id=" . $car['id'] ."'>Book now</a></div>";
                 } else {
-                    echo "<div>Rented Out</div>";
+                    echo "<div style='color:red';>Rented Out</div>";
                 }
                 echo "</div>"; 
                 echo "</div>"; 
@@ -130,6 +138,13 @@ include("../connect/connection.php");
         }
     }
     ?>
+    <div style='position: fixed; bottom: 12px; left: 10px;'>
+        <a href="../index.php"
+            style="text-decoration: none; padding: 10px 10px; background-color: #C45946; color: white; border-radius:6px;">Go
+            Back</a>
+    </div>
+
+
 </body>
 
 </html>

@@ -2,11 +2,11 @@
 session_start();
 include('../connect/connection.php');
 
-if (!isset($_SESSION['user_email']) && !isset($_SESSION['id'])) {
-    die("Session variables are not set.");
+if (!isset($_SESSION['email']) && !isset($_SESSION['id'])) {
+    echo("Session variables are not set.");
 }
 
-$userEmail = $_SESSION['user_email'];
+$userEmail = $_SESSION['email'];
 $carId = $_SESSION['id'];
 
 $sql = "UPDATE users SET booking_count = booking_count + 1 WHERE email = '$userEmail'";
