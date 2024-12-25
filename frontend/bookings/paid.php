@@ -10,17 +10,20 @@ $userEmail = $_SESSION['user_email'];
 $carId = $_SESSION['id'];
 
 $sql = "UPDATE users SET booking_count = booking_count + 1 WHERE email = '$userEmail'";
-if (!mysqli_query($conn, $sql)) {
+$result=mysqli_query($conn,$sql);
+if (!($result)) {
     die("Error updating users table: " . mysqli_error($conn));
 }
 
 $sql = "UPDATE cars SET status = 'booked' WHERE id = $carId";
-if (!mysqli_query($conn, $sql)) {
+$resultt=mysqli_query($conn,$sql);
+if (!($resultt)) {
     die("Error updating cars table: " . mysqli_error($conn));
 }
 
 $sql = "UPDATE reservations SET payment_status = 'paid' WHERE car_id = $carId";
-if (!mysqli_query($conn, $sql)) {
+$rresult=mysqli_query($conn,$sql);
+if (!($rresult)) {
     die("Error updating reservation table: " . mysqli_error($conn));
 }
 
