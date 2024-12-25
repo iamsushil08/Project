@@ -268,7 +268,7 @@
                     <span id="type-error" style="color:red;"></span>
 
                     <label>Description</label>
-                    <textarea name=" description" rows="2" cols="20" required></textarea>
+                    <textarea name=" description" rows="2" cols="20"></textarea>
                     <span id="des-error" style="color:red;"></span>
 
                 </div>
@@ -301,6 +301,83 @@
                 </div>
             </form>
         </div>
+        <script>
+        function validateForm() {
+            var isCarNameValid = validateCarName();
+            var isCarModelValid = validateCarModel();
+            var isCarMileageValid = validateCarMileage();
+            var isCarColorValid = validateCarColor();
+            var isChargeValid = validateCharge();
+
+            return isCarNameValid && isCarModelValid && isCarMileageValid && isCarColorValid && isChargeValid;
+        }
+
+        function validateCarName() {
+            var carName = document.getElementById("carName").value.trim();
+            var carNameError = document.getElementById("carNameError");
+
+            if (carName === "") {
+                carNameError.textContent = "Car Name cannot be empty.";
+                return false;
+            } else {
+                carNameError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCarModel() {
+            var carModel = document.getElementById("carModel").value.trim();
+            var carModelError = document.getElementById("carModelError");
+
+            if (carModel === "") {
+                carModelError.textContent = "Car Model cannot be empty.";
+                return false;
+            } else {
+                carModelError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCarMileage() {
+            var carMileage = document.getElementById("carMileage").value.trim();
+            var carMileageError = document.getElementById("carMileageError");
+
+            if (carMileage === "" || isNaN(carMileage)) {
+                carMileageError.textContent = "Enter a valid mileage.";
+                return false;
+            } else {
+                carMileageError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCarColor() {
+            var carColor = document.getElementById("carColor").value.trim();
+            var carColorError = document.getElementById("carColorError");
+
+            if (carColor === "") {
+                carColorError.textContent = "Car Color cannot be empty.";
+                return false;
+            } else {
+                carColorError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCharge() {
+            var charge = document.getElementById("charge").value.trim();
+            var chargeError = document.getElementById("chargeError");
+
+            if (charge === "" || isNaN(charge)) {
+                chargeError.textContent = "Enter a valid charge amount.";
+                return false;
+            } else {
+                chargeError.textContent = "";
+                return true;
+            }
+        }
+        </script>
+
 
     </div>
     <!-- page2 -->
