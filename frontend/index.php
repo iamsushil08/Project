@@ -284,197 +284,285 @@ mysqli_close($conn) ;
 
 
         <div id="contactsection">
+
             <div id="formhere">
                 <h2>Do you have any queries?</h2>
-                <form id="contactForm" method="POST" action="./dashboard/submitcontact.php">
-                    <input type="text" name="name" id="name" placeholder="Your Name" required>
-                    <input type="email" name="email" id="email" placeholder="Your Email" required>
-                    <input type="tel" name="phone" id="phone" placeholder="Your Phone" required>
-                    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <form id="contactForm" method="POST" action="./dashboard/submitcontact.php"
+                    onsubmit="return validateContactForm()">
+                    <input type="text" name="name" id="name" placeholder="Your Name">
+                    <div id="name_error" style="color:red;"></div>
+
+                    <input type="email" name="email" id="email" placeholder="Your Email">
+                    <div id="email_error" style="color:red;"></div>
+
+                    <input type=" tel" name="phone" id="phone" placeholder="Your Phone">
+                    <div id="phone_error" class="error"></div>
+
+                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                    <div id="message_error" class="error"></div>
+
                     <button type="submit" id="sendMessageBtn" name="sendMessageBtn">Send Message</button>
                 </form>
             </div>
 
-            <div id="rightbox">
-                <img id="advertis" src="./images/advertisment.webp" alt="">
+            <script>
+            function validateContactForm() {
+                var isValidName = validateName();
+                var isValidEmail = validateEmail();
+                var isValidPhone = validatePhone();
+                var isValidMessage = validateMessage();
+
+                return isValidName && isValidEmail && isValidPhone && isValidMessage;
+            }
+
+            function validateName() {
+                var nameInput = document.getElementById("name").value.trim();
+                var nameError = document.getElementById("name_error");
+                var namePattern = /^[A-Za-z\s]+$/;
+
+                if (nameInput === "") {
+                    nameError.innerHTML = "Name cannot be empty.";
+                    return false;
+                } else if (!namePattern.test(nameInput)) {
+                    nameError.innerHTML = "Name must only contain letters and spaces.";
+                    return false;
+                } else {
+                    nameError.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function validateEmail() {
+                var emailInput = document.getElementById("email").value.trim();
+                var emailError = document.getElementById("email_error");
+                var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if (emailInput === "") {
+                    emailError.innerHTML = "Email cannot be empty.";
+                    return false;
+                } else if (!emailPattern.test(emailInput)) {
+                    emailError.innerHTML = "Invalid email format.";
+                    return false;
+                } else {
+                    emailError.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function validatePhone() {
+                var phoneInput = document.getElementById("phone").value.trim();
+                var phoneError = document.getElementById("phone_error");
+                var phonePattern = /^\d{10}$/;
+
+                if (phoneInput === "") {
+                    phoneError.innerHTML = "Phone number cannot be empty.";
+                    return false;
+                } else if (!phonePattern.test(phoneInput)) {
+                    phoneError.innerHTML = "Phone number must be 10 digits.";
+                    return false;
+                } else {
+                    phoneError.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function validateMessage() {
+                var messageInput = document.getElementById("message").value.trim();
+                var messageError = document.getElementById("message_error");
+
+                if (messageInput === "") {
+                    messageError.innerHTML = "Message cannot be empty.";
+                    return false;
+                } else {
+                    messageError.innerHTML = "";
+                    return true;
+                }
+            }
+            </script>
+</body>
+
+</html>
+
+
+<div id="rightbox">
+    <img id="advertis" src="./images/advertisment.webp" alt="">
+</div>
+</div>
+<div id="faqSection">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faqItem">
+        <h3 class="question">1.How do I book a car?</h3>
+        <p class="answer">You can book a car by searching your desired car and filling
+            out
+            the booking form but for that you have to be logged in.</p>
+    </div>
+
+    <div class="faqItem">
+        <h3 class="question">2.What are the requirements for renting a car?</h3>
+        <p class="answer">To rent a car,you must search the car,log in and do downpayment of 15%.</p>
+    </div>
+
+    <div class="faqItem">
+        <h3 class="question">3.How does the payment process work?</h3>
+        <p class="answer">You must pay 15% as advance payment and remaining via cash or online method
+            after
+            service
+            is provided.</p>
+    </div>
+
+    <div class="faqItem">
+        <h3 class="question">4.Can I cancel my booking?</h3>
+        <p class="answer">Yes, you can cancel your booking up to 12 hours of time period but after 12 hours 15%
+            payment
+            cannot
+            be
+            refunded> </p>
+    </div>
+
+    <div class="faqItem">
+        <h3 class="question">5.Are there any additional charges?</h3>
+        <p class="answer">Additional charges may not apply but if car met accidents you must solve the
+            issue
+            before
+            returning the car.</p>
+    </div>
+</div>
+
+<footer>
+    <div id="footerbox">
+
+        <div id="footerabout">
+            <h3>About Us</h3>
+            <p>
+                Founded in 2024 by two ambitious students, DrivZy is set to become Nepal's premier
+                vehicle
+                rental service, providing an exceptional travel experience. With a dedication to
+                quality,
+                DrivZy
+                offers car rentals across Nepal, delivering reliability and affordability.
+            </p>
+        </div>
+
+
+        <div id="footerinfo">
+            <h3>Contact Info</h3>
+            <p> <i class="fas fa-map-marker-alt"></i>Rupandehi,Nepal</p>
+            <p><i class="fas fa-phone"></i>9867556559</p>
+            <p><i class="fas fa-envelope"></i><a href="mailto:paudelsandhya1588@gmail.com">teamdrivZy@gmail.com
+            </p>
+
+
+        </div>
+
+
+        <div id="footerlinks">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#blogs">About</a></li>
+                <li><a href="#faqSection">FAQs</a></li>
+                <li><a href="#contactSection">Contact</a></li>
+                <li><a href="./admin/admin.php">Admin</a></li>
+                <?php if ($message): ?>
+                <div class="message" style="font-family:'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">
+
+                    <p><?php echo $message; ?></p>
+                </div>
+                <?php endif; ?>
+            </ul>
+
+        </div>
+
+        <div id=" footernetwork">
+            <h3>Social Network</h3>
+            <div class="socialicons">
+                <a href="#" id="fbiconn"><i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" id="isiconn"> <i class=" fab fa-instagram"></i>
+                </a>
+                <a href="#" id="linkiconn"> <i class=" fab fa-linkedin"></i>
+                </a>
+                <a href="#" id="yticonn"> <i class=" fab fa-youtube"></i>
+                </a>
             </div>
         </div>
-        <div id="faqSection">
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faqItem">
-                <h3 class="question">1.How do I book a car?</h3>
-                <p class="answer">You can book a car by searching your desired car and filling
-                    out
-                    the booking form but for that you have to be logged in.</p>
-            </div>
-
-            <div class="faqItem">
-                <h3 class="question">2.What are the requirements for renting a car?</h3>
-                <p class="answer">To rent a car,you must search the car,log in and do downpayment of 15%.</p>
-            </div>
-
-            <div class="faqItem">
-                <h3 class="question">3.How does the payment process work?</h3>
-                <p class="answer">You must pay 15% as advance payment and remaining via cash or online method
-                    after
-                    service
-                    is provided.</p>
-            </div>
-
-            <div class="faqItem">
-                <h3 class="question">4.Can I cancel my booking?</h3>
-                <p class="answer">Yes, you can cancel your booking up to 12 hours of time period but after 12 hours 15%
-                    payment
-                    cannot
-                    be
-                    refunded> </p>
-            </div>
-
-            <div class="faqItem">
-                <h3 class="question">5.Are there any additional charges?</h3>
-                <p class="answer">Additional charges may not apply but if car met accidents you must solve the
-                    issue
-                    before
-                    returning the car.</p>
-            </div>
-        </div>
-
-        <footer>
-            <div id="footerbox">
-
-                <div id="footerabout">
-                    <h3>About Us</h3>
-                    <p>
-                        Founded in 2024 by two ambitious students, DrivZy is set to become Nepal's premier
-                        vehicle
-                        rental service, providing an exceptional travel experience. With a dedication to
-                        quality,
-                        DrivZy
-                        offers car rentals across Nepal, delivering reliability and affordability.
-                    </p>
-                </div>
 
 
-                <div id="footerinfo">
-                    <h3>Contact Info</h3>
-                    <p> <i class="fas fa-map-marker-alt"></i>Rupandehi,Nepal</p>
-                    <p><i class="fas fa-phone"></i>9867556559</p>
-                    <p><i class="fas fa-envelope"></i><a href="mailto:paudelsandhya1588@gmail.com">teamdrivZy@gmail.com
-                    </p>
-
-
-                </div>
-
-
-                <div id="footerlinks">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#blogs">About</a></li>
-                        <li><a href="#faqSection">FAQs</a></li>
-                        <li><a href="#contactSection">Contact</a></li>
-                        <li><a href="./admin/admin.php">Admin</a></li>
-                        <?php if ($message): ?>
-                        <div class="message"
-                            style="font-family:'Segoe UI Historic', 'Segoe UI', Helvetica, Arial, sans-serif;">
-
-                            <p><?php echo $message; ?></p>
-                        </div>
-                        <?php endif; ?>
-                    </ul>
-
-                </div>
-
-                <div id=" footernetwork">
-                    <h3>Social Network</h3>
-                    <div class="socialicons">
-                        <a href="#" id="fbiconn"><i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" id="isiconn"> <i class=" fab fa-instagram"></i>
-                        </a>
-                        <a href="#" id="linkiconn"> <i class=" fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" id="yticonn"> <i class=" fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-        </footer>
+</footer>
 
 
 
 
 
-        <script>
-        const fbicon = document.getElementById('fbiconn');
-        fbicon.addEventListener('mouseover', function() {
-            fbicon.style.backgroundColor = 'blue';
-            fbicon.style.color = 'black';
+<script>
+const fbicon = document.getElementById('fbiconn');
+fbicon.addEventListener('mouseover', function() {
+    fbicon.style.backgroundColor = 'blue';
+    fbicon.style.color = 'black';
 
-        });
-
-
-
-        fbicon.addEventListener('mouseout', function() {
-            fbicon.style.backgroundColor = '#C45946';
-            fbicon.style.color = 'black';
-        });
-
-        const isicon = document.getElementById('isiconn');
-
-        isicon.addEventListener('mouseover', function() {
-            isicon.style.backgroundColor = '#C13584';
-            isicon.style.color = 'black';
-
-        });
+});
 
 
 
-        isicon.addEventListener('mouseout', function() {
-            isicon.style.backgroundColor = '#C45946';
-            isicon.style.color = 'black';
-        });
+fbicon.addEventListener('mouseout', function() {
+    fbicon.style.backgroundColor = '#C45946';
+    fbicon.style.color = 'black';
+});
 
-        const linkicon = document.getElementById('linkiconn');
+const isicon = document.getElementById('isiconn');
 
-        linkicon.addEventListener('mouseover', function() {
-            linkicon.style.backgroundColor = '#0A66C2';
-            linkicon.style.color = 'black';
+isicon.addEventListener('mouseover', function() {
+    isicon.style.backgroundColor = '#C13584';
+    isicon.style.color = 'black';
 
-        });
-
-        linkicon.addEventListener('mouseout', function() {
-            linkicon.style.backgroundColor = '#C45946';
-            linkicon.style.color = 'black';
-        });
-
-        const yticon = document.getElementById('yticonn');
-
-        yticon.addEventListener('mouseover', function() {
-            yticon.style.backgroundColor = '#FF0000';
-            yticon.style.color = 'black';
-
-        });
-
-        yticon.addEventListener('mouseout', function() {
-            yticon.style.backgroundColor = '#C45946';
-            yticon.style.color = 'black';
-        });
+});
 
 
 
+isicon.addEventListener('mouseout', function() {
+    isicon.style.backgroundColor = '#C45946';
+    isicon.style.color = 'black';
+});
 
-        document.querySelectorAll(".question").forEach(question => {
-            question.addEventListener("click", () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle("active");
+const linkicon = document.getElementById('linkiconn');
 
-                const answer = faqItem.querySelector(".answer");
-                answer.style.display = answer.style.display === "block" ? "none" : "block";
-            });
-        });
-        </script>
+linkicon.addEventListener('mouseover', function() {
+    linkicon.style.backgroundColor = '#0A66C2';
+    linkicon.style.color = 'black';
+
+});
+
+linkicon.addEventListener('mouseout', function() {
+    linkicon.style.backgroundColor = '#C45946';
+    linkicon.style.color = 'black';
+});
+
+const yticon = document.getElementById('yticonn');
+
+yticon.addEventListener('mouseover', function() {
+    yticon.style.backgroundColor = '#FF0000';
+    yticon.style.color = 'black';
+
+});
+
+yticon.addEventListener('mouseout', function() {
+    yticon.style.backgroundColor = '#C45946';
+    yticon.style.color = 'black';
+});
+
+
+
+
+document.querySelectorAll(".question").forEach(question => {
+    question.addEventListener("click", () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle("active");
+
+        const answer = faqItem.querySelector(".answer");
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+    });
+});
+</script>
 </body>
 
 </html>
