@@ -380,13 +380,11 @@
 
 
     </div>
-    <!-- page2 -->
+
     <div id="fdb">
         <h3>Feedbacks</h3>
         <?php
         include "../connect/connection.php";
-
-
         $query="select * from contacts";
         $result=mysqli_query($conn,$query);
 
