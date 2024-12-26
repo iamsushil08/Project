@@ -81,12 +81,12 @@
     function validateUname() {
       var unameInput = document.getElementById("uname").value.trim();
       var uname_error = document.getElementById("uname_error");
-      var unamepattern = /^[A-Za-z\s]+$/;
+      var unamePattern = /^[A-Za-z]+$/;
 
       if (unameInput === "") {
         uname_error.innerHTML = "Cannot have empty field";
         return false;
-      } else if (!unamepattern.test(unameInput)) {
+      } else if (!unamePattern.test(unameInput)) {
         uname_error.innerHTML = "Invalid name";
         return false;
       } else if (unameInput.length < 8) {
