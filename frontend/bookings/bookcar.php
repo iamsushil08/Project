@@ -139,31 +139,38 @@
         var startError = document.getElementById("start_error");
         var now = new Date();
 
-        // Set seconds and milliseconds to 0 for comparison
-        now.setSeconds(0);
-        now.setMilliseconds(0);
+        // Reset time to midnight for comparison
+        now.setHours(0, 0, 0, 0);
 
-        if (startInput > now) {
+        if (isNaN(startInput)) {
+            startError.innerHTML = "Please select a valid start date.";
+            return false;
+        } else if (startInput < now) {
+            startError.innerHTML = "Start date cannot be before today.";
+            return false;
+        } else {
             startError.innerHTML = "";
             return true;
         }
     }
 
-
-
-
-
-
     function validateEndDate() {
         var startInput = new Date(document.getElementById("starting").value);
         var endInput = new Date(document.getElementById("ending").value);
         var endError = document.getElementById("end_error");
+        var now = new Date();
+
+        // Reset time to midnight for comparison
+        now.setHours(0, 0, 0, 0);
 
         if (isNaN(endInput)) {
             endError.innerHTML = "Please select a valid end date.";
             return false;
+        } else if (endInput <= now) {
+            endError.innerHTML = "End date must be after today.";
+            return false;
         } else if (endInput <= startInput) {
-            endError.innerHTML = "End date must be after start date.";
+            endError.innerHTML = "End date must be after the start date.";
             return false;
         } else {
             endError.innerHTML = "";

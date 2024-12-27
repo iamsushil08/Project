@@ -101,7 +101,7 @@
     function validateEmail() {
       var emailInput = document.getElementById("email").value.trim();
       var email_error = document.getElementById("email_error");
-      var emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      var emailpattern = /^[a-zA-Z._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
       if (emailInput === "") {
         email_error.innerHTML = " Cannot have an empty field";
