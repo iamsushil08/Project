@@ -37,6 +37,7 @@ if (isset($_SESSION['message'])) {
             <a id="search" href="./bookings/search.php">Search
             </a>
         </div>
+        //hey
         <div id="righty">
             <?php 
     include("./connect/connection.php");
