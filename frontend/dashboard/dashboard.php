@@ -171,7 +171,7 @@
     #manage-users {
         height: 650px;
         width: 100%;
-        background-color: red;
+        background-color:#F5FFFA;
     }
 
     .cart {
@@ -216,6 +216,15 @@
         border: none;
         border-radius: 4px;
         background-color: black;
+    }
+    #user-data{
+        text-align:center;
+    }
+    #manage-cars{
+
+    }
+    #car-data{
+        text-align:center;
     }
     </style>
 
@@ -442,7 +451,7 @@
 
 
 
-        <h3>User Data</h3>
+        <h3 id="user-data">User Data</h3>
         <?php 
         include("../connect/connection.php");
 
@@ -511,7 +520,7 @@ echo "<td><a href='./delete.php?user_id=".$row['user_id']."'>
     <!-- page4 -->
     <div id="manage-cars">
 
-        <h3>Car Data</h3>
+        <h3 id="car-data" >Car Data</h3>
         <?php 
         include("../connect/connection.php");
 
