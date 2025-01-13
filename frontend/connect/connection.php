@@ -3,7 +3,7 @@
 $host="localhost";
 $user="root";
 $pw="";
-$dbname="carrent";
+$dbname="carrenting";
 
 $conn=mysqli_connect($host,$user,$pw,$dbname);
 if(!$conn){
