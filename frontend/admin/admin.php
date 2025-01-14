@@ -1,8 +1,8 @@
 <?php
-
 session_start();
 include '../connect/connection.php';
-//user cha nai vanera checking first 
+
+
 if (isset($_SESSION['email'])) {
     if ($_SESSION['role'] == 'admin') {
         header('Location:./admin.php');
@@ -21,15 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username']; 
     $password = $_POST['password'];
 
-   
     $query = "SELECT * FROM admins WHERE username='$username'";
     $result = mysqli_query($conn, $query);
     $admin = mysqli_fetch_assoc($result);
 
-
     if ($admin && password_verify($password, $admin['password'])) {
         $_SESSION['admin_id'] = $admin['id'];
-   
         header('Location:../dashboard/dashboard.php'); 
         exit;
     } else {
@@ -43,18 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Admin Login</title>
     <style>
     body {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        font-family: "Segoe UI Historic",
-            "Segoe UI",
-            Helvetica,
-            Arial,
-            sans background-color: #c45946;
+        font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
+        background-color: #c45946;
     }
 
     form {
@@ -101,10 +95,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         margin-top: 3px;
         text-align: center;
     }
+
+    .message {
+        color: red;
+        text-align: center;
+        margin-bottom: 15px;
+    }
     </style>
 </head>
 
 <body>
+
+    <!-- Display session message if set -->
+    <?php if (isset($_SESSION['message'])): ?>
+    <div class="message">
+        <?php echo $_SESSION['message']; ?>
+    </div>
+    <?php 
+        // Unset message after displaying it
+        unset($_SESSION['message']);
+        ?>
+    <?php endif; ?>
+
     <form method="POST" action="./admin.php">
         <h2>Admin Login</h2>
         <input type="text" name="username" placeholder="Admin Username" required /><br /><br />
