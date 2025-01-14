@@ -75,32 +75,53 @@ $totalpayment = number_format($details['total_payment'], 2);
 
     .row {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        margin-top: 33px;
+        justify-content: space-around;
     }
 
     .details-box {
         background: #f9f9f9;
-        padding: 20px;
         border-radius: 10px;
-        width: 30%;
+        width: 35%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
-    .details-box p {
-        font-size: 18px;
-        color: #555;
-        line-height: 1.6;
+    .details-boxx {
+        width: 35%;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+    .details-box p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin: 0 4 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.details-boxx p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin: 0 3 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
     .highlight {
         font-weight: bold;
         color: #222;
+        justify-content:center;
+        align-items: center;
     }
 
     .button-container {
         margin-top: 20px;
+        width:500px;
+        margin-left:235px;
     }
+
 
     .recalculate-btn,
     .paypal-btn {
@@ -123,12 +144,12 @@ $totalpayment = number_format($details['total_payment'], 2);
 
     .footer {
         font-size: 14px;
-        color: #666;
+        color:black;
         margin-top: 30px;
     }
 
     .footer a {
-        color: #0070ba;
+        color: gray;
         text-decoration: none;
         font-weight: 600;
     }
@@ -136,6 +157,10 @@ $totalpayment = number_format($details['total_payment'], 2);
     .footer a:hover {
         color: #005f8c;
         text-decoration: underline;
+    }
+    #paypal-button-container{
+        margin-left:133px;
+        border-radius:22px;
     }
     </style>
 </head>
@@ -146,7 +171,7 @@ $totalpayment = number_format($details['total_payment'], 2);
         <h2>Car Rental Details</h2>
 
         <div class="row">
-            <div class="details-box">
+            <div class="details-boxx">
                 <p><span class="highlight">Car Name:</span> <?php echo $name; ?></p>
                 <p><span class="highlight">Description:</span> <?php echo $description; ?></p>
                 <p><span class="highlight">Color:</span> <?php echo $color; ?></p>
@@ -171,7 +196,7 @@ $totalpayment = number_format($details['total_payment'], 2);
         <div id="paypal-button-container" style="margin-top: 20px;"></div>
 
         <div class="footer">
-            <p>If you have any questions, feel free to <a href="#">contact us</a>.</p>
+            <p>If you have any questions, feel free to <a href="#contactsection">contact us</a>.</p>
         </div>
     </div>
 
