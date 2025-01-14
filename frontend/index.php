@@ -129,16 +129,15 @@ include ("./connect/connection.php");
 
                 <h3><?php echo htmlspecialchars($car['name']); ?></h3>
 
-
                 <button class="view-details-btn" onclick="toggleDetails(<?php echo $car['id']; ?>)">View
                     Details</button>
 
-
                 <div class="car-details" id="details-<?php echo $car['id']; ?>" style="display: none;">
-                    <p>Cost:$<?php echo number_format($car['charge'], 0). '/hr'; ?></p>
-                    <p>Mileage:<?php echo htmlspecialchars($car['mileage']) . ' km/l'; ?> </p>
+                    <p>Cost: $<?php echo number_format($car['charge'], 0) . '/hr'; ?></p>
+                    <p>Mileage: <?php echo htmlspecialchars($car['mileage']) . ' km/l'; ?> </p>
                     <p
-                        class="<?php echo ($car['status'] === 'Available') ? 'status-available' : 'status-unavailable'; ?>">
+                        style="color: <?php echo ($car['status'] === 'Available') ? 'green' : ($car['status'] === 'Booked' ? 'red' : 'black'); ?>;">
+
                         Status: <?php echo htmlspecialchars($car['status']); ?>
                     </p>
                 </div>
@@ -148,6 +147,7 @@ include ("./connect/connection.php");
             <p>No cars available at the moment.</p>
             <?php endif; ?>
         </div>
+
 
 
 

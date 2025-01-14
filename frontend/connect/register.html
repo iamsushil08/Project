@@ -81,7 +81,7 @@
     function validateUname() {
       var unameInput = document.getElementById("uname").value.trim();
       var uname_error = document.getElementById("uname_error");
-      var unamePattern = /^[A-Za-z]+$/;
+      var unamePattern = /^[A-Za-z\s]+$/;
 
       if (unameInput === "") {
         uname_error.innerHTML = "Cannot have empty field";
