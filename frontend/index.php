@@ -72,7 +72,7 @@ include('./bookings/updatecars.php');
                     <h3><?php echo $users['username']; ?></h3>
                     <p><?php echo $users['email']; ?></p>
                     <a href="" id="bluebtn">Edit Profile</a>
-                    <a href="" id="bluebtn">Your Reservations</a>
+                    <a href="./bookings/reservation.php" id="bluebtn">Your Reservations</a>
 
                     <a href="./connect/logout.php" id="bluebtn">Log Out</a>
                 </div>

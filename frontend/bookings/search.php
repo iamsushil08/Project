@@ -124,7 +124,7 @@ include("../connect/connection.php");
                 echo "<div><strong>Charge:</strong> " . htmlspecialchars($car['charge']) . "</div>";
                 echo "<div><strong>Status:</strong> " . htmlspecialchars($car['status']) . "</div>";
                 echo "<div><strong>Plate Number:</strong> " . htmlspecialchars($car['plate_number']) . "</div>";
-                if ($car['status'] === 'Available') {
+                if ($car['status'] === 'available') {
                     echo "<div><a href='checkuser.php?id=" . $car['id'] ."'>Book now</a></div>";
                 } else {
                     echo "<div style='color:red';>Rented Out</div>";
