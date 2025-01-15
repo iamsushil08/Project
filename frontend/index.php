@@ -1,14 +1,12 @@
 <?php 
 session_start();
+$message="";
 if (isset($_SESSION['message'])) {
-   
     $message = $_SESSION['message'];
-
     unset($_SESSION['message']);
-} else {
-    $message = "";
 }
 ?>
+
 <?php
 include('./connect/connection.php');
 include('./bookings/updatecars.php');

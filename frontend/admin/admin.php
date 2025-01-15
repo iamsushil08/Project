@@ -4,21 +4,15 @@ include '../connect/connection.php';
 
 
 if (isset($_SESSION['email'])) {
-    if ($_SESSION['role'] == 'admin') {
-        header('Location:./admin.php');
-        exit;
-    } else {
-        $_SESSION['message'] = "Please Log out first to log in as Admin";
-        session_unset(); 
-        session_destroy(); 
 
-        header('Location:../index.php#footerlinks');
-        exit;
-    }
+    $_SESSION['message'] = "Please log out first to log in as Admin.";
+    header('Location: ../index.php#footerlinks');
+    exit;
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username']; 
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     $query = "SELECT * FROM admins WHERE username='$username'";
@@ -27,13 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($admin && password_verify($password, $admin['password'])) {
         $_SESSION['admin_id'] = $admin['id'];
-        header('Location:../dashboard/dashboard.php'); 
+        $_SESSION['email'] = $admin['email'];  
+        header('Location: ../dashboard/dashboard.php');
         exit;
     } else {
         echo "Invalid username or password";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,16 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <!-- Display session message if set -->
-    <?php if (isset($_SESSION['message'])): ?>
-    <div class="message">
-        <?php echo $_SESSION['message']; ?>
-    </div>
-    <?php 
-        // Unset message after displaying it
-        unset($_SESSION['message']);
-        ?>
-    <?php endif; ?>
 
     <form method="POST" action="./admin.php">
         <h2>Admin Login</h2>
