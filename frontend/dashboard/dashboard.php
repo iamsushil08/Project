@@ -171,7 +171,7 @@
     #manage-users {
         height: 650px;
         width: 100%;
-        background-color:#F5FFFA;
+        background-color: #F5FFFA;
     }
 
     .cart {
@@ -217,14 +217,15 @@
         border-radius: 4px;
         background-color: black;
     }
-    #user-data{
-        text-align:center;
-    }
-    #manage-cars{
 
+    #user-data {
+        text-align: center;
     }
-    #car-data{
-        text-align:center;
+
+    #manage-cars {}
+
+    #car-data {
+        text-align: center;
     }
     </style>
 
@@ -239,7 +240,7 @@
             <a href="#fdb" id="mf">Manage Feedbacks</a>
             <a href="#manage-users" id="u">Manage Users</a>
             <a href="#manage-cars">Manage Cars</a>
-            <a href="" id="pay">Payments</a>
+
             <a href="../admin/alogout.php">Log Out</a>
         </nav>
         <br><br>
@@ -314,16 +315,23 @@
         function validateForm() {
             var isCarNameValid = validateCarName();
             var isCarModelValid = validateCarModel();
-            var isCarMileageValid = validateCarMileage();
             var isCarColorValid = validateCarColor();
+            var isCarMileageValid = validateCarMileage();
+            var isTypeValid = validateCarType();
+            var isDescriptionValid = validateDescription();
+            var isSeatsValid = validateSeats();
             var isChargeValid = validateCharge();
+            var isStatusValid = validateStatus();
+            var isPlateNumberValid = validatePlateNumber();
 
-            return isCarNameValid && isCarModelValid && isCarMileageValid && isCarColorValid && isChargeValid;
+            return isCarNameValid && isCarModelValid && isCarColorValid &&
+                isCarMileageValid && isTypeValid && isDescriptionValid &&
+                isSeatsValid && isChargeValid && isStatusValid && isPlateNumberValid;
         }
 
         function validateCarName() {
-            var carName = document.getElementById("carName").value.trim();
-            var carNameError = document.getElementById("carNameError");
+            var carName = document.querySelector("[name='name']").value.trim();
+            var carNameError = document.getElementById("name-error");
 
             if (carName === "") {
                 carNameError.textContent = "Car Name cannot be empty.";
@@ -335,8 +343,8 @@
         }
 
         function validateCarModel() {
-            var carModel = document.getElementById("carModel").value.trim();
-            var carModelError = document.getElementById("carModelError");
+            var carModel = document.querySelector("[name='model']").value.trim();
+            var carModelError = document.getElementById("model-error");
 
             if (carModel === "") {
                 carModelError.textContent = "Car Model cannot be empty.";
@@ -347,22 +355,9 @@
             }
         }
 
-        function validateCarMileage() {
-            var carMileage = document.getElementById("carMileage").value.trim();
-            var carMileageError = document.getElementById("carMileageError");
-
-            if (carMileage === "" || isNaN(carMileage)) {
-                carMileageError.textContent = "Enter a valid mileage.";
-                return false;
-            } else {
-                carMileageError.textContent = "";
-                return true;
-            }
-        }
-
         function validateCarColor() {
-            var carColor = document.getElementById("carColor").value.trim();
-            var carColorError = document.getElementById("carColorError");
+            var carColor = document.querySelector("[name='color']").value.trim();
+            var carColorError = document.getElementById("color-error");
 
             if (carColor === "") {
                 carColorError.textContent = "Car Color cannot be empty.";
@@ -373,15 +368,94 @@
             }
         }
 
-        function validateCharge() {
-            var charge = document.getElementById("charge").value.trim();
-            var chargeError = document.getElementById("chargeError");
+        function validateCarMileage() {
+            var carMileage = document.querySelector("[name='mileage']").value.trim();
+            var carMileageError = document.getElementById("mileage-error");
 
-            if (charge === "" || isNaN(charge)) {
+            if (carMileage === "" || isNaN(carMileage) || carMileage <= 0) {
+                carMileageError.textContent = "Enter a valid mileage.";
+                return false;
+            } else {
+                carMileageError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCarType() {
+            var electric = document.getElementById("electric").checked;
+            var nonelectric = document.getElementById("nonelectric").checked;
+            var typeError = document.getElementById("type-error");
+
+            if (!electric && !nonelectric) {
+                typeError.textContent = "Select the car type.";
+                return false;
+            } else {
+                typeError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateDescription() {
+            var description = document.querySelector("[name='description']").value.trim();
+            var descriptionError = document.getElementById("des-error");
+
+            if (description === "") {
+                descriptionError.textContent = "Description cannot be empty.";
+                return false;
+            } else {
+                descriptionError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateSeats() {
+            var seats = document.querySelector("[name='noofseats']").value.trim();
+            var seatError = document.getElementById("seat-error");
+
+            if (seats === "" || isNaN(seats) || seats <= 0) {
+                seatError.textContent = "Enter a valid number of seats.";
+                return false;
+            } else {
+                seatError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateCharge() {
+            var charge = document.querySelector("[name='charge']").value.trim();
+            var chargeError = document.getElementById("charge-error");
+
+            if (charge === "" || isNaN(charge) || charge <= 0) {
                 chargeError.textContent = "Enter a valid charge amount.";
                 return false;
             } else {
                 chargeError.textContent = "";
+                return true;
+            }
+        }
+
+        function validateStatus() {
+            var status = document.querySelector("[name='status']").value;
+            var statusError = document.getElementById("status-error");
+
+            if (status === "") {
+                statusError.textContent = "Select the car status.";
+                return false;
+            } else {
+                statusError.textContent = "";
+                return true;
+            }
+        }
+
+        function validatePlateNumber() {
+            var plateNumber = document.querySelector("[name='plate_number']").value.trim();
+            var plateNumberError = document.getElementById("num-error");
+
+            if (plateNumber === "") {
+                plateNumberError.textContent = "Plate Number cannot be empty.";
+                return false;
+            } else {
+                plateNumberError.textContent = "";
                 return true;
             }
         }
@@ -520,7 +594,7 @@ echo "<td><a href='./delete.php?user_id=".$row['user_id']."'>
     <!-- page4 -->
     <div id="manage-cars">
 
-        <h3 id="car-data" >Car Data</h3>
+        <h3 id="car-data">Car Data</h3>
         <?php 
         include("../connect/connection.php");
 

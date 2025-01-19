@@ -69,82 +69,86 @@
   </body>
   <script>
     function validateForm() {
-      var isValiduname = validateUname();
-      var isValidemail = validateEmail();
-      var isValidphone = validatePhone();
+      var isValidUname = validateUname();
+      var isValidEmail = validateEmail();
+      var isValidPhone = validatePhone();
       var isValidPassword = validatePassword();
       var isValidCPassword = validateCPassword();
 
-      return isValiduname && isValidemail && isValidphone && isValidPassword && isValidCPassword;
+      return isValidUname && isValidEmail && isValidPhone && isValidPassword && isValidCPassword;
     }
 
     function validateUname() {
       var unameInput = document.getElementById("uname").value.trim();
-      var uname_error = document.getElementById("uname_error");
-      var unamePattern = /^[A-Za-z\s]+$/;
+      var unameError = document.getElementById("uname_error");
+      var usernamePattern = /^[A-Za-z]+$/;
 
       if (unameInput === "") {
-        uname_error.innerHTML = "Cannot have empty field";
+        unameError.innerHTML = "Username cannot be empty.";
         return false;
-      } else if (!unamePattern.test(unameInput)) {
-        uname_error.innerHTML = "Invalid name";
+      } else if (!usernamePattern.test(unameInput)) {
+        unameError.innerHTML = "Username must contain only letters.";
         return false;
       } else if (unameInput.length < 8) {
-        uname_error.innerHTML = "Must be at least 8 characters long";
+        unameError.innerHTML = "Username must be at least 8 characters long.";
         return false;
       } else {
-        uname_error.innerHTML = "";
+        unameError.innerHTML = "";
         return true;
       }
     }
 
     function validateEmail() {
       var emailInput = document.getElementById("email").value.trim();
-      var email_error = document.getElementById("email_error");
-      var emailpattern = /^[a-zA-Z._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      var emailError = document.getElementById("email_error");
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
       if (emailInput === "") {
-        email_error.innerHTML = " Cannot have an empty field";
+        emailError.innerHTML = "Email cannot be empty.";
         return false;
-      } else if (!emailpattern.test(emailInput)) {
-        email_error.innerHTML = "Invalid email format";
+      } else if (!emailPattern.test(emailInput)) {
+        emailError.innerHTML = "Invalid email format.";
         return false;
       } else {
-        email_error.innerHTML = "";
+        emailError.innerHTML = "";
         return true;
       }
     }
 
     function validatePhone() {
       var phoneInput = document.getElementById("phone").value.trim();
-      var phone_error = document.getElementById("phone_error");
-      var phonepattern = /^\d{10}$/;
+      var phoneError = document.getElementById("phone_error");
+      var phonePattern = /^9\d{9}$/;
 
       if (phoneInput === "") {
-        phone_error.innerHTML = " Cannot have an empty field";
+        phoneError.innerHTML = "Phone number cannot be empty.";
         return false;
-      } else if (!phonepattern.test(phoneInput)) {
-        phone_error.innerHTML = "Phone number must be in digits";
+      } else if (phoneInput.length !== 10) {
+        phoneError.innerHTML = "Phone number must be exactly 10 digits.";
+        return false;
+      } else if (!phonePattern.test(phoneInput)) {
+        phoneError.innerHTML = "Phone number must start with 9.";
         return false;
       } else {
-        phone_error.innerHTML = "";
+        phoneError.innerHTML = "";
         return true;
       }
     }
 
     function validatePassword() {
       var passwordInput = document.getElementById("pw").value.trim();
-      var password_error = document.getElementById("password_error");
-      var passwordpattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
+      var passwordError = document.getElementById("password_error");
+      var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
 
       if (passwordInput === "") {
-        password_error.innerHTML = "Cannot have an empty";
+        passwordError.innerHTML = "Password cannot be empty.";
         return false;
-      } else if (!passwordpattern.test(passwordInput)) {
-        password_error.innerHTML = "Password must be at least of 8 characters containn";
+      } else if (!passwordPattern.test(passwordInput)) {
+        passwordError.innerHTML =
+          "Password must be at least 8 characters long and contain at least one letter and one number.";
         return false;
       } else {
-        password_error.innerHTML = "";
+        passwordError.innerHTML = "";
         return true;
       }
     }
@@ -152,16 +156,16 @@
     function validateCPassword() {
       var passwordInput = document.getElementById("pw").value.trim();
       var cpasswordInput = document.getElementById("cpw").value.trim();
-      var cpassword_error = document.getElementById("cpassword_error");
+      var cpasswordError = document.getElementById("cpassword_error");
 
       if (cpasswordInput === "") {
-        cpassword_error.innerHTML = "Cannot have an empty";
+        cpasswordError.innerHTML = "Confirm password cannot be empty.";
         return false;
       } else if (passwordInput !== cpasswordInput) {
-        cpassword_error.innerHTML = "Passwords do not match";
+        cpasswordError.innerHTML = "Passwords do not match.";
         return false;
       } else {
-        cpassword_error.innerHTML = "";
+        cpasswordError.innerHTML = "";
         return true;
       }
     }
