@@ -139,7 +139,7 @@ include ("./connect/connection.php");
                     <p>Cost: $<?php echo number_format($car['charge'], 0) . '/hr'; ?></p>
                     <p>Mileage: <?php echo htmlspecialchars($car['mileage']) . ' km/l'; ?> </p>
                     <p
-                        style="color: <?php echo ($car['status'] === 'available') ? 'green' : ($car['status'] === 'Booked' ? 'red' : 'black'); ?>;">
+                        style="color: <?php echo ($car['status'] === 'available') ? 'green' : ($car['status'] === 'booked' ? 'red' : 'black'); ?>;">
 
                         Status: <?php echo htmlspecialchars($car['status']); ?>
                     </p>

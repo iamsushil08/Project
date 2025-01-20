@@ -293,8 +293,8 @@
                     <span id="charge-error" style="color:red;"></span>
                     <label>Status</label>
                     <select name=" status" id="status" required>
-                        <option value="Available">Available</option>
-                        <option value="Booked">Booked</option>
+                        <option value="available">available</option>
+                        <option value="booked">booked</option>
                     </select>
                     <span id="status-error" style="color:red;"></span>
                     <label>Plate Number</label>

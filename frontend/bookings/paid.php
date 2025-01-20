@@ -2,32 +2,53 @@
 session_start();
 include('../connect/connection.php');
 
-if (!isset($_SESSION['email']) && ! isset($_SESSION['id'])) {
-    echo("Session variables are not set.");
+// Ensure the user is logged in
+if (!isset($_SESSION['email'])) {
+    header("Location:../connect/diffsignup.php");
+    exit;
 }
 
-$userEmail = $_SESSION['email'];
-$carId = $_SESSION['id'];
+$user_email = $_SESSION['email'];
 
-$sql = "UPDATE users SET booking_count = booking_count + 1 WHERE email = '$userEmail'";
-$result= mysqli_query($conn,$sql);
-if (!($result)) {
-    die("Error updating users table: " . mysqli_error($conn));
+// Fetch the user_id from the users table using the email
+$query_user = "SELECT user_id FROM users WHERE email = '$user_email'";
+$result_user = mysqli_query($conn, $query_user);
+if (!$result_user) {
+    echo "Error fetching user: " . mysqli_error($conn);
+    exit;
 }
+$user = mysqli_fetch_assoc($result_user);
+$user_id = $user['user_id'];
 
-$sql = "UPDATE cars SET status = 'booked' WHERE id = $carId";
-$resultt= mysqli_query($conn,$sql);
-if (!($resultt)) {
-    die("Error updating cars table: " . mysqli_error($conn));
+// Fetch the latest reservation where payment_status is 'pending'
+$query = "SELECT r.*, c.id AS car_id FROM reservationS r INNER JOIN cars c ON r.car_id = c.id WHERE r.user_id = '$user_id' AND r.payment_status = 'pending' ORDER BY r.id DESC LIMIT 1";
+$result = mysqli_query($conn, $query);
+if (!$result) {
+    echo "Error fetching reservation: " . mysqli_error($conn);
+    exit;
 }
+$details = mysqli_fetch_assoc($result);
 
-$sql = "UPDATE reservations SET payment_status = 'paid' WHERE car_id = $carId";
-$rresult= mysqli_query($conn,$sql);
-if (!($rresult)) {
-    die("Error updating reservation table: " . mysqli_error($conn));
+if ($details) {
+    $car_id = $details['car_id'];
+
+    // Update car status to 'booked'
+    $update_car_query = "UPDATE cars SET status = 'booked' WHERE id = '$car_id'";
+    if (!mysqli_query($conn, $update_car_query)) {
+        echo "Error updating car status: " . mysqli_error($conn) . "<br>";
+        exit; // Exit if there's an error
+    }
+
+    // Increase the booking count for the user
+    $update_user_query = "UPDATE users SET booking_count = booking_count + 1 WHERE user_id = '$user_id'";
+    if (!mysqli_query($conn, $update_user_query)) {
+        echo "Error updating user booking count: " . mysqli_error($conn) . "<br>";
+        exit; // Exit if there's an error
+    }
+
+    // Redirect to index.php after the updates
+    echo "<script>window.location.href = '../index.php';</script>";
+} else {
+    echo "No pending booking found for this user.";
 }
-
-mysqli_close($conn);
-header("Location:../index.php");
-exit();
 ?>

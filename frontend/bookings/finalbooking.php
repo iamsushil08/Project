@@ -85,41 +85,44 @@ $totalpayment = number_format($details['total_payment'], 2);
         width: 35%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     .details-boxx {
         width: 35%;
         background: #f9f9f9;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     .details-box p {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.8;
-    margin: 0 4 10px;
-    display: flex;
-    justify-content: space-between;
-}
-.details-boxx p {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.8;
-    margin: 0 3 10px;
-    display: flex;
-    justify-content: space-between;
-}
+        font-size: 18px;
+        color: #555;
+        line-height: 1.8;
+        margin: 0 4 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .details-boxx p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.8;
+        margin: 0 3 10px;
+        display: flex;
+        justify-content: space-between;
+    }
 
 
     .highlight {
         font-weight: bold;
         color: #222;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
     }
 
     .button-container {
         margin-top: 20px;
-        width:500px;
-        margin-left:235px;
+        width: 500px;
+        margin-left: 235px;
     }
 
 
@@ -144,7 +147,7 @@ $totalpayment = number_format($details['total_payment'], 2);
 
     .footer {
         font-size: 14px;
-        color:black;
+        color: black;
         margin-top: 30px;
     }
 
@@ -158,9 +161,10 @@ $totalpayment = number_format($details['total_payment'], 2);
         color: #005f8c;
         text-decoration: underline;
     }
-    #paypal-button-container{
-        margin-left:133px;
-        border-radius:22px;
+
+    #paypal-button-container {
+        margin-left: 133px;
+        border-radius: 22px;
     }
     </style>
 </head>
@@ -187,10 +191,7 @@ $totalpayment = number_format($details['total_payment'], 2);
             </div>
         </div>
 
-        <div class="button-container">
-            <!-- Recalculate Button -->
-            <button class="recalculate-btn" onclick="window.location.reload();">Recalculate</button>
-        </div>
+        <a href="./paid.php">Cash Payment</a>
 
         <!-- PayPal Button -->
         <div id="paypal-button-container" style="margin-top: 20px;"></div>
@@ -200,7 +201,7 @@ $totalpayment = number_format($details['total_payment'], 2);
         </div>
     </div>
 
-    <script
+    <!-- <script
         src="https://www.paypal.com/sdk/js?client-id=AfrxsugjDF5UzPrGu9K5OWvVkWDIbNIZ9prfcwu1lOhZNk_b7Qb80O79G60MO92hOk7S_BMAGfMj_lGp&currency=USD">
     </script>
     <script>
@@ -237,7 +238,7 @@ $totalpayment = number_format($details['total_payment'], 2);
     }
 
     initPayPalButton();
-    </script>
+    </script> -->
 </body>
 
 </html>
