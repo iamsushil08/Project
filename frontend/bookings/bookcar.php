@@ -160,7 +160,7 @@
         var endError = document.getElementById("end_error");
         var now = new Date();
 
-        // Reset time to midnight for comparison
+
         now.setHours(0, 0, 0, 0);
 
         if (isNaN(endInput)) {
