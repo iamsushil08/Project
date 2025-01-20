@@ -409,7 +409,7 @@ mysqli_close($conn) ;
 
     <div class="faqItem">
         <h3 class="question">3.How does the payment process work?</h3>
-        <p class="answer">You must pay 15% as advance payment and remaining via cash or online method
+        <p class="answer">Via cash method
             after
             service
             is provided.</p>
@@ -417,11 +417,7 @@ mysqli_close($conn) ;
 
     <div class="faqItem">
         <h3 class="question">4.Can I cancel my booking?</h3>
-        <p class="answer">Yes, you can cancel your booking up to 12 hours of time period but after 12 hours 15%
-            payment
-            cannot
-            be
-            refunded> </p>
+        <p class="answer">No, the cancel request is not embedded yet.> </p>
     </div>
 
     <div class="faqItem">
